@@ -176,21 +176,71 @@ function CTA() {
         </Link>
 
       </div>
+
       {/* =========================
-    DEVELOPMENT MILESTONE
-========================= */}
+          SOCIAL MEDIA LINKS
+      ========================= */}
+      <div className="contact-social-links">
+        <span>Connect With Us:</span>
+        <div className="contact-social-icons">
+          <a
+            href="https://www.linkedin.com/company/nascon-technologies"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nascon Technologies on LinkedIn"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://twitter.com/nascontech"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nascon Technologies on X"
+          >
+            X (Twitter)
+          </a>
+          <a
+            href="https://www.facebook.com/nascontechnologies"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nascon Technologies on Facebook"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/nascontechnologies"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nascon Technologies on Instagram"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.youtube.com/@nascontechnologies"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Nascon Technologies on YouTube"
+          >
+            YouTube
+          </a>
+        </div>
+      </div>
 
-<div className="development-credit">
+      {/* =========================
+          DEVELOPMENT MILESTONE
+      ========================= */}
 
-  <span className="development-line"></span>
+      <div className="development-credit">
 
-  <p>
-    Developed by <strong>A2BN PRIVATE LIMITED</strong>
-  </p>
+        <span className="development-line"></span>
 
-  <span className="development-line"></span>
+        <p>
+          Developed by <strong>A2BN PRIVATE LIMITED</strong>
+        </p>
 
-</div>
+        <span className="development-line"></span>
+
+      </div>
 
     </section>
   );

@@ -4,31 +4,31 @@ import { useLocation } from "react-router-dom";
 const pageMetaMap = {
   "/": {
     title: "Nascon Technologies | Industrial Automation & Controls",
-    description: "Smart industrial automation solutions, custom engineered control panels, and genuine industrial product supply by Nascon Technologies.",
+    description: "Smart industrial automation, custom control panels, and genuine industrial product supply by Nascon Technologies.",
   },
   "/about": {
-    title: "About Us | Nascon Technologies - Industrial Automation Excellence Since 2012",
-    description: "Learn about Nascon Technologies, our 12+ years of engineering experience, values, and industrial automation capabilities.",
+    title: "About Us | Nascon Technologies - Automation Since 2012",
+    description: "Learn about Nascon Technologies, our 12+ years of engineering experience and industrial automation capabilities.",
   },
   "/products": {
     title: "Industrial Automation Products | Nascon Technologies",
-    description: "Explore genuine industrial automation products, PLCs, HMIs, VFD drives, switchgear, relays, cables, and control components from trusted brands.",
+    description: "Explore genuine industrial automation products, PLCs, HMIs, VFD drives, switchgear, relays, and cables from trusted brands.",
   },
   "/solutions": {
-    title: "Engineering & Automation Solutions | Nascon Technologies",
+    title: "Automation & Control Panel Solutions | Nascon",
     description: "Custom process automation, control panels, IoT remote monitoring, SPM automation, and electrical engineering solutions.",
   },
   "/industries": {
     title: "Industries We Serve | Nascon Technologies",
-    description: "Application-driven automation and electrical control solutions across automotive, packaging, food & beverage, pharmaceuticals, and manufacturing.",
+    description: "Application-driven automation and electrical control solutions across manufacturing, automotive, pharma, and utilities.",
   },
   "/partners": {
     title: "Technology & Brand Partners | Nascon Technologies",
-    description: "Authorized system integrator and distributor for global leaders including Schneider Electric, Siemens, Phoenix Contact, Multispan, and Selec.",
+    description: "Authorized system integrator and distributor for global leaders including Schneider, Siemens, Phoenix Contact, and Selec.",
   },
   "/contact": {
-    title: "Contact Us & Business Enquiry | Nascon Technologies",
-    description: "Get in touch with Nascon Technologies for custom automation panels, product inquiries, project consultation, and business partnerships.",
+    title: "Contact Us & Enquiry | Nascon Technologies",
+    description: "Get in touch with Nascon Technologies for custom automation panels, product inquiries, and engineering consultation.",
   },
 };
 
@@ -54,13 +54,13 @@ export default function PageMeta() {
         const brand = partnerNames[slug] || "Brand";
         meta = {
           title: `${brand} Products & Solutions | Nascon Technologies`,
-          description: `Authorized supply and integration for genuine ${brand} automation, control, and electrical products at Nascon Technologies.`,
+          description: `Authorized supply and integration for genuine ${brand} automation and electrical products at Nascon Technologies.`,
         };
       } else {
         meta = {
           title: "Nascon Technologies | Industrial Automation Solutions",
           description:
-            "Smart automation solutions and engineered control panels for modern industries.",
+            "Smart industrial automation solutions and engineered control panels by Nascon Technologies.",
         };
       }
     }
