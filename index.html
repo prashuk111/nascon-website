@@ -104,8 +104,10 @@
     </script>
   </head>
   <body>
-    <div id="root">
-      <!-- Semantic crawlable HTML for search engines and SEO bots -->
+    <div id="root"></div>
+
+    <!-- Semantic fallback for search engine crawlers (Google, Bing, SEO bots) without flashing to JS users -->
+    <noscript>
       <header>
         <nav aria-label="Main Navigation">
           <a href="/">Home</a>
@@ -196,7 +198,8 @@
           <a href="/contact">Contact</a>
         </p>
       </footer>
-    </div>
+    </noscript>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
