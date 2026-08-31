@@ -545,55 +545,6 @@
 }
 }
 
-/* =========================================================
-   SOCIAL MEDIA LINKS
-========================================================= */
-
-.contact-social-links {
-  margin-top: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.contact-social-links span {
-  color: #666666;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.contact-social-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 20px;
-}
-
-.contact-social-icons a {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  min-height: 44px;
-  background: #ffffff;
-  border: 1px solid #dbe5e0;
-  border-radius: 8px;
-  color: #16458a;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.contact-social-icons a:hover {
-  background: #16458a;
-  color: #ffffff;
-  border-color: #16458a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(22, 69, 138, 0.15);
-}
-
 
 /* =========================================================
    REDUCED MOTION
