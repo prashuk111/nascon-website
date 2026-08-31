@@ -39,10 +39,16 @@ function Hero() {
 
   <div className="hero-image hero-image-animate">
 
-    <img
-      src="/images/hero.png"
-      alt="Nascon Technologies industrial automation solutions"
-    />
+    <picture>
+      <source srcSet="/images/hero.webp" type="image/webp" />
+      <img
+        src="/images/hero.png"
+        alt="Nascon Technologies industrial automation solutions"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+      />
+    </picture>
 
   </div>
 

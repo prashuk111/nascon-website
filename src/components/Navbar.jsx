@@ -6,10 +6,16 @@ function Navbar() {
     <nav className="navbar">
 
       <Link to="/" className="logo">
-        <img
-          src="/images/Nascon.png"
-          alt="Nascon Technologies"
-        />
+        <picture>
+          <source srcSet="/images/Nascon.webp" type="image/webp" />
+          <img
+            src="/images/Nascon.png"
+            alt="Nascon Technologies"
+            width="170"
+            height="45"
+            decoding="async"
+          />
+        </picture>
       </Link>
 
       <div className="nav-links">

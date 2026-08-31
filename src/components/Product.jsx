@@ -22,11 +22,16 @@ function Product() {
 
         <div className="product-card">
           <div className="product-image">
-            <img
-            className="control-panel-img"
-              src="/images/control-panel-balanced.png"
-              alt="Control Panel Manufacturing"
-            />
+            <picture>
+              <source srcSet="/images/control-panel-balanced.webp" type="image/webp" />
+              <img
+                className="control-panel-img"
+                src="/images/control-panel-balanced.png"
+                alt="Control Panel Manufacturing"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="product-content">
@@ -44,10 +49,15 @@ function Product() {
 
         <div className="product-card">
           <div className="product-image">
-            <img
-              src="/images/industrial-automation-home.png"
-              alt="Industrial automation equipment"
-            />
+            <picture>
+              <source srcSet="/images/industrial-automation-home.webp" type="image/webp" />
+              <img
+                src="/images/industrial-automation-home.png"
+                alt="Industrial automation equipment"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="product-content">
@@ -65,10 +75,15 @@ function Product() {
 
         <div className="product-card">
           <div className="product-image">
-            <img
-              src="/images/electrical-products-home.png"
-              alt="Electrical automation products"
-            />
+            <picture>
+              <source srcSet="/images/electrical-products-home.webp" type="image/webp" />
+              <img
+                src="/images/electrical-products-home.png"
+                alt="Electrical automation products"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="product-content">

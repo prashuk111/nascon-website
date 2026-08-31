@@ -67,11 +67,16 @@ function About() {
 
           <div className="about-image-wrapper">
 
-            <img
-              src="/images/n.png"
-              alt="Nascon Technologies industrial automation solutions"
-              className="about-industrial-image"
-            />
+            <picture>
+              <source srcSet="/images/n.webp" type="image/webp" />
+              <img
+                src="/images/n.png"
+                alt="Nascon Technologies industrial automation solutions"
+                className="about-industrial-image"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
 
             <div className="about-image-overlay"></div>
 

@@ -132,11 +132,16 @@ function SystemIntegration() {
               {/* Partner name */}
 
               <div className={`partner-logo ${partner.className}`}>
-  <img
-    src={partner.logo}
-    alt={partner.name}
-  />
-</div>
+                <picture>
+                  <source srcSet={partner.logo.replace(/\.png$/, ".webp")} type="image/webp" />
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
 
 
               {/* Partner subtitle */}
