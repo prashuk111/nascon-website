@@ -3,8 +3,8 @@ import { useLocation } from "react-router-dom";
 
 const pageMetaMap = {
   "/": {
-    title: "Nascon Technologies | Industrial Automation, Control Panels & Product Supply",
-    description: "Nascon Technologies delivers smart automation solutions, custom engineered control panels, and trusted industrial products for modern manufacturing.",
+    title: "Nascon Technologies | Industrial Automation & Controls",
+    description: "Smart industrial automation solutions, custom engineered control panels, and genuine industrial product supply by Nascon Technologies.",
   },
   "/about": {
     title: "About Us | Nascon Technologies - Industrial Automation Excellence Since 2012",
