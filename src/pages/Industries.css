@@ -1,0 +1,1174 @@
+/* =========================================================
+   INDUSTRIES PAGE
+========================================================= */
+
+.industries {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 110px 60px 100px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgba(22, 131, 74, 0.045),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fbfdfc 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DECORATION
+========================================================= */
+
+.industries::before {
+  content: "";
+
+  position: absolute;
+
+  top: 40px;
+  right: -160px;
+
+  width: 430px;
+  height: 430px;
+
+  border: 1px solid rgba(22, 69, 138, 0.055);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.industries::after {
+  content: "";
+
+  position: absolute;
+
+  top: 115px;
+  right: -80px;
+
+  width: 280px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(22, 131, 74, 0.18),
+      transparent
+    );
+
+  transform: rotate(-25deg);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.industries-heading {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 850px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+
+/* Label */
+
+.industries-label {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  margin: 0 0 18px;
+
+  color: #16834a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.4px;
+
+  text-transform: uppercase;
+}
+
+.industries-label::before {
+  content: "";
+
+  width: 30px;
+  height: 2px;
+
+  margin-right: 12px;
+
+  background: #16834a;
+}
+
+
+/* Heading */
+
+.industries-heading h1 {
+  margin: 0 0 22px;
+
+  color: #16458a;
+
+  font-size: 48px;
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -1.2px;
+}
+
+
+/* Description */
+
+.industries-description {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: #666666;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   INDUSTRIES GRID
+========================================================= */
+
+.industries-grid {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   INDUSTRY CARD
+========================================================= */
+
+.industry-card {
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #edf2f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 32px rgba(22, 69, 138, 0.065);
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  animation:
+    industryCardReveal
+    0.7s ease
+    forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   STAGGER
+========================================================= */
+
+.industry-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.industry-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.industry-card:nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.industry-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.industry-card:nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.industry-card:nth-child(6) {
+  animation-delay: 0.40s;
+}
+
+.industry-card:nth-child(7) {
+  animation-delay: 0.47s;
+}
+
+.industry-card:nth-child(8) {
+  animation-delay: 0.54s;
+}
+
+
+/* =========================================================
+   TOP ACCENT
+========================================================= */
+
+.industry-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #16458a,
+      #16834a
+    );
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+.industry-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.industry-card:hover {
+  transform: translateY(-7px);
+
+  background: #fcfefd;
+
+  border-color: #d8e6df;
+
+  box-shadow:
+    0 20px 45px rgba(22, 69, 138, 0.11);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.industry-number {
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  color: #d8e2e9;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.industry-icon {
+  flex-shrink: 0;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 3px;
+
+  box-sizing: border-box;
+
+  border-radius: 14px;
+
+  background: #f2f8f5;
+
+  color: #16834a;
+
+  font-size: 29px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(22, 131, 74, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.industry-card:hover .industry-icon {
+  transform:
+    rotate(4deg)
+    scale(1.06);
+
+  background: #16834a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 18px rgba(22, 131, 74, 0.18);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.industry-content {
+  flex: 1;
+
+  min-width: 0;
+
+  padding-top: 2px;
+}
+
+
+/* Title */
+
+.industry-content h2 {
+  margin: 0 38px 13px 0;
+
+  color: #16458a;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  font-weight: 750;
+
+  letter-spacing: -0.35px;
+}
+
+
+/* Description */
+
+.industry-content p {
+  margin: 0 0 20px;
+
+  color: #666666;
+
+  font-size: 14.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.industry-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #16834a;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.industry-link span {
+  display: inline-block;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.industry-link:hover {
+  gap: 13px;
+
+  color: #116b3c;
+}
+
+.industry-link:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CAPABILITIES
+========================================================= */
+
+.industry-capabilities {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 105px;
+
+  padding-top: 85px;
+
+  border-top: 1px solid #e7eeee;
+
+  animation:
+    industryFadeUp
+    0.8s ease
+    both;
+}
+
+
+/* =========================================================
+   CAPABILITY HEADING
+========================================================= */
+
+.capabilities-heading {
+  max-width: 760px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.capabilities-heading p {
+  margin: 0 0 14px;
+
+  color: #16834a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.capabilities-heading h2 {
+  margin: 0 0 18px;
+
+  color: #16458a;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.6px;
+}
+
+.capabilities-heading h2 span {
+  color: #16834a;
+}
+
+.capabilities-heading > span {
+  display: block;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #666666;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CAPABILITY GRID
+========================================================= */
+
+.capabilities-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   CAPABILITY CARD
+========================================================= */
+
+.capability-card {
+  position: relative;
+
+  min-height: 235px;
+
+  padding: 28px 22px;
+
+  box-sizing: border-box;
+
+  background: #f6faf8;
+
+  border: 1px solid transparent;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  opacity: 0;
+
+  animation:
+    capabilityReveal
+    0.7s ease
+    forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* Stagger */
+
+.capability-card:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+.capability-card:nth-child(2) {
+  animation-delay: 0.17s;
+}
+
+.capability-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.capability-card:nth-child(4) {
+  animation-delay: 0.31s;
+}
+
+.capability-card:nth-child(5) {
+  animation-delay: 0.38s;
+}
+
+
+/* Number */
+
+.capability-number {
+  position: absolute;
+
+  top: 15px;
+  right: 17px;
+
+  color: #d1dfe4;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* Hover */
+
+.capability-card:hover {
+  transform: translateY(-6px);
+
+  background: #ffffff;
+
+  border-color: #dce8e3;
+
+  box-shadow:
+    0 17px 36px rgba(22, 69, 138, 0.09);
+}
+
+
+/* =========================================================
+   CAPABILITY ICON
+========================================================= */
+
+.capability-icon {
+  width: 54px;
+  height: 54px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #16834a;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.capability-card:hover .capability-icon {
+  transform: scale(1.07);
+
+  background: #16834a;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CAPABILITY TEXT
+========================================================= */
+
+.capability-card h3 {
+  margin: 0 0 10px;
+
+  color: #16458a;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+.capability-card p {
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.industries-cta {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 80px;
+
+  padding: 48px 52px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f8f5,
+      #f7fbfa
+    );
+
+  border: 1px solid #e1ece7;
+
+  animation:
+    industryFadeUp
+    0.8s ease
+    both;
+}
+
+
+/* CTA content */
+
+.cta-content {
+  max-width: 720px;
+}
+
+.cta-label {
+  margin: 0 0 13px;
+
+  color: #16834a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.cta-content h2 {
+  margin: 0 0 17px;
+
+  color: #16458a;
+
+  font-size: 35px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.cta-content > p:last-child {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.cta-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  min-width: 180px;
+
+  padding: 15px 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background: #16458a;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cta-button span {
+  display: inline-block;
+
+  font-size: 18px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.cta-button:hover {
+  background: #12396f;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(22, 69, 138, 0.15);
+}
+
+.cta-button:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes industryFadeUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes industryCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes capabilityReveal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .industries {
+    padding: 85px 40px;
+  }
+
+  .industries-heading {
+    margin-bottom: 55px;
+  }
+
+  .industries-heading h1 {
+    font-size: 42px;
+  }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+  }
+
+  .industry-card {
+    min-height: 260px;
+
+    padding: 27px;
+
+    gap: 18px;
+  }
+
+  .industry-content h2 {
+    font-size: 22px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capability-card {
+    min-height: 210px;
+  }
+
+  .industries-cta {
+    padding: 40px;
+
+    margin-top: 60px;
+  }
+
+  .industry-capabilities {
+    margin-top: 80px;
+
+    padding-top: 65px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .industries {
+    padding: 70px 20px;
+  }
+
+  .industries-heading {
+    margin-bottom: 45px;
+  }
+
+  .industries-label {
+    font-size: 11px;
+
+    letter-spacing: 1.6px;
+  }
+
+  .industries-heading h1 {
+    font-size: 34px;
+
+    letter-spacing: -0.5px;
+  }
+
+  .industries-description {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .industry-card {
+    min-height: auto;
+
+    padding: 25px 22px;
+
+    gap: 16px;
+
+    border-radius: 15px;
+  }
+
+  .industry-number {
+    top: 16px;
+
+    right: 18px;
+
+    font-size: 12px;
+  }
+
+  .industry-icon {
+    width: 56px;
+    height: 56px;
+
+    font-size: 26px;
+
+    border-radius: 11px;
+  }
+
+  .industry-content h2 {
+    margin-right: 25px;
+
+    font-size: 21px;
+  }
+
+  .industry-content p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+  .industry-link {
+    font-size: 14px;
+  }
+
+  .industry-capabilities {
+    margin-top: 65px;
+
+    padding-top: 55px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: 32px;
+  }
+
+  .capabilities-heading > span {
+    font-size: 15px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .capability-card {
+    min-height: auto;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    text-align: left;
+  }
+
+  .capability-number {
+    top: 14px;
+    right: 15px;
+  }
+
+  .capability-icon {
+    flex-shrink: 0;
+
+    margin: 0;
+  }
+
+  .capability-content {
+    padding-top: 2px;
+  }
+
+  .industries-cta {
+    margin-top: 50px;
+
+    padding: 32px 24px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    border-radius: 15px;
+  }
+
+  .cta-content h2 {
+    font-size: 28px;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .industry-card,
+  .industry-capabilities,
+  .capability-card,
+  .industries-cta {
+    animation: none;
+
+    opacity: 1;
+  }
+
+  .industry-card,
+  .industry-icon,
+  .industry-link,
+  .industry-link span,
+  .capability-card,
+  .capability-icon,
+  .cta-button,
+  .cta-button span {
+    transition: none;
+  }
+
+  .industry-card:hover,
+  .capability-card:hover,
+  .cta-button:hover {
+    transform: none;
+  }
+
+}

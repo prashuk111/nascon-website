@@ -1,0 +1,6 @@
+# Robots.txt for Nascon Technologies
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://nascontechnologies.com/sitemap.xml

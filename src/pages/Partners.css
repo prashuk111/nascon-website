@@ -1,0 +1,2617 @@
+/* =========================================================
+   NASCON PARTNERS PAGE
+========================================================= */
+
+.nascon-partners-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #555555;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.nascon-partners-hero {
+  position: relative;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7faf8 0%,
+      #f1f7f4 100%
+    );
+
+  overflow: hidden;
+}
+
+
+.nascon-partners-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 620px;
+  height: 620px;
+
+  right: -310px;
+  top: -390px;
+
+  border: 1px solid rgba(22, 131, 74, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.nascon-partners-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  right: -190px;
+  bottom: -260px;
+
+  border: 1px solid rgba(22, 69, 138, 0.06);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.nascon-partners-hero-inner {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 95px 70px 90px;
+
+  box-sizing: border-box;
+}
+
+
+.nascon-partners-hero-text {
+  max-width: 880px;
+
+  animation:
+    partnersHeroText
+    0.7s
+    ease
+    both;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+========================================================= */
+
+.nascon-partners-eyebrow {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  margin: 0 0 20px;
+
+  padding-left: 38px;
+
+  color: #16834a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
+}
+
+
+.nascon-partners-eyebrow::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  width: 25px;
+  height: 2px;
+
+  background: #16834a;
+
+  transform-origin: left;
+
+  animation:
+    partnersLine
+    0.6s
+    ease
+    0.15s
+    both;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.nascon-partners-hero h1 {
+  margin: 0 0 22px;
+
+  color: #16458a;
+
+  font-size: 60px;
+
+  line-height: 1.06;
+
+  font-weight: 750;
+
+  letter-spacing: -1.8px;
+}
+
+
+.nascon-partners-hero-description {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #606060;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PARTNERS LIST SECTION
+========================================================= */
+
+.nascon-partners-list {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 90px 70px 105px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.nascon-partners-heading {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  column-gap: 90px;
+
+  align-items: end;
+
+  margin-bottom: 48px;
+}
+
+
+.nascon-partners-heading-left {
+  max-width: 700px;
+
+  animation:
+    partnersHeadingLeft
+    0.65s
+    ease
+    0.1s
+    both;
+}
+
+
+.nascon-partners-label {
+  margin: 0 0 12px;
+
+  color: #16834a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.nascon-partners-heading h2 {
+  margin: 0;
+
+  color: #16458a;
+
+  font-size: 42px;
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.9px;
+}
+
+
+.nascon-partners-heading-description {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  animation:
+    partnersHeadingRight
+    0.65s
+    ease
+    0.2s
+    both;
+}
+
+
+/* =========================================================
+   PARTNER GRID
+========================================================= */
+
+.nascon-partners-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   PARTNER CARD
+========================================================= */
+
+.nascon-partner-card {
+  position: relative;
+
+  min-height: 285px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 27px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e9e6;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  animation:
+    partnerCardReveal
+    0.55s
+    ease
+    both;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+}
+
+
+/* =========================================================
+   CARD STAGGER
+========================================================= */
+
+.nascon-partner-card:nth-child(1) {
+  animation-delay: 0.04s;
+}
+
+.nascon-partner-card:nth-child(2) {
+  animation-delay: 0.09s;
+}
+
+.nascon-partner-card:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.nascon-partner-card:nth-child(4) {
+  animation-delay: 0.19s;
+}
+
+.nascon-partner-card:nth-child(5) {
+  animation-delay: 0.24s;
+}
+
+.nascon-partner-card:nth-child(6) {
+  animation-delay: 0.29s;
+}
+
+.nascon-partner-card:nth-child(7) {
+  animation-delay: 0.34s;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.nascon-partner-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbdcd4;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 16px 35px rgba(22, 69, 138, 0.09);
+}
+
+
+/* =========================================================
+   SELECTED CARD
+========================================================= */
+
+.nascon-partner-card.selected {
+  background: #f5faf7;
+
+  border-color: #16834a;
+
+  box-shadow:
+    0 16px 35px rgba(22, 131, 74, 0.12);
+
+  transform: translateY(-5px);
+}
+
+
+.nascon-partner-card.selected
+.nascon-partner-card-content h3 {
+  color: #16834a;
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.nascon-partner-card-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  margin-bottom: 35px;
+}
+
+
+.nascon-partner-number {
+  color: #cbd8d4;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PARTNER ICON
+========================================================= */
+
+.nascon-partner-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f3f8f5;
+
+  border: 1px solid #dbe8e2;
+
+  border-radius: 10px;
+
+  color: #16834a;
+
+  font-size: 23px;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.28s ease,
+    color 0.28s ease,
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+
+.nascon-partner-card:hover
+.nascon-partner-icon,
+
+.nascon-partner-card.selected
+.nascon-partner-icon {
+  background: #16834a;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(22, 131, 74, 0.14);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.nascon-partner-card-content {
+  max-width: 430px;
+
+  flex: 1;
+}
+
+
+.nascon-partner-category {
+  margin: 0 0 8px;
+
+  color: #16834a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.nascon-partner-card-content h3 {
+  margin: 0 0 12px;
+
+  color: #16458a;
+
+  font-size: 25px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.nascon-partner-description {
+  margin: 0;
+
+  color: #686868;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+========================================================= */
+
+.partner-view-details {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 18px;
+
+  color: #16834a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    gap 0.25s ease;
+}
+
+
+.nascon-partner-card:hover
+.partner-view-details {
+  transform: translateX(4px);
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   CARD GREEN ACCENT
+========================================================= */
+
+.nascon-partner-accent {
+  position: absolute;
+
+  left: 27px;
+
+  bottom: 0;
+
+  width: 42px;
+  height: 3px;
+
+  background: #16834a;
+
+  border-radius:
+    3px
+    3px
+    0
+    0;
+
+  transform-origin: left;
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.nascon-partner-card:hover
+.nascon-partner-accent,
+
+.nascon-partner-card.selected
+.nascon-partner-accent {
+  width: 82px;
+}
+
+
+/* =========================================================
+   SUPPLY NETWORK
+========================================================= */
+
+.supply-network {
+  margin-top: 90px;
+
+  padding-top: 75px;
+
+  border-top: 1px solid #e7eeeb;
+}
+
+
+/* =========================================================
+   SUPPLY HEADING
+========================================================= */
+
+.supply-heading {
+  max-width: 760px;
+
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+
+.supply-heading p {
+  margin: 0 0 12px;
+
+  color: #16834a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+.supply-heading h2 {
+  margin: 0 0 15px;
+
+  color: #16458a;
+
+  font-size: 38px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+
+.supply-heading h2 span {
+  color: #16834a;
+}
+
+
+.supply-heading > span {
+  display: block;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUPPLY GRID
+========================================================= */
+
+.supply-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   SUPPLY CARD
+========================================================= */
+
+.supply-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding: 23px 20px;
+
+  background: #f7faf9;
+
+  border: 1px solid #edf2ef;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+
+  animation:
+    supplyCardReveal
+    0.55s
+    ease
+    both;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease,
+    border-color 0.28s ease;
+}
+
+
+.supply-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.supply-card:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.supply-card:nth-child(3) {
+  animation-delay: 0.20s;
+}
+
+.supply-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+
+.supply-card:hover {
+  transform: translateY(-4px);
+
+  background: #ffffff;
+
+  border-color: #dce8e3;
+
+  box-shadow:
+    0 12px 28px rgba(22, 69, 138, 0.07);
+}
+
+
+/* =========================================================
+   SUPPLY ICON
+========================================================= */
+
+.supply-icon {
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e5ece9;
+
+  border-radius: 9px;
+
+  color: #16834a;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.025);
+
+  transition:
+    background 0.28s ease,
+    color 0.28s ease,
+    transform 0.28s ease;
+}
+
+
+.supply-card:hover
+.supply-icon {
+  background: #16834a;
+
+  color: #ffffff;
+
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   SUPPLY CONTENT
+========================================================= */
+
+.supply-card h3 {
+  margin: 1px 0 7px;
+
+  color: #16458a;
+
+  font-size: 15px;
+
+  line-height: 1.3;
+
+  font-weight: 750;
+}
+
+
+.supply-card p {
+  margin: 0;
+
+  color: #696969;
+
+  font-size: 12.5px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT / CTA
+========================================================= */
+
+.nascon-partners-contact {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 70px 95px;
+
+  box-sizing: border-box;
+}
+
+
+.nascon-partners-contact-inner {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  padding: 55px 60px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3f8f5,
+      #edf5f1
+    );
+
+  border: 1px solid #e0ebe6;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  animation:
+    partnersCtaReveal
+    0.65s
+    ease
+    0.1s
+    both;
+}
+
+
+.nascon-partners-contact-inner::after {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  right: -190px;
+  bottom: -240px;
+
+  border: 1px solid rgba(22, 131, 74, 0.10);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CTA TEXT
+========================================================= */
+
+.nascon-partners-contact-text {
+  position: relative;
+
+  z-index: 1;
+}
+
+
+.nascon-partners-contact-text h2 {
+  margin: 0 0 15px;
+
+  color: #16458a;
+
+  font-size: 37px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.7px;
+}
+
+
+.nascon-partners-contact-text > p:last-child {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.nascon-partners-contact-button {
+  position: relative;
+
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 14px 23px;
+
+  background: #16458a;
+
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    gap 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.nascon-partners-contact-button:hover {
+  background: #16834a;
+
+  transform: translateY(-3px);
+
+  gap: 13px;
+
+  box-shadow:
+    0 10px 22px rgba(22, 69, 138, 0.13);
+}
+
+
+.nascon-partners-contact-button span {
+  font-size: 17px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.nascon-partners-contact-button:hover span {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   PARTNER DETAIL PAGE
+========================================================= */
+
+.partner-detail-hero {
+  position: relative;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7faf8 0%,
+      #eef5f2 100%
+    );
+
+  overflow: hidden;
+}
+
+
+.partner-detail-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -240px;
+  top: -300px;
+
+  border: 1px solid rgba(22, 131, 74, 0.09);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.partner-detail-hero-inner {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 65px 70px 80px;
+
+  box-sizing: border-box;
+}
+
+
+.partner-detail-back {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 48px;
+
+  color: #16458a;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.partner-detail-back:hover {
+  color: #16834a;
+
+  transform: translateX(-4px);
+}
+
+
+.partner-detail-number {
+  margin-bottom: 14px;
+
+  color: #cbd9d4;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.partner-detail-hero h1 {
+  margin: 0 0 12px;
+
+  color: #16458a;
+
+  font-size: 60px;
+
+  line-height: 1.06;
+
+  font-weight: 750;
+
+  letter-spacing: -1.7px;
+}
+
+
+.partner-detail-category {
+  margin: 0 0 22px;
+
+  color: #16834a;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+.partner-detail-description {
+  max-width: 800px;
+
+  margin: 0;
+
+  color: #606060;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
+
+.partner-detail-section {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 90px 70px;
+
+  box-sizing: border-box;
+}
+
+
+.partner-detail-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+.partner-detail-box {
+  padding: 35px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e9e5;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 25px rgba(22, 69, 138, 0.045);
+}
+
+
+.partner-detail-box h2 {
+  margin: 0 0 25px;
+
+  color: #16458a;
+
+  font-size: 29px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   PRODUCT LIST
+========================================================= */
+
+.partner-product-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+
+.partner-product-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 13px;
+
+  background: #f6faf8;
+
+  border: 1px solid #e3eee9;
+
+  border-radius: 7px;
+}
+
+
+.partner-product-item span {
+  color: #16834a;
+
+  font-weight: 800;
+}
+
+
+.partner-product-item p {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 12.5px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   APPLICATION LIST
+========================================================= */
+
+.partner-application-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.partner-application-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid #edf1ef;
+}
+
+
+.partner-application-item:last-child {
+  border-bottom: none;
+}
+
+
+.partner-application-item span {
+  color: #16834a;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.partner-application-item p {
+  margin: 0;
+
+  color: #555555;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   NASCON VALUE
+========================================================= */
+
+.partner-detail-value {
+  margin-top: 30px;
+
+  padding: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f9f6,
+      #edf5f1
+    );
+
+  border: 1px solid #e0ebe6;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+}
+
+
+.partner-detail-value h2 {
+  max-width: 700px;
+
+  margin: 0 0 13px;
+
+  color: #16458a;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+
+.partner-detail-value h2 span {
+  color: #16834a;
+}
+
+
+.partner-detail-value > div > p:last-child {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   OTHER PARTNERS
+========================================================= */
+
+.partner-other-section {
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 70px 95px;
+
+  box-sizing: border-box;
+}
+
+
+.partner-other-heading {
+  margin-bottom: 30px;
+}
+
+
+.partner-other-heading h2 {
+  margin: 0;
+
+  color: #16458a;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+
+.partner-other-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+.partner-other-card {
+  position: relative;
+
+  padding: 23px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe8e4;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+
+.partner-other-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #c9dbd3;
+
+  box-shadow:
+    0 12px 28px rgba(22, 69, 138, 0.07);
+}
+
+
+.partner-other-card > span {
+  color: #16834a;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.partner-other-card h3 {
+  margin: 13px 0 6px;
+
+  color: #16458a;
+
+  font-size: 18px;
+
+  line-height: 1.3;
+}
+
+
+.partner-other-card p {
+  margin: 0 0 18px;
+
+  color: #707070;
+
+  font-size: 12.5px;
+
+  line-height: 1.55;
+}
+
+
+.partner-other-card strong {
+  color: #16834a;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   SELECTED PARTNER
+========================================================= */
+
+.selected-partner {
+  margin: 0 0 75px;
+
+  padding: 40px;
+
+  background: #f5f9f7;
+
+  border: 1px solid #dce9e3;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  animation:
+    selectedPartnerReveal
+    0.55s
+    ease
+    both;
+}
+
+
+.selected-partner-header {
+  margin-bottom: 25px;
+}
+
+
+.selected-partner-header h2 {
+  margin: 0 0 8px;
+
+  color: #16458a;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+}
+
+
+.selected-partner-header > p:last-child {
+  margin: 0;
+
+  color: #16834a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.selected-partner-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 23px;
+
+  background: #ffffff;
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 7px 22px rgba(22, 69, 138, 0.045);
+}
+
+
+.selected-partner-icon {
+  flex-shrink: 0;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #16834a;
+
+  color: #ffffff;
+
+  border-radius: 11px;
+
+  font-size: 26px;
+}
+
+
+.selected-partner-content h3 {
+  margin: 0 0 7px;
+
+  color: #16458a;
+
+  font-size: 22px;
+}
+
+
+.selected-partner-content p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PARTNER DETAILS
+========================================================= */
+
+.partner-details {
+  position: relative;
+
+  margin-top: 60px;
+
+  padding: 45px;
+
+  background: #f5f9f7;
+
+  border: 1px solid #dceae4;
+
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DETAILS HEADER
+========================================================= */
+
+.partner-details-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-bottom: 27px;
+
+  border-bottom: 1px solid #dce5e2;
+}
+
+
+.partner-details-header h2 {
+  margin: 0 0 7px;
+
+  color: #16458a;
+
+  font-size: 38px;
+
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+
+.partner-details-category {
+  margin: 0;
+
+  color: #16834a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.partner-details-number {
+  color: #d2ded9;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DETAILS CONTENT
+========================================================= */
+
+.partner-details-content {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  gap: 60px;
+
+  padding: 32px 0 35px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.partner-details-description p {
+  margin: 0 0 16px;
+
+  color: #5f5f5f;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+.partner-details-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SOLUTIONS
+========================================================= */
+
+.partner-solutions-title {
+  margin: 0 0 16px;
+
+  color: #16458a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+
+.partner-solutions-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.partner-solution-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 12px 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2ebe7;
+
+  border-radius: 7px;
+
+  color: #555555;
+
+  font-size: 13px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.partner-solution-item:hover {
+  transform: translateX(4px);
+
+  border-color: #c9ddd4;
+
+  box-shadow:
+    0 5px 15px rgba(22, 69, 138, 0.05);
+}
+
+
+.solution-check {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #eaf5ef;
+
+  border-radius: 50%;
+
+  color: #16834a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DETAILS FOOTER
+========================================================= */
+
+.partner-details-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 27px;
+
+  border-top: 1px solid #dce5e2;
+}
+
+
+.partner-details-footer div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.partner-details-footer strong {
+  color: #16458a;
+
+  font-size: 16px;
+
+  font-weight: 750;
+}
+
+
+.partner-details-footer span {
+  color: #707070;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   DETAILS BUTTON
+========================================================= */
+
+.partner-details-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 13px 21px;
+
+  background: #16458a;
+
+  color: #ffffff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    gap 0.25s ease;
+}
+
+
+.partner-details-button:hover {
+  background: #16834a;
+
+  transform: translateY(-2px);
+
+  gap: 13px;
+}
+
+
+.partner-details-button span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes partnersHeroText {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes partnersLine {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scaleX(1);
+  }
+
+}
+
+
+@keyframes partnersHeadingLeft {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+@keyframes partnersHeadingRight {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+@keyframes partnerCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes supplyCardReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes partnersCtaReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes selectedPartnerReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .nascon-partners-hero-inner {
+    padding:
+      80px
+      40px
+      75px;
+  }
+
+
+  .nascon-partners-hero h1 {
+    font-size: 51px;
+  }
+
+
+  .nascon-partners-list {
+    padding:
+      75px
+      40px
+      90px;
+  }
+
+
+  .nascon-partners-heading {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 40px;
+  }
+
+
+  .nascon-partners-heading h2 {
+    font-size: 37px;
+  }
+
+
+  .nascon-partners-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+
+  .supply-network {
+    margin-top: 75px;
+
+    padding-top: 60px;
+  }
+
+
+  .supply-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .nascon-partners-contact {
+    padding:
+      0
+      40px
+      80px;
+  }
+
+
+  .nascon-partners-contact-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 45px;
+  }
+
+
+  .partner-detail-hero-inner {
+    padding:
+      60px
+      40px
+      70px;
+  }
+
+
+  .partner-detail-hero h1 {
+    font-size: 51px;
+  }
+
+
+  .partner-detail-section {
+    padding:
+      75px
+      40px;
+  }
+
+
+  .partner-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .partner-other-section {
+    padding:
+      0
+      40px
+      80px;
+  }
+
+
+  .partner-other-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .partner-details-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* ---------- HERO ---------- */
+
+  .nascon-partners-hero-inner {
+    padding:
+      65px
+      22px
+      60px;
+  }
+
+
+  .nascon-partners-hero::before {
+    width: 350px;
+    height: 350px;
+
+    right: -210px;
+    top: -190px;
+  }
+
+
+  .nascon-partners-hero::after {
+    width: 240px;
+    height: 240px;
+
+    right: -140px;
+    bottom: -170px;
+  }
+
+
+  .nascon-partners-eyebrow {
+    margin-bottom: 17px;
+
+    font-size: 11px;
+
+    letter-spacing: 1.8px;
+  }
+
+
+  .nascon-partners-hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -0.9px;
+  }
+
+
+  .nascon-partners-hero-description {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* ---------- PARTNERS ---------- */
+
+  .nascon-partners-list {
+    padding:
+      65px
+      22px
+      70px;
+  }
+
+
+  .nascon-partners-heading {
+    margin-bottom: 34px;
+  }
+
+
+  .nascon-partners-heading h2 {
+    font-size: 31px;
+  }
+
+
+  .nascon-partners-heading-description {
+    font-size: 14px;
+  }
+
+
+  .nascon-partners-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+
+  .nascon-partner-card {
+    min-height: 270px;
+
+    padding: 24px;
+  }
+
+
+  .nascon-partner-card-header {
+    margin-bottom: 30px;
+  }
+
+
+  .nascon-partner-icon {
+    width: 51px;
+    height: 51px;
+
+    font-size: 21px;
+  }
+
+
+  .nascon-partner-card-content h3 {
+    font-size: 23px;
+  }
+
+
+  .nascon-partner-description {
+    font-size: 13.5px;
+  }
+
+
+  /* ---------- SUPPLY ---------- */
+
+  .supply-network {
+    margin-top: 60px;
+
+    padding-top: 50px;
+  }
+
+
+  .supply-heading {
+    margin-bottom: 35px;
+  }
+
+
+  .supply-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .supply-heading > span {
+    font-size: 14px;
+  }
+
+
+  .supply-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  .supply-card {
+    padding: 20px 18px;
+  }
+
+
+  /* ---------- CTA ---------- */
+
+  .nascon-partners-contact {
+    padding:
+      0
+      22px
+      60px;
+  }
+
+
+  .nascon-partners-contact-inner {
+    padding:
+      36px
+      25px;
+
+    gap: 30px;
+
+    border-radius: 12px;
+  }
+
+
+  .nascon-partners-contact-text h2 {
+    font-size: 29px;
+  }
+
+
+  .nascon-partners-contact-text > p:last-child {
+    font-size: 14px;
+  }
+
+
+  .nascon-partners-contact-button {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ---------- DETAIL HERO ---------- */
+
+  .partner-detail-hero-inner {
+    padding:
+      50px
+      22px
+      60px;
+  }
+
+
+  .partner-detail-back {
+    margin-bottom: 35px;
+  }
+
+
+  .partner-detail-hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -0.9px;
+  }
+
+
+  .partner-detail-description {
+    font-size: 14px;
+  }
+
+
+  /* ---------- DETAIL CONTENT ---------- */
+
+  .partner-detail-section {
+    padding:
+      60px
+      22px;
+  }
+
+
+  .partner-detail-box {
+    padding: 25px;
+  }
+
+
+  .partner-detail-box h2 {
+    font-size: 25px;
+  }
+
+
+  .partner-product-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- VALUE ---------- */
+
+  .partner-detail-value {
+    padding:
+      30px
+      24px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+
+  .partner-detail-value h2 {
+    font-size: 29px;
+  }
+
+
+  .partner-detail-value
+  .nascon-partners-contact-button {
+    width: 100%;
+  }
+
+
+  /* ---------- OTHER PARTNERS ---------- */
+
+  .partner-other-section {
+    padding:
+      0
+      22px
+      60px;
+  }
+
+
+  .partner-other-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .partner-other-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------- SELECTED PARTNER ---------- */
+
+  .selected-partner {
+    padding: 27px;
+
+    margin-bottom: 55px;
+  }
+
+
+  .selected-partner-header h2 {
+    font-size: 30px;
+  }
+
+
+  .selected-partner-content {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+
+  .selected-partner-content h3 {
+    font-size: 20px;
+  }
+
+
+  .selected-partner-content p {
+    font-size: 13.5px;
+  }
+
+
+  /* ---------- DETAILS ---------- */
+
+  .partner-details {
+    margin-top: 45px;
+
+    padding:
+      28px
+      20px;
+
+    border-radius: 12px;
+  }
+
+
+  .partner-details-header {
+    padding-bottom: 20px;
+  }
+
+
+  .partner-details-header h2 {
+    font-size: 29px;
+  }
+
+
+  .partner-details-number {
+    font-size: 33px;
+  }
+
+
+  .partner-details-content {
+    padding:
+      25px
+      0
+      28px;
+
+    gap: 28px;
+  }
+
+
+  .partner-details-description p {
+    font-size: 13.5px;
+
+    line-height: 1.7;
+  }
+
+
+  .partner-details-footer {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .partner-details-button {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .nascon-partners-hero-text,
+  .nascon-partners-eyebrow::before,
+  .nascon-partners-heading-left,
+  .nascon-partners-heading-description,
+  .nascon-partner-card,
+  .supply-card,
+  .nascon-partners-contact-inner,
+  .selected-partner {
+    animation: none;
+
+    opacity: 1;
+  }
+
+
+  .nascon-partner-card,
+  .nascon-partner-icon,
+  .nascon-partner-accent,
+  .supply-card,
+  .supply-icon,
+  .nascon-partners-contact-button,
+  .nascon-partners-contact-button span,
+  .partner-detail-back,
+  .partner-other-card,
+  .partner-view-details,
+  .partner-solution-item,
+  .partner-details-button {
+    transition: none;
+  }
+
+
+  .nascon-partner-card:hover,
+  .supply-card:hover,
+  .nascon-partners-contact-button:hover,
+  .partner-other-card:hover,
+  .partner-solution-item:hover {
+    transform: none;
+  }
+
+}

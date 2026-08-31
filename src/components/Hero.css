@@ -1,0 +1,560 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  max-width: 1400px;
+  min-height: 680px;
+
+  margin: 0 auto;
+  padding: 85px 6%;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+
+  align-items: center;
+  gap: 70px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(22, 131, 74, 0.07),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f7f9f8 0%,
+      #ffffff 55%,
+      #f4f8fc 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -180px;
+  top: -180px;
+
+  border: 1px solid rgba(22, 69, 138, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  left: -150px;
+  bottom: -160px;
+
+  border: 1px solid rgba(22, 131, 74, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.hero-subtitle {
+  display: inline-flex;
+  align-items: center;
+
+  margin: 0 0 22px;
+
+  color: #16834a;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  letter-spacing: 2.2px;
+}
+
+
+/* Small line before subtitle */
+
+.hero-subtitle::before {
+  content: "";
+
+  width: 32px;
+  height: 2px;
+
+  margin-right: 12px;
+
+  background: #16834a;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.hero h1 {
+  margin: 0 0 28px;
+
+  color: #16458a;
+
+  font-size: clamp(44px, 4.5vw, 64px);
+
+  line-height: 1.06;
+
+  font-weight: 750;
+
+  letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+  max-width: 570px;
+
+  margin: 0 0 34px;
+
+  color: #5f6368;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+
+.primary-btn,
+.secondary-btn {
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* Primary */
+
+.primary-btn {
+  background: #16458a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 22px rgba(22, 69, 138, 0.16);
+}
+
+.primary-btn:hover {
+  background: #12396f;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 28px rgba(22, 69, 138, 0.22);
+}
+
+
+/* Secondary */
+
+.secondary-btn {
+  border: 1.5px solid #16834a;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: #16834a;
+}
+
+.secondary-btn:hover {
+  background: #16834a;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 24px rgba(22, 131, 74, 0.17);
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+========================================================= */
+
+.hero-image {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 650px;
+
+  justify-self: end;
+}
+
+
+/* Image */
+
+.hero-image img {
+  display: block;
+
+  width: 100%;
+
+  height: 450px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  box-shadow: 0 18px 40px rgba(20, 50, 80, 0.12);
+
+  transition: transform 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.015);
+}
+
+
+/* =========================================================
+   FLOATING INFORMATION CARD
+========================================================= */
+
+.hero-image::after {
+  content:
+    "Industrial Automation \A & Electrical Control Solutions";
+
+  white-space: pre;
+
+  position: absolute;
+
+  left: -28px;
+  bottom: 28px;
+
+  min-width: 245px;
+
+  padding: 18px 21px;
+
+  box-sizing: border-box;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(22, 69, 138, 0.08);
+
+  color: #16458a;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  box-shadow:
+    0 15px 35px rgba(20, 50, 80, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    min-height: 620px;
+
+    padding: 75px 5%;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-image img {
+    height: 400px;
+  }
+
+  .hero-image::after {
+    left: -15px;
+    bottom: 20px;
+
+    min-width: 220px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero {
+    min-height: auto;
+
+    padding: 65px 20px 75px;
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .hero-content {
+    max-width: none;
+  }
+
+
+  .hero-subtitle {
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+  }
+
+
+  .hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -1px;
+
+    line-height: 1.08;
+  }
+
+
+  .hero-description {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+
+  .primary-btn,
+  .secondary-btn {
+    min-height: 47px;
+
+    padding: 0 20px;
+  }
+
+
+  .hero-image {
+    max-width: none;
+  }
+
+
+  .hero-image img {
+    height: 320px;
+
+    border-radius: 14px;
+  }
+
+
+  .hero-image::after {
+    left: 15px;
+    bottom: -20px;
+
+    min-width: 220px;
+
+    padding: 14px 17px;
+
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .hero {
+    padding: 55px 18px 65px;
+  }
+
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+
+  .primary-btn,
+  .secondary-btn {
+    flex: 1;
+
+    padding: 0 14px;
+  }
+
+
+  .hero-image img {
+    height: 280px;
+  }
+
+}
+/* =========================================================
+   PREMIUM HERO ANIMATION
+========================================================= */
+
+.hero-animate {
+  opacity: 0;
+
+  transform: translateY(22px);
+
+  animation: heroFadeUp 0.8s ease forwards;
+}
+
+
+.hero-delay-1 {
+  animation-delay: 0.1s;
+}
+
+
+.hero-delay-2 {
+  animation-delay: 0.2s;
+}
+
+
+.hero-delay-3 {
+  animation-delay: 0.35s;
+}
+
+
+.hero-delay-4 {
+  animation-delay: 0.5s;
+}
+
+
+/* =========================================================
+   HERO IMAGE ENTRANCE
+========================================================= */
+
+.hero-image-animate {
+  opacity: 0;
+
+  transform: translateX(35px);
+
+  animation: heroImageReveal 0.9s ease forwards;
+
+  animation-delay: 0.25s;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+========================================================= */
+
+@keyframes heroFadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes heroImageReveal {
+
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}

@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+  width: 100%;
+
+  padding: 18px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #ffffff;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  position: relative;
+  z-index: 1000;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+
+  color: #16458a;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #222;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  padding: 5px 0;
+
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #16834a;
+}
+
+/* Green line under link */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #16834a;
+
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+  nav {
+    padding: 18px 30px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  nav {
+    padding: 15px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+}
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* Prevent sections from touching screen edges */
+
+section {
+  scroll-margin-top: 78px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    position: relative;
+
+    height: auto;
+
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px 18px;
+  }
+
+  .nav-links a {
+    padding: 4px 0;
+
+    font-size: 12px;
+  }
+
+  .nav-links a::after {
+    bottom: -3px;
+  }
+}
