@@ -1,0 +1,528 @@
+/* ==========================================================================
+   NASCON TECHNOLOGIES - DEDICATED PRODUCT PAGES (AUTOMATION)
+   ========================================================================== */
+
+.dedicated-product-page {
+  width: 100%;
+  background: #ffffff;
+  color: #222222;
+  overflow-x: hidden;
+}
+
+/* ===================================================
+   BREADCRUMBS
+   =================================================== */
+.prod-page-breadcrumbs {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 0;
+  font-size: 13px;
+  animation: prodFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prod-page-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.prod-page-breadcrumbs a:hover {
+  color: #16458a;
+}
+
+.breadcrumb-sep {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.breadcrumb-current {
+  color: #16458a;
+  font-weight: 700;
+}
+
+/* ===================================================
+   PAGE HERO
+   =================================================== */
+.prod-page-hero {
+  position: relative;
+  background: linear-gradient(180deg, #f7f9f8 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 56px 0 50px;
+}
+
+.prod-hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.prod-hero-content {
+  flex: 1.2;
+  max-width: 720px;
+  animation: prodFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.prod-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: #16834a;
+}
+
+.prod-eyebrow-line {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #16834a;
+}
+
+.prod-eyebrow-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #16458a;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.prod-hero-h1 {
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.12;
+  font-weight: 800;
+  color: #16458a;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+}
+
+.prod-hero-h1 span {
+  color: #16834a;
+}
+
+.prod-hero-subtitle {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0 0 28px;
+  max-width: 640px;
+}
+
+/* Hero Stats Row */
+.prod-hero-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 14px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(22, 69, 138, 0.05);
+  animation: prodFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.prod-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-stat-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #16458a;
+  line-height: 1.1;
+}
+
+.prod-stat-lbl {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.prod-stat-div {
+  width: 1px;
+  height: 30px;
+  background: #e2e8f0;
+}
+
+/* Hero Badge Card */
+.prod-hero-badge-card {
+  flex: 0.85;
+  max-width: 380px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 32px rgba(22, 69, 138, 0.08);
+  position: relative;
+  animation: prodSlideInRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.hero-card-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  background: #eef8f2;
+  color: #16834a;
+  border: 1px solid rgba(22, 131, 74, 0.25);
+  margin-bottom: 16px;
+}
+
+.prod-hero-badge-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #16458a;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.prod-hero-badge-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 0 18px;
+}
+
+.hero-card-tag {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #16458a;
+  background: rgba(22, 69, 138, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* ===================================================
+   PRODUCT CATALOG SECTION & 4-COL GRID
+   =================================================== */
+.prod-catalog-section {
+  padding: 60px 6% 80px;
+}
+
+.prod-section-header {
+  margin-bottom: 36px;
+  animation: prodFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.prod-section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.section-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #16458a;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.prod-section-header h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: #16458a;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+}
+
+.prod-section-header p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555e68;
+  max-width: 760px;
+  margin: 0;
+}
+
+/* 4-column Grid on Desktop */
+.prod-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ===================================================
+   WHY CHOOSE NASCON (CATEGORY TAILORED)
+   =================================================== */
+.why-nascon-category-section {
+  padding: 70px 0;
+  background: #f8fafc;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.why-cat-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 44px;
+}
+
+.why-cat-eyebrow {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16834a;
+  margin-bottom: 8px;
+}
+
+.why-cat-header h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 800;
+  color: #16458a;
+  margin: 0 0 12px;
+}
+
+.why-cat-header h2 span {
+  color: #16834a;
+}
+
+.why-cat-intro {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+}
+
+.why-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.why-cat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 24px 20px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.why-cat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(22, 69, 138, 0.08);
+}
+
+.why-cat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #eef8f2;
+  color: #16834a;
+  margin-bottom: 14px;
+}
+
+.why-cat-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #16458a;
+  margin: 0 0 8px;
+}
+
+.why-cat-card p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #555e68;
+  margin: 0;
+}
+
+/* ===================================================
+   CATEGORY CONSULTATION CTA
+   =================================================== */
+.cat-consultation-section {
+  padding: 60px 0 90px;
+  background: #ffffff;
+}
+
+.cat-consultation-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  background: linear-gradient(135deg, #16458a 0%, #0f3166 100%);
+  border-radius: 14px;
+  padding: 42px 48px;
+  color: #ffffff;
+  box-shadow: 0 16px 36px rgba(22, 69, 138, 0.18);
+}
+
+.cat-consult-eyebrow {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #52c286;
+  margin-bottom: 8px;
+}
+
+.cat-consultation-text h2 {
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.cat-consultation-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  max-width: 680px;
+  margin: 0;
+}
+
+.btn-consult-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: #16834a;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(22, 131, 74, 0.35);
+}
+
+.btn-consult-primary:hover {
+  background: #136f3e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 131, 74, 0.45);
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN: TABLET & MOBILE
+   =================================================== */
+@media (max-width: 1024px) {
+  .prod-hero-badge-card {
+    display: none;
+  }
+
+  .prod-hero-content {
+    max-width: 100%;
+  }
+
+  /* 2-column Grid on Tablet */
+  .prod-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .why-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cat-consultation-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .prod-page-hero {
+    padding: 36px 0 32px;
+  }
+
+  .prod-hero-stats {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .prod-stat-val {
+    font-size: 18px;
+  }
+
+  .prod-stat-lbl {
+    font-size: 9.5px;
+  }
+
+  .prod-catalog-section {
+    padding: 40px 6% 60px;
+  }
+
+  /* 1-column Grid on Mobile */
+  .prod-grid-4col {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .why-cat-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cat-consultation-box {
+    padding: 26px 20px;
+  }
+
+  .btn-consult-primary {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+
+.btn-consult-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ===================================================
+   ANIMATION KEYFRAMES
+   =================================================== */
+@keyframes prodFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes prodSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+

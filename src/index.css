@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -22,15 +23,45 @@ body {
   background: #ffffff;
 
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button,
-a {
+a,
+input,
+select,
+textarea {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* =========================================================
+   GPU ACCELERATION & INSTANT RENDERING OPTIMIZATION
+========================================================= */
+
+.gpu-accelerated,
+[class*="hero"],
+[class*="card"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Off-screen rendering boost: skips off-screen layout during initial page load */
+.contact-faq-section,
+.contact-benefits,
+.quality-support-section,
+.engineering-capabilities-section,
+.system-integration-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }
 
 

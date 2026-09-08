@@ -1,0 +1,11 @@
+/* ==========================================================================
+   NASCON TECHNOLOGIES - DEDICATED PRODUCT PAGES (CABLES & WIRING)
+   ========================================================================== */
+@import "./AutomationProducts.css";
+
+/* Accent highlights specific to cables */
+#cables-products .hero-card-icon-wrap {
+  background: #f0fdf4;
+  color: #16834a;
+  border-color: rgba(22, 131, 74, 0.25);
+}

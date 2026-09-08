@@ -1,0 +1,316 @@
+/* ==========================================================================
+   CATEGORY PRODUCT CARD COMPONENT STYLES
+   Used across the 4 Dedicated Product Pages
+   ========================================================================== */
+
+.category-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: catCardEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(22, 69, 138, 0.04);
+}
+
+/* Staggered card entrance when page opens */
+.prod-grid-4col .category-product-card:nth-child(1) { animation-delay: 0.04s; }
+.prod-grid-4col .category-product-card:nth-child(2) { animation-delay: 0.08s; }
+.prod-grid-4col .category-product-card:nth-child(3) { animation-delay: 0.12s; }
+.prod-grid-4col .category-product-card:nth-child(4) { animation-delay: 0.16s; }
+.prod-grid-4col .category-product-card:nth-child(5) { animation-delay: 0.20s; }
+.prod-grid-4col .category-product-card:nth-child(6) { animation-delay: 0.24s; }
+.prod-grid-4col .category-product-card:nth-child(7) { animation-delay: 0.28s; }
+.prod-grid-4col .category-product-card:nth-child(8) { animation-delay: 0.32s; }
+
+.category-product-card:hover {
+  transform: translateY(-8px);
+  border-color: #94a3b8;
+  box-shadow: 0 20px 42px -10px rgba(22, 69, 138, 0.16), 0 0 0 1px rgba(22, 131, 74, 0.22);
+}
+
+.category-product-card:active {
+  transform: translateY(-3px) scale(0.99);
+}
+
+/* Card Header */
+.cat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #f8fafc;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cat-card-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #16834a;
+  letter-spacing: 0.5px;
+}
+
+.cat-card-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #16458a;
+  background: rgba(22, 69, 138, 0.07);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* Image Wrap */
+.cat-card-img-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 24px;
+  background: #ffffff;
+  overflow: hidden;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.cat-card-img-wrap picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cat-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+}
+
+.category-product-card:hover .cat-card-img {
+  transform: scale(1.06);
+}
+
+.cat-card-hover-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #16458a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.category-product-card:hover .cat-card-hover-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Body */
+.cat-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 20px 20px;
+  background: #ffffff;
+}
+
+.cat-card-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: #16458a;
+}
+
+.cat-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cat-card-title a:hover {
+  color: #16834a;
+}
+
+.cat-card-desc {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #555e68;
+}
+
+/* Key Features Section */
+.cat-card-features-section {
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  margin-bottom: 14px;
+}
+
+.cat-card-features-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.cat-card-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cat-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #334155;
+}
+
+.cat-feature-icon {
+  color: #16834a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Applications Tags */
+.cat-card-apps-section {
+  margin-bottom: 18px;
+}
+
+.cat-card-apps-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.cat-card-apps-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cat-app-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #16458a;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Bottom Actions */
+.cat-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.cat-btn-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #16458a;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cat-btn-arrow {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-btn-explore:hover {
+  color: #16834a;
+}
+
+.cat-btn-explore:hover .cat-btn-arrow {
+  transform: translateX(6px);
+}
+
+.cat-btn-explore:active {
+  transform: scale(0.97);
+}
+
+.cat-btn-enquire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #16834a;
+  background: #eef8f2;
+  border: 1px solid rgba(22, 131, 74, 0.25);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-btn-enquire:hover {
+  background: #16834a;
+  color: #ffffff;
+  border-color: #16834a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 131, 74, 0.3);
+}
+
+.cat-btn-enquire:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* ==========================================================================
+   ENTRANCE ANIMATION KEYFRAMES
+   ========================================================================== */
+@keyframes catCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

@@ -1,0 +1,11 @@
+/* ==========================================================================
+   NASCON TECHNOLOGIES - DEDICATED PRODUCT PAGES (ELECTRICAL CONTROL)
+   ========================================================================== */
+@import "./AutomationProducts.css";
+
+/* Accent highlights specific to electrical control if needed */
+#electrical-control-products .hero-card-icon-wrap {
+  background: #fff8eb;
+  color: #d97706;
+  border-color: rgba(217, 119, 6, 0.25);
+}

@@ -97,6 +97,7 @@
 
 .contact-heading h2 span {
   display: block;
+
   color: #16834a;
 }
 
@@ -126,9 +127,12 @@
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
 
-  gap: 16px;
+  /* EXACTLY 3 CARDS */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  /* ONE CONSISTENT GAP */
+  gap: 20px;
 }
 
 
@@ -137,6 +141,7 @@
 ========================================================= */
 
 .contact-item {
+  width: 100%;
   min-height: 165px;
 
   padding: 24px 21px;
@@ -152,7 +157,8 @@
   border: 1px solid #e1e8e5;
   border-radius: 13px;
 
-  box-shadow: 0 5px 18px rgba(22, 69, 138, 0.035);
+  box-shadow:
+    0 5px 18px rgba(22, 69, 138, 0.035);
 
   transition:
     transform 0.25s ease,
@@ -203,6 +209,7 @@
 
 .contact-item:hover .contact-icon {
   background: #16834a;
+
   color: #ffffff;
 
   transform: translateY(-2px);
@@ -344,7 +351,10 @@
 
 .contact-button:hover svg {
   transform: translateX(4px);
-}/* =========================================================
+}
+
+
+/* =========================================================
    DEVELOPMENT MILESTONE
 ========================================================= */
 
@@ -353,6 +363,7 @@
   z-index: 1;
 
   max-width: 1150px;
+
   margin: 65px auto 0;
 
   padding-top: 28px;
@@ -360,11 +371,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 22px;
 
   border-top: 1px solid #e3ebe7;
 }
-
 
 .development-credit p {
   margin: 0;
@@ -381,7 +392,6 @@
   text-align: center;
 }
 
-
 .development-credit strong {
   margin-left: 6px;
 
@@ -394,7 +404,9 @@
 }
 
 
-/* Small professional separators */
+/* =========================================================
+   SMALL PROFESSIONAL SEPARATORS
+========================================================= */
 
 .development-line {
   width: 45px;
@@ -404,6 +416,7 @@
 
   opacity: 0.75;
 }
+
 
 /* =========================================================
    TABLET
@@ -419,8 +432,30 @@
     font-size: 38px;
   }
 
+  /* Keep 3 cards on larger tablets */
   .contact-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .contact-item {
+    padding: 22px 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .contact-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
   }
 
 }
@@ -442,32 +477,42 @@
 
   .contact-eyebrow {
     font-size: 11px;
+
     letter-spacing: 1.6px;
   }
 
   .contact-heading h2 {
     font-size: 30px;
+
     letter-spacing: -0.4px;
   }
 
   .contact-intro {
     font-size: 14px;
+
     line-height: 1.65;
   }
 
 
+  /* =====================================================
+     CONTACT CARDS
+  ===================================================== */
+
   .contact-row {
     grid-template-columns: 1fr;
+
     gap: 12px;
   }
 
-
   .contact-item {
+    width: 100%;
+
     min-height: 105px;
 
     padding: 19px;
 
     flex-direction: row;
+
     align-items: flex-start;
 
     gap: 15px;
@@ -475,6 +520,10 @@
     border-radius: 11px;
   }
 
+
+  /* =====================================================
+     ICON
+  ===================================================== */
 
   .contact-icon {
     width: 42px;
@@ -484,13 +533,22 @@
   }
 
 
-  .contact-item > div:last-child {
+  /* =====================================================
+     TEXT
+  ===================================================== */
+
+  .contact-item>div:last-child {
     flex: 1;
+
     min-width: 0;
 
     padding-top: 2px;
   }
 
+
+  /* =====================================================
+     BOTTOM CTA
+  ===================================================== */
 
   .contact-bottom {
     margin-top: 28px;
@@ -498,6 +556,7 @@
     padding: 24px 20px;
 
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 20px;
@@ -505,44 +564,73 @@
     border-radius: 12px;
   }
 
-
   .contact-bottom h3 {
     font-size: 19px;
   }
 
-
   .contact-button {
     width: 100%;
-  }.development-credit {
-  margin-top: 45px;
-  padding-top: 22px;
+  }
 
-  gap: 12px;
+
+  /* =====================================================
+     DEVELOPMENT CREDIT
+  ===================================================== */
+
+  .development-credit {
+    margin-top: 45px;
+
+    padding-top: 22px;
+
+    gap: 12px;
+  }
+
+  .development-credit p {
+    font-size: 10px;
+
+    letter-spacing: 0.9px;
+
+    line-height: 1.6;
+  }
+
+  .development-credit strong {
+    display: block;
+
+    margin: 3px 0 0;
+
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .development-line {
+    width: 22px;
+
+    height: 1px;
+  }
+
 }
 
 
-.development-credit p {
-  font-size: 10px;
-  letter-spacing: 0.9px;
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
-  line-height: 1.6;
-}
+@media (max-width: 400px) {
 
+  .contact-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
-.development-credit strong {
-  display: block;
+  .contact-heading h2 {
+    font-size: 28px;
+  }
 
-  margin: 3px 0 0;
+  .contact-item {
+    padding: 17px;
+  }
 
-  font-size: 12px;
-  letter-spacing: 1.2px;
-}
-
-
-.development-line {
-  width: 22px;
-  height: 1px;
-}
 }
 
 

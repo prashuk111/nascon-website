@@ -1,0 +1,11 @@
+/* ==========================================================================
+   NASCON TECHNOLOGIES - DEDICATED PRODUCT PAGES (INSTRUMENTATION)
+   ========================================================================== */
+@import "./AutomationProducts.css";
+
+/* Accent highlights specific to instrumentation */
+#instrumentation-products .hero-card-icon-wrap {
+  background: #f0fdfa;
+  color: #0d9488;
+  border-color: rgba(13, 148, 136, 0.25);
+}

@@ -3,63 +3,63 @@ import "./Industries.css";
 
 function Industries() {
   const industries = [
-  {
-    number: "01",
-    title: "Food Processing",
-    description:
-      "Automation solutions for processing, batching, mixing, cooking and packaging applications.",
-    icon: "⌁",
-  },
-  {
-    number: "02",
-    title: "Chemical & Process Plants",
-    description:
-      "Process automation for reactors, tanks, dosing, utilities and critical plant operations.",
-    icon: "◈",
-  },
-  {
-    number: "03",
-    title: "Packaging Machines",
-    description:
-      "Automation solutions for filling, sealing, labeling, cartoning and high-speed packaging applications.",
-    icon: "▦",
-  },
-  {
-    number: "04",
-    title: "Water & Wastewater",
-    description:
-      "Control solutions for pumping, filtration, aeration, treatment and water management systems.",
-    icon: "◌",
-  },
-  {
-    number: "05",
-    title: "Distilleries",
-    description:
-      "Automation for fermentation, distillation, blending, utilities and process control systems.",
-    icon: "ϟ",
-  },
-  {
-    number: "06",
-    title: "Spray Dryer Applications",
-    description:
-      "Automation and process control for feed, drying, product handling and associated systems.",
-    icon: "◎",
-  },
-  {
-    number: "07",
-    title: "Evaporation & Process Systems",
-    description:
-      "Automation for multiple-effect evaporation, condensate recovery, process control and related systems.",
-    icon: "≋",
-  },
-  {
-    number: "08",
-    title: "Special Purpose Machines",
-    description:
-      "Custom automation and control solutions for dedicated industrial machines and applications.",
-    icon: "⚙",
-  },
-];
+    {
+      number: "01",
+      title: "Food Processing",
+      description:
+        "Automated control for cooking, mixing, pasteurization and packaging lines.",
+      image: "/images/industries/food-processing",
+    },
+    {
+      number: "02",
+      title: "Chemical & Process Plants",
+      description:
+        "Precise process control for reactors, tanks, dosing and utility systems.",
+      image: "/images/industries/chemical-process",
+    },
+    {
+      number: "03",
+      title: "Packaging Machines",
+      description:
+        "High-speed automation for filling, sealing, labeling and cartoning machines.",
+      image: "/images/industries/packaging-machines",
+    },
+    {
+      number: "04",
+      title: "Water & Wastewater",
+      description:
+        "Smart control for pumping, filtration, aeration, disinfection and sludge management.",
+      image: "/images/industries/water-wastewater",
+    },
+    {
+      number: "05",
+      title: "Distilleries",
+      description:
+        "Automation for fermentation, distillation, blending and utility management.",
+      image: "/images/industries/distilleries",
+    },
+    {
+      number: "06",
+      title: "Spray Dryer Automation",
+      description:
+        "End-to-end control of feed, drying, product collection and emission systems.",
+      image: "/images/industries/spray-dryer",
+    },
+    {
+      number: "07",
+      title: "Multiple Effect Evaporator Automation",
+      description:
+        "Efficient control of evaporation stages, condensate recovery and CIP.",
+      image: "/images/industries/evaporator-automation",
+    },
+    {
+      number: "08",
+      title: "Special Purpose Machines",
+      description:
+        "Custom automation solutions for dedicated, high-precision industrial machines.",
+      image: "/images/industries/special-purpose-machines",
+    },
+  ];
 
   const capabilities = [
     {
@@ -138,46 +138,30 @@ function Industries() {
       ========================= */}
 
       <div className="industries-grid">
-
         {industries.map((industry) => (
-
           <article
             className="industry-card"
             key={industry.number}
           >
-
-            <div className="industry-number">
-              {industry.number}
-            </div>
-
-            <div className="industry-icon">
-              {industry.icon}
+            <div className="industry-card-image-wrap">
+              <picture>
+                <source srcSet={`${industry.image}.webp`} type="image/webp" />
+                <img
+                  src={`${industry.image}.png`}
+                  alt={industry.title}
+                  className="industry-card-image"
+                  loading="lazy"
+                />
+              </picture>
             </div>
 
             <div className="industry-content">
-
-              <h2>
-                {industry.title}
-              </h2>
-
-              <p>
-                {industry.description}
-              </p>
-
-              <Link
-  to="/contact"
-  className="industry-link"
->
-                Discuss Your Requirements
-                <span>→</span>
-              </Link>
+              <h2>{industry.title}</h2>
+              <p>{industry.description}</p>
 
             </div>
-
           </article>
-
         ))}
-
       </div>
 
 
@@ -271,9 +255,9 @@ function Industries() {
         </div>
 
         <Link
-  to="/contact"
-  className="cta-button"
->
+          to="/contact"
+          className="cta-button"
+        >
           Talk to Our Team
           <span>→</span>
         </Link>

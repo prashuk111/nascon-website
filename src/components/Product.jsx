@@ -6,11 +6,9 @@ function Product() {
     <section className="products" id="products">
 
       <div className="products-heading">
-        <p>OUR PRODUCTS</p>
+        <p>OUR SOLUTIONS</p>
 
-        <h2>
-          Industrial Automation Solutions
-        </h2>
+        <h2>Industrial Automation Solutions</h2>
 
         <span>
           High-quality automation products and solutions from
@@ -20,14 +18,21 @@ function Product() {
 
       <div className="products-grid">
 
+        {/* =========================
+            CARD 01
+        ========================= */}
         <div className="product-card">
+
           <div className="product-image">
             <picture>
-              <source srcSet="/images/control-panel-balanced.webp" type="image/webp" />
+              <source
+                srcSet="/images/control-panel-balanced.webp"
+                type="image/webp"
+              />
+
               <img
-                className="control-panel-img"
                 src="/images/control-panel-balanced.png"
-                alt="Control Panel Manufacturing"
+                alt="Smart Control Panel Solutions"
                 loading="lazy"
                 decoding="async"
               />
@@ -35,25 +40,39 @@ function Product() {
           </div>
 
           <div className="product-content">
-            <h3>Control Panels</h3>
+
+
+
+            <h3>Smart Control Panels Solutions</h3>
 
             <p>
               Custom electrical and automation control panels
-              designed for industrial applications.
+              designed for reliable industrial applications.
             </p>
 
-            <Link to="/products">View Products →</Link>
+            <Link to="/solutions/control-panels">
+              Explore Solutions <span>→</span>
+            </Link>
+
           </div>
         </div>
 
 
+        {/* =========================
+            CARD 02
+        ========================= */}
         <div className="product-card">
+
           <div className="product-image">
             <picture>
-              <source srcSet="/images/industrial-automation-home.webp" type="image/webp" />
+              <source
+                srcSet="/images/industrial-automation-home.webp"
+                type="image/webp"
+              />
+
               <img
                 src="/images/industrial-automation-home.png"
-                alt="Industrial automation equipment"
+                alt="Industrial Automation Solutions"
                 loading="lazy"
                 decoding="async"
               />
@@ -61,40 +80,20 @@ function Product() {
           </div>
 
           <div className="product-content">
-            <h3>Industrial Automation</h3>
+
+
+
+            <h3>Automation And Control Solutions</h3>
 
             <p>
               Automation components and systems for efficient
               and reliable industrial processes.
             </p>
 
-            <Link to="/products">View Products →</Link>
-          </div>
-        </div>
+            <Link to="/solutions/automation-control">
+              Explore Solutions <span>→</span>
+            </Link>
 
-
-        <div className="product-card">
-          <div className="product-image">
-            <picture>
-              <source srcSet="/images/electrical-products-home.webp" type="image/webp" />
-              <img
-                src="/images/electrical-products-home.png"
-                alt="Electrical automation products"
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-          </div>
-
-          <div className="product-content">
-            <h3>Electrical Products</h3>
-
-            <p>
-              Reliable electrical products sourced from
-              trusted industrial manufacturers.
-            </p>
-
-            <Link to="/products">View Products →</Link>
           </div>
         </div>
 

@@ -1,0 +1,110 @@
+# ============================================================================
+# NASCON TECHNOLOGIES - APACHE WEB SERVER CONFIGURATION (.htaccess)
+# Enables Gzip, Brotli Compression, Precompressed Serving & SPA Routing
+# ============================================================================
+
+# ----------------------------------------------------------------------
+# 1. Gzip Compression via mod_deflate
+# ----------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 2. Brotli Compression via mod_brotli (if installed)
+# ----------------------------------------------------------------------
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json
+  AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS application/xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/html
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS text/plain
+  AddOutputFilterByType BROTLI_COMPRESS text/xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Serve Pre-compressed Brotli (.br) & Gzip (.gz) Assets Directly
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Serve Brotli compressed files if available and supported by browser
+  <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:Accept-Encoding} br
+    RewriteCond %{REQUEST_FILENAME}\.br -f
+    RewriteRule ^(.*)$ $1\.br [L]
+    
+    RewriteRule \.html\.br$ - [T=text/html,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.js\.br$   - [T=application/javascript,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.css\.br$  - [T=text/css,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.svg\.br$  - [T=image/svg+xml,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.xml\.br$  - [T=application/xml,E=no-brotli:1,E=no-gzip:1]
+
+    <FilesMatch "\.br$">
+      Header set Content-Encoding br
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+
+    # Serve Gzip compressed files if Brotli not supported
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule ^(.*)$ $1\.gz [L]
+
+    RewriteRule \.html\.gz$ - [T=text/html,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.js\.gz$   - [T=application/javascript,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.css\.gz$  - [T=text/css,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.svg\.gz$  - [T=image/svg+xml,E=no-brotli:1,E=no-gzip:1]
+    RewriteRule \.xml\.gz$  - [T=application/xml,E=no-brotli:1,E=no-gzip:1]
+
+    <FilesMatch "\.gz$">
+      Header set Content-Encoding gzip
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+  </IfModule>
+
+  # Browser Caching Headers
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|svg|woff2|ico)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 4. SPA HTML Fallback Routing
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

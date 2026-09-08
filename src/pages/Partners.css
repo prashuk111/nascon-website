@@ -1,2617 +1,1687 @@
-/* =========================================================
-   NASCON PARTNERS PAGE
-========================================================= */
+/* ==========================================================================
+   NASCON TECHNOLOGIES - PARTNERS CATALOGUE STYLES
+   Design Tokens:
+   - Primary Industrial Blue: #16458a (dark: #0f3166)
+   - Secondary Industrial Green: #16834a (light: #22c55e)
+   - Surface White: #ffffff
+   - Surface Neutral: #f8fafc / #f1f5f9
+   - Border Color: #e2e8f0 / #cbd5e1
+   - Text Slate: #1e293b / #475569 / #64748b
+========================================================================== */
 
 .nascon-partners-page {
   width: 100%;
   min-height: 100vh;
-
-  background: #ffffff;
-  color: #555555;
-
+  background-color: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.nascon-partners-hero {
+/* ==========================================================================
+   1. TOP PAGE HEADER
+========================================================================== */
+.nascon-partners-top-header {
   position: relative;
-
-  width: 100%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f7faf8 0%,
-      #f1f7f4 100%
-    );
-
+  background: linear-gradient(135deg, #0a1f44 0%, #16458a 60%, #12376e 100%);
+  color: #ffffff;
+  padding: 80px 24px 70px;
+  text-align: center;
   overflow: hidden;
 }
 
-
-.nascon-partners-hero::before {
+.nascon-partners-top-header::before {
   content: "";
-
   position: absolute;
-
-  width: 620px;
-  height: 620px;
-
-  right: -310px;
-  top: -390px;
-
-  border: 1px solid rgba(22, 131, 74, 0.08);
-
-  border-radius: 50%;
-
+  top: -50%;
+  left: -20%;
+  width: 140%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(22, 131, 74, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
-
-.nascon-partners-hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 340px;
-  height: 340px;
-
-  right: -190px;
-  bottom: -260px;
-
-  border: 1px solid rgba(22, 69, 138, 0.06);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-.nascon-partners-hero-inner {
+.top-header-inner {
   position: relative;
-
-  z-index: 1;
-
-  max-width: 1400px;
-
+  z-index: 2;
+  max-width: 960px;
   margin: 0 auto;
-
-  padding: 95px 70px 90px;
-
-  box-sizing: border-box;
 }
 
-
-.nascon-partners-hero-text {
-  max-width: 880px;
-
-  animation:
-    partnersHeroText
-    0.7s
-    ease
-    both;
-}
-
-
-/* =========================================================
-   HERO EYEBROW
-========================================================= */
-
-.nascon-partners-eyebrow {
-  position: relative;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  margin: 0 0 20px;
-
-  padding-left: 38px;
-
-  color: #16834a;
-
-  font-size: 13px;
-
-  font-weight: 800;
-
-  letter-spacing: 2.2px;
-
+.top-header-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #a7f3d0;
+  margin-bottom: 18px;
+  backdrop-filter: blur(8px);
+  animation: partnerFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-
-.nascon-partners-eyebrow::before {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-
-  width: 25px;
-  height: 2px;
-
-  background: #16834a;
-
-  transform-origin: left;
-
-  animation:
-    partnersLine
-    0.6s
-    ease
-    0.15s
-    both;
-}
-
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
-
-.nascon-partners-hero h1 {
-  margin: 0 0 22px;
-
-  color: #16458a;
-
-  font-size: 60px;
-
-  line-height: 1.06;
-
-  font-weight: 750;
-
-  letter-spacing: -1.8px;
-}
-
-
-.nascon-partners-hero-description {
-  max-width: 760px;
-
-  margin: 0;
-
-  color: #606060;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   PARTNERS LIST SECTION
-========================================================= */
-
-.nascon-partners-list {
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 90px 70px 105px;
-
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
-.nascon-partners-heading {
-  display: grid;
-
-  grid-template-columns:
-    1.1fr
-    0.9fr;
-
-  column-gap: 90px;
-
-  align-items: end;
-
-  margin-bottom: 48px;
-}
-
-
-.nascon-partners-heading-left {
-  max-width: 700px;
-
-  animation:
-    partnersHeadingLeft
-    0.65s
-    ease
-    0.1s
-    both;
-}
-
-
-.nascon-partners-label {
-  margin: 0 0 12px;
-
-  color: #16834a;
-
-  font-size: 12px;
-
+.top-header-title {
+  font-size: 2.8rem;
   font-weight: 800;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-
-.nascon-partners-heading h2 {
-  margin: 0;
-
-  color: #16458a;
-
-  font-size: 42px;
-
   line-height: 1.15;
-
-  font-weight: 750;
-
-  letter-spacing: -0.9px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 16px;
+  animation: partnerFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
-
-.nascon-partners-heading-description {
-  max-width: 500px;
-
-  margin: 0;
-
-  color: #666666;
-
-  font-size: 15px;
-
-  line-height: 1.8;
-
-  animation:
-    partnersHeadingRight
-    0.65s
-    ease
-    0.2s
-    both;
+.top-header-desc {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0 auto;
+  max-width: 780px;
+  animation: partnerFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
+/* ==========================================================================
+   2. PARTNER NAVIGATION TABS
+========================================================================== */
+.nascon-partner-tabs-wrapper {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.06);
+  transition: all 0.2s ease;
+  animation: partnerFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
 
-/* =========================================================
-   PARTNER GRID
-========================================================= */
+.nascon-partner-tabs-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
 
-.nascon-partners-grid {
+.nascon-partner-tabs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.nascon-partner-tabs-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.nascon-partner-tabs-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #16834a;
+}
+
+.nascon-partner-tabs-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.nascon-partner-tabs-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.nascon-partner-tabs-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+.nascon-partner-tab-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.nascon-partner-tab-btn:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.nascon-partner-tab-btn.active {
+  background: #ffffff;
+  border-color: #16458a;
+  box-shadow: 0 4px 14px -2px rgba(22, 69, 138, 0.2);
+}
+
+.nascon-tab-logo-box {
+  width: 42px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+.nascon-tab-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.nascon-tab-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.nascon-tab-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.nascon-partner-tab-btn.active .nascon-tab-name {
+  color: #16458a;
+}
+
+.nascon-tab-category {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.nascon-tab-active-indicator {
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  background: #16458a;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   3. PARTNER HERO BANNER
+========================================================================== */
+.nascon-partner-hero-banner {
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding: 60px 24px 50px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nascon-partner-hero-inner {
+  max-width: 1380px;
+  margin: 0 auto;
   display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+.nascon-partner-hero-copy {
+  animation: partnerHeroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
+.nascon-partner-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.nascon-partner-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(22, 69, 138, 0.08);
+  color: #16458a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 6px;
+}
+
+.eyebrow-icon {
+  color: #16834a;
+}
+
+.nascon-partner-brochure-ref {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.nascon-partner-title-group {
+  margin-bottom: 20px;
+}
+
+.nascon-partner-logo-container {
+  min-height: 44px;
+  max-height: 52px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.nascon-partner-logo-container picture {
+  display: flex;
+  align-items: center;
+  max-height: 52px;
+}
+
+.nascon-hero-partner-logo {
+  max-height: 48px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.nascon-partner-headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.nascon-partner-tagline {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #16458a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.nascon-partner-overview {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 28px;
+  max-width: 680px;
+}
+
+.nascon-partner-hero-ctas {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.nascon-partner-guarantee-strip {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.guarantee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.guarantee-icon {
+  color: #16834a;
+  flex-shrink: 0;
+}
+
+/* Hero Media Column */
+.nascon-partner-hero-media {
+  position: relative;
+  animation: partnerHeroVisual 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.nascon-hero-image-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.16);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  aspect-ratio: 16 / 10;
+}
+
+.nascon-partner-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nascon-hero-image-frame:hover .nascon-partner-hero-img {
+  transform: scale(1.03);
+}
+
+.nascon-hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.5) 100%);
+  pointer-events: none;
+}
+
+.nascon-hero-floating-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+.badge-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #16834a;
+  box-shadow: 0 0 0 4px rgba(22, 131, 74, 0.25);
+  flex-shrink: 0;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-text strong {
+  font-size: 0.85rem;
+  color: #0f172a;
+}
+
+.badge-text span {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   4. PARTNER KEY THEMES
+========================================================================== */
+.nascon-partner-themes-section {
+  background: #ffffff;
+  padding: 36px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.nascon-partner-themes-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.nascon-partner-themes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-
-/* =========================================================
-   PARTNER CARD
-========================================================= */
-
-.nascon-partner-card {
-  position: relative;
-
-  min-height: 285px;
-
+.nascon-partner-theme-card {
   display: flex;
-
-  flex-direction: column;
-
-  padding: 27px;
-
-  background: #ffffff;
-
-  border: 1px solid #e2e9e6;
-
-  border-radius: 12px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  cursor: pointer;
-
-  opacity: 0;
-
-  animation:
-    partnerCardReveal
-    0.55s
-    ease
-    both;
-
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    border-color 0.28s ease,
-    background 0.28s ease;
-}
-
-
-/* =========================================================
-   CARD STAGGER
-========================================================= */
-
-.nascon-partner-card:nth-child(1) {
-  animation-delay: 0.04s;
-}
-
-.nascon-partner-card:nth-child(2) {
-  animation-delay: 0.09s;
-}
-
-.nascon-partner-card:nth-child(3) {
-  animation-delay: 0.14s;
-}
-
-.nascon-partner-card:nth-child(4) {
-  animation-delay: 0.19s;
-}
-
-.nascon-partner-card:nth-child(5) {
-  animation-delay: 0.24s;
-}
-
-.nascon-partner-card:nth-child(6) {
-  animation-delay: 0.29s;
-}
-
-.nascon-partner-card:nth-child(7) {
-  animation-delay: 0.34s;
-}
-
-
-/* =========================================================
-   CARD HOVER
-========================================================= */
-
-.nascon-partner-card:hover {
-  transform: translateY(-5px);
-
-  border-color: #cbdcd4;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 16px 35px rgba(22, 69, 138, 0.09);
-}
-
-
-/* =========================================================
-   SELECTED CARD
-========================================================= */
-
-.nascon-partner-card.selected {
-  background: #f5faf7;
-
-  border-color: #16834a;
-
-  box-shadow:
-    0 16px 35px rgba(22, 131, 74, 0.12);
-
-  transform: translateY(-5px);
-}
-
-
-.nascon-partner-card.selected
-.nascon-partner-card-content h3 {
-  color: #16834a;
-}
-
-
-/* =========================================================
-   CARD HEADER
-========================================================= */
-
-.nascon-partner-card-header {
-  display: flex;
-
   align-items: flex-start;
-
-  justify-content: space-between;
-
-  margin-bottom: 35px;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  animation: partnerCardReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all 0.25s ease;
 }
 
+.nascon-partner-themes-grid .nascon-partner-theme-card:nth-child(1) { animation-delay: 0.05s; }
+.nascon-partner-themes-grid .nascon-partner-theme-card:nth-child(2) { animation-delay: 0.12s; }
+.nascon-partner-themes-grid .nascon-partner-theme-card:nth-child(3) { animation-delay: 0.19s; }
+.nascon-partner-themes-grid .nascon-partner-theme-card:nth-child(4) { animation-delay: 0.26s; }
 
-.nascon-partner-number {
-  color: #cbd8d4;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-}
-
-
-/* =========================================================
-   PARTNER ICON
-========================================================= */
-
-.nascon-partner-icon {
-  width: 54px;
-  height: 54px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  background: #f3f8f5;
-
-  border: 1px solid #dbe8e2;
-
-  border-radius: 10px;
-
-  color: #16834a;
-
-  font-size: 23px;
-
-  box-sizing: border-box;
-
-  transition:
-    background 0.28s ease,
-    color 0.28s ease,
-    transform 0.28s ease,
-    box-shadow 0.28s ease;
-}
-
-
-.nascon-partner-card:hover
-.nascon-partner-icon,
-
-.nascon-partner-card.selected
-.nascon-partner-icon {
-  background: #16834a;
-
-  color: #ffffff;
-
+.nascon-partner-theme-card:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 18px -4px rgba(15, 23, 42, 0.08);
   transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 18px rgba(22, 131, 74, 0.14);
 }
 
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
-
-.nascon-partner-card-content {
-  max-width: 430px;
-
-  flex: 1;
-}
-
-
-.nascon-partner-category {
-  margin: 0 0 8px;
-
-  color: #16834a;
-
-  font-size: 11px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
-}
-
-
-.nascon-partner-card-content h3 {
-  margin: 0 0 12px;
-
-  color: #16458a;
-
-  font-size: 25px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-
-  letter-spacing: -0.3px;
-
-  transition:
-    color 0.25s ease;
-}
-
-
-.nascon-partner-description {
-  margin: 0;
-
-  color: #686868;
-
-  font-size: 14px;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================================
-   VIEW DETAILS
-========================================================= */
-
-.partner-view-details {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 7px;
-
-  margin-top: 18px;
-
-  color: #16834a;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  transition:
-    transform 0.25s ease,
-    gap 0.25s ease;
-}
-
-
-.nascon-partner-card:hover
-.partner-view-details {
-  transform: translateX(4px);
-
-  gap: 10px;
-}
-
-
-/* =========================================================
-   CARD GREEN ACCENT
-========================================================= */
-
-.nascon-partner-accent {
-  position: absolute;
-
-  left: 27px;
-
-  bottom: 0;
-
-  width: 42px;
-  height: 3px;
-
-  background: #16834a;
-
-  border-radius:
-    3px
-    3px
-    0
-    0;
-
-  transform-origin: left;
-
-  transition:
-    width 0.3s ease;
-}
-
-
-.nascon-partner-card:hover
-.nascon-partner-accent,
-
-.nascon-partner-card.selected
-.nascon-partner-accent {
-  width: 82px;
-}
-
-
-/* =========================================================
-   SUPPLY NETWORK
-========================================================= */
-
-.supply-network {
-  margin-top: 90px;
-
-  padding-top: 75px;
-
-  border-top: 1px solid #e7eeeb;
-}
-
-
-/* =========================================================
-   SUPPLY HEADING
-========================================================= */
-
-.supply-heading {
-  max-width: 760px;
-
-  margin: 0 auto 45px;
-
-  text-align: center;
-}
-
-
-.supply-heading p {
-  margin: 0 0 12px;
-
-  color: #16834a;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
-
-.supply-heading h2 {
-  margin: 0 0 15px;
-
-  color: #16458a;
-
-  font-size: 38px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-
-  letter-spacing: -0.6px;
-}
-
-
-.supply-heading h2 span {
-  color: #16834a;
-}
-
-
-.supply-heading > span {
-  display: block;
-
-  max-width: 650px;
-
-  margin: 0 auto;
-
-  color: #666666;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   SUPPLY GRID
-========================================================= */
-
-.supply-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, minmax(0, 1fr));
-
-  gap: 16px;
-}
-
-
-/* =========================================================
-   SUPPLY CARD
-========================================================= */
-
-.supply-card {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 15px;
-
-  padding: 23px 20px;
-
-  background: #f7faf9;
-
-  border: 1px solid #edf2ef;
-
+.nascon-theme-icon-box {
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
-
-  box-sizing: border-box;
-
-  opacity: 0;
-
-  animation:
-    supplyCardReveal
-    0.55s
-    ease
-    both;
-
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    background 0.28s ease,
-    border-color 0.28s ease;
-}
-
-
-.supply-card:nth-child(1) {
-  animation-delay: 0.08s;
-}
-
-.supply-card:nth-child(2) {
-  animation-delay: 0.14s;
-}
-
-.supply-card:nth-child(3) {
-  animation-delay: 0.20s;
-}
-
-.supply-card:nth-child(4) {
-  animation-delay: 0.26s;
-}
-
-
-.supply-card:hover {
-  transform: translateY(-4px);
-
-  background: #ffffff;
-
-  border-color: #dce8e3;
-
-  box-shadow:
-    0 12px 28px rgba(22, 69, 138, 0.07);
-}
-
-
-/* =========================================================
-   SUPPLY ICON
-========================================================= */
-
-.supply-icon {
-  flex-shrink: 0;
-
-  width: 43px;
-  height: 43px;
-
+  background: rgba(22, 69, 138, 0.08);
+  color: #16458a;
   display: flex;
-
   align-items: center;
   justify-content: center;
-
-  background: #ffffff;
-
-  border: 1px solid #e5ece9;
-
-  border-radius: 9px;
-
-  color: #16834a;
-
-  font-size: 18px;
-
-  box-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.025);
-
-  transition:
-    background 0.28s ease,
-    color 0.28s ease,
-    transform 0.28s ease;
-}
-
-
-.supply-card:hover
-.supply-icon {
-  background: #16834a;
-
-  color: #ffffff;
-
-  transform: scale(1.04);
-}
-
-
-/* =========================================================
-   SUPPLY CONTENT
-========================================================= */
-
-.supply-card h3 {
-  margin: 1px 0 7px;
-
-  color: #16458a;
-
-  font-size: 15px;
-
-  line-height: 1.3;
-
-  font-weight: 750;
-}
-
-
-.supply-card p {
-  margin: 0;
-
-  color: #696969;
-
-  font-size: 12.5px;
-
-  line-height: 1.6;
-}
-
-
-/* =========================================================
-   CONTACT / CTA
-========================================================= */
-
-.nascon-partners-contact {
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 0 70px 95px;
-
-  box-sizing: border-box;
-}
-
-
-.nascon-partners-contact-inner {
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 50px;
-
-  padding: 55px 60px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f3f8f5,
-      #edf5f1
-    );
-
-  border: 1px solid #e0ebe6;
-
-  border-radius: 14px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
-
-  opacity: 0;
-
-  animation:
-    partnersCtaReveal
-    0.65s
-    ease
-    0.1s
-    both;
-}
-
-
-.nascon-partners-contact-inner::after {
-  content: "";
-
-  position: absolute;
-
-  width: 360px;
-  height: 360px;
-
-  right: -190px;
-  bottom: -240px;
-
-  border: 1px solid rgba(22, 131, 74, 0.10);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* =========================================================
-   CTA TEXT
-========================================================= */
-
-.nascon-partners-contact-text {
-  position: relative;
-
-  z-index: 1;
-}
-
-
-.nascon-partners-contact-text h2 {
-  margin: 0 0 15px;
-
-  color: #16458a;
-
-  font-size: 37px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-
-  letter-spacing: -0.7px;
-}
-
-
-.nascon-partners-contact-text > p:last-child {
-  max-width: 600px;
-
-  margin: 0;
-
-  color: #666666;
-
-  font-size: 15px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   CTA BUTTON
-========================================================= */
-
-.nascon-partners-contact-button {
-  position: relative;
-
-  z-index: 2;
-
   flex-shrink: 0;
+}
 
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  padding: 14px 23px;
-
+.nascon-partner-theme-card:hover .nascon-theme-icon-box {
   background: #16458a;
-
   color: #ffffff;
-
-  border-radius: 6px;
-
-  text-decoration: none;
-
-  font-size: 14px;
-
-  font-weight: 750;
-
-  white-space: nowrap;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    gap 0.25s ease,
-    box-shadow 0.25s ease;
 }
 
-
-.nascon-partners-contact-button:hover {
-  background: #16834a;
-
-  transform: translateY(-3px);
-
-  gap: 13px;
-
-  box-shadow:
-    0 10px 22px rgba(22, 69, 138, 0.13);
-}
-
-
-.nascon-partners-contact-button span {
-  font-size: 17px;
-
-  transition:
-    transform 0.25s ease;
-}
-
-
-.nascon-partners-contact-button:hover span {
-  transform: translateX(3px);
-}
-
-
-/* =========================================================
-   PARTNER DETAIL PAGE
-========================================================= */
-
-.partner-detail-hero {
-  position: relative;
-
-  width: 100%;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f7faf8 0%,
-      #eef5f2 100%
-    );
-
-  overflow: hidden;
-}
-
-
-.partner-detail-hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 520px;
-  height: 520px;
-
-  right: -240px;
-  top: -300px;
-
-  border: 1px solid rgba(22, 131, 74, 0.09);
-
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-.partner-detail-hero-inner {
-  position: relative;
-
-  z-index: 1;
-
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 65px 70px 80px;
-
-  box-sizing: border-box;
-}
-
-
-.partner-detail-back {
-  display: inline-flex;
-
-  align-items: center;
-
-  margin-bottom: 48px;
-
-  color: #16458a;
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  font-weight: 750;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.partner-detail-back:hover {
-  color: #16834a;
-
-  transform: translateX(-4px);
-}
-
-
-.partner-detail-number {
-  margin-bottom: 14px;
-
-  color: #cbd9d4;
-
-  font-size: 14px;
-
-  font-weight: 800;
-
-  letter-spacing: 2px;
-}
-
-
-.partner-detail-hero h1 {
-  margin: 0 0 12px;
-
-  color: #16458a;
-
-  font-size: 60px;
-
-  line-height: 1.06;
-
-  font-weight: 750;
-
-  letter-spacing: -1.7px;
-}
-
-
-.partner-detail-category {
-  margin: 0 0 22px;
-
-  color: #16834a;
-
-  font-size: 13px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-
-  text-transform: uppercase;
-}
-
-
-.partner-detail-description {
-  max-width: 800px;
-
-  margin: 0;
-
-  color: #606060;
-
-  font-size: 16px;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-   DETAIL CONTENT
-========================================================= */
-
-.partner-detail-section {
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 90px 70px;
-
-  box-sizing: border-box;
-}
-
-
-.partner-detail-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
-
-.partner-detail-box {
-  padding: 35px;
-
-  background: #ffffff;
-
-  border: 1px solid #e1e9e5;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 8px 25px rgba(22, 69, 138, 0.045);
-}
-
-
-.partner-detail-box h2 {
-  margin: 0 0 25px;
-
-  color: #16458a;
-
-  font-size: 29px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-}
-
-
-/* =========================================================
-   PRODUCT LIST
-========================================================= */
-
-.partner-product-list {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 10px;
-}
-
-
-.partner-product-item {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 12px 13px;
-
-  background: #f6faf8;
-
-  border: 1px solid #e3eee9;
-
-  border-radius: 7px;
-}
-
-
-.partner-product-item span {
-  color: #16834a;
-
-  font-weight: 800;
-}
-
-
-.partner-product-item p {
-  margin: 0;
-
-  color: #555555;
-
-  font-size: 12.5px;
-
-  line-height: 1.4;
-}
-
-
-/* =========================================================
-   APPLICATION LIST
-========================================================= */
-
-.partner-application-list {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 12px;
-}
-
-
-.partner-application-item {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  padding-bottom: 12px;
-
-  border-bottom: 1px solid #edf1ef;
-}
-
-
-.partner-application-item:last-child {
-  border-bottom: none;
-}
-
-
-.partner-application-item span {
-  color: #16834a;
-
-  font-size: 16px;
-
+.nascon-theme-title {
+  font-size: 0.95rem;
   font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
 }
 
-
-.partner-application-item p {
+.nascon-theme-desc {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #64748b;
   margin: 0;
-
-  color: #555555;
-
-  font-size: 13px;
-
-  line-height: 1.5;
 }
 
-
-/* =========================================================
-   NASCON VALUE
-========================================================= */
-
-.partner-detail-value {
-  margin-top: 30px;
-
-  padding: 45px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 40px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f4f9f6,
-      #edf5f1
-    );
-
-  border: 1px solid #e0ebe6;
-
-  border-radius: 14px;
-
-  box-sizing: border-box;
+/* ==========================================================================
+   5. PARTNER PRODUCT GRID (4 COLUMNS)
+========================================================================== */
+.nascon-partner-products-section {
+  background: #f8fafc;
+  padding: 70px 24px;
 }
 
-
-.partner-detail-value h2 {
-  max-width: 700px;
-
-  margin: 0 0 13px;
-
-  color: #16458a;
-
-  font-size: 36px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-}
-
-
-.partner-detail-value h2 span {
-  color: #16834a;
-}
-
-
-.partner-detail-value > div > p:last-child {
-  max-width: 650px;
-
-  margin: 0;
-
-  color: #666666;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   OTHER PARTNERS
-========================================================= */
-
-.partner-other-section {
-  max-width: 1400px;
-
+.nascon-partner-products-container {
+  max-width: 1380px;
   margin: 0 auto;
-
-  padding: 0 70px 95px;
-
-  box-sizing: border-box;
 }
 
-
-.partner-other-heading {
-  margin-bottom: 30px;
+.nascon-partner-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 24px;
+  flex-wrap: wrap;
+  animation: partnerFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-
-.partner-other-heading h2 {
-  margin: 0;
-
-  color: #16458a;
-
-  font-size: 36px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-}
-
-
-.partner-other-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 16px;
-}
-
-
-.partner-other-card {
-  position: relative;
-
-  padding: 23px;
-
-  background: #ffffff;
-
-  border: 1px solid #dfe8e4;
-
-  border-radius: 10px;
-
-  text-decoration: none;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    border-color 0.28s ease;
-}
-
-
-.partner-other-card:hover {
-  transform: translateY(-4px);
-
-  border-color: #c9dbd3;
-
-  box-shadow:
-    0 12px 28px rgba(22, 69, 138, 0.07);
-}
-
-
-.partner-other-card > span {
+.nascon-section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   color: #16834a;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
 
-  font-size: 10px;
-
+.nascon-section-title {
+  font-size: 2.1rem;
   font-weight: 800;
-
-  letter-spacing: 1px;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  letter-spacing: -0.015em;
 }
 
-
-.partner-other-card h3 {
-  margin: 13px 0 6px;
-
-  color: #16458a;
-
-  font-size: 18px;
-
-  line-height: 1.3;
-}
-
-
-.partner-other-card p {
-  margin: 0 0 18px;
-
-  color: #707070;
-
-  font-size: 12.5px;
-
+.nascon-section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+  max-width: 680px;
   line-height: 1.55;
 }
 
-
-.partner-other-card strong {
-  color: #16834a;
-
-  font-size: 11px;
-}
-
-
-/* =========================================================
-   SELECTED PARTNER
-========================================================= */
-
-.selected-partner {
-  margin: 0 0 75px;
-
-  padding: 40px;
-
-  background: #f5f9f7;
-
-  border: 1px solid #dce9e3;
-
-  border-radius: 14px;
-
-  box-sizing: border-box;
-
-  animation:
-    selectedPartnerReveal
-    0.55s
-    ease
-    both;
-}
-
-
-.selected-partner-header {
-  margin-bottom: 25px;
-}
-
-
-.selected-partner-header h2 {
-  margin: 0 0 8px;
-
-  color: #16458a;
-
-  font-size: 36px;
-
-  line-height: 1.2;
-
-  font-weight: 750;
-}
-
-
-.selected-partner-header > p:last-child {
-  margin: 0;
-
-  color: #16834a;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-
-.selected-partner-content {
-  display: flex;
-
+.nascon-category-count-badge {
+  display: inline-flex;
   align-items: center;
-
-  gap: 22px;
-
-  padding: 23px;
-
+  gap: 10px;
+  padding: 8px 18px;
   background: #ffffff;
-
-  border-radius: 11px;
-
-  box-shadow:
-    0 7px 22px rgba(22, 69, 138, 0.045);
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+.count-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #16458a;
+}
 
-.selected-partner-icon {
-  flex-shrink: 0;
+.count-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
 
-  width: 64px;
-  height: 64px;
+/* 4-Column Grid */
+.nascon-partner-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
 
+.nascon-partner-product-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
+  animation: partnerCardReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
 
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(1) { animation-delay: 0.04s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(2) { animation-delay: 0.08s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(3) { animation-delay: 0.12s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(4) { animation-delay: 0.16s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(5) { animation-delay: 0.20s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(6) { animation-delay: 0.24s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(7) { animation-delay: 0.28s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(8) { animation-delay: 0.32s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(9) { animation-delay: 0.36s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(10) { animation-delay: 0.40s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(11) { animation-delay: 0.44s; }
+.nascon-partner-products-grid .nascon-partner-product-card:nth-child(12) { animation-delay: 0.48s; }
+
+.nascon-partner-product-card:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 32px -8px rgba(22, 69, 138, 0.12);
+}
+
+.product-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px 8px;
+  background: #ffffff;
+}
+
+.product-card-num {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #16458a;
+  background: rgba(22, 69, 138, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.product-card-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Image Container */
+.product-card-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  background: #16834a;
-
-  color: #ffffff;
-
-  border-radius: 11px;
-
-  font-size: 26px;
-}
-
-
-.selected-partner-content h3 {
-  margin: 0 0 7px;
-
-  color: #16458a;
-
-  font-size: 22px;
-}
-
-
-.selected-partner-content p {
-  max-width: 750px;
-
-  margin: 0;
-
-  color: #666666;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-
-/* =========================================================
-   PARTNER DETAILS
-========================================================= */
-
-.partner-details {
-  position: relative;
-
-  margin-top: 60px;
-
-  padding: 45px;
-
-  background: #f5f9f7;
-
-  border: 1px solid #dceae4;
-
-  border-radius: 14px;
-
+  padding: 12px;
   box-sizing: border-box;
-
+  cursor: pointer;
+  border-top: 1px solid #f8fafc;
+  border-bottom: 1px solid #f1f5f9;
   overflow: hidden;
 }
 
+.product-card-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
 
-/* =========================================================
-   DETAILS HEADER
-========================================================= */
+.product-card-img-wrapper:hover .product-card-img {
+  transform: scale(1.05);
+}
 
-.partner-details-header {
+.product-card-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(2px);
   display: flex;
-
-  align-items: flex-start;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
-  padding-bottom: 27px;
-
-  border-bottom: 1px solid #dce5e2;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
+.product-card-img-wrapper:hover .product-card-hover-overlay {
+  opacity: 1;
+}
 
-.partner-details-header h2 {
-  margin: 0 0 7px;
-
+.overlay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #ffffff;
   color: #16458a;
-
-  font-size: 38px;
-
-  line-height: 1.15;
-
-  font-weight: 750;
-
-  letter-spacing: -0.6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-.partner-details-category {
-  margin: 0;
-
-  color: #16834a;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-
-.partner-details-number {
-  color: #d2ded9;
-
-  font-size: 46px;
-
-  line-height: 1;
-
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   DETAILS CONTENT
-========================================================= */
-
-.partner-details-content {
-  display: grid;
-
-  grid-template-columns:
-    1.1fr
-    0.9fr;
-
-  gap: 60px;
-
-  padding: 32px 0 35px;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.partner-details-description p {
-  margin: 0 0 16px;
-
-  color: #5f5f5f;
-
-  font-size: 15px;
-
-  line-height: 1.8;
-}
-
-
-.partner-details-description p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* =========================================================
-   SOLUTIONS
-========================================================= */
-
-.partner-solutions-title {
-  margin: 0 0 16px;
-
-  color: #16458a;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.7px;
-
-  text-transform: uppercase;
-}
-
-
-.partner-solutions-list {
+/* Card Body */
+.product-card-body {
+  padding: 18px 18px 14px;
+  flex: 1;
   display: flex;
-
   flex-direction: column;
+}
 
+.product-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.product-card-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #16458a;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.product-card-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.feature-check {
+  color: #16834a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Card Footer */
+.product-card-footer {
+  padding: 12px 18px;
+  background: #fafafa;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.product-view-details-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #16458a;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: all 0.2s ease;
+}
+
+.product-view-details-btn:hover {
+  color: #0f3166;
+  gap: 9px;
+}
+
+.product-enquire-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  background: rgba(22, 131, 74, 0.08);
+  color: #16834a;
+  border: 1px solid rgba(22, 131, 74, 0.2);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.product-enquire-link:hover {
+  background: #16834a;
+  color: #ffffff;
+  border-color: #16834a;
+}
+
+/* ==========================================================================
+   6. PRODUCT DETAILS MODAL
+========================================================================== */
+.nascon-product-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.nascon-product-modal-container {
+  background: #ffffff;
+  border-radius: 18px;
+  max-width: 980px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.nascon-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.modal-header-meta {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-
-.partner-solution-item {
-  display: flex;
-
-  align-items: center;
-
-  gap: 11px;
-
-  padding: 12px 14px;
-
-  background: #ffffff;
-
-  border: 1px solid #e2ebe7;
-
-  border-radius: 7px;
-
-  color: #555555;
-
-  font-size: 13px;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-
-.partner-solution-item:hover {
-  transform: translateX(4px);
-
-  border-color: #c9ddd4;
-
-  box-shadow:
-    0 5px 15px rgba(22, 69, 138, 0.05);
-}
-
-
-.solution-check {
-  width: 22px;
-  height: 22px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  background: #eaf5ef;
-
-  border-radius: 50%;
-
-  color: #16834a;
-
-  font-size: 11px;
-
+.modal-badge-number {
+  font-size: 0.78rem;
   font-weight: 800;
-}
-
-
-/* =========================================================
-   DETAILS FOOTER
-========================================================= */
-
-.partner-details-footer {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
-  padding-top: 27px;
-
-  border-top: 1px solid #dce5e2;
-}
-
-
-.partner-details-footer div {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 4px;
-}
-
-
-.partner-details-footer strong {
   color: #16458a;
-
-  font-size: 16px;
-
-  font-weight: 750;
-}
-
-
-.partner-details-footer span {
-  color: #707070;
-
-  font-size: 13px;
-}
-
-
-/* =========================================================
-   DETAILS BUTTON
-========================================================= */
-
-.partner-details-button {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  padding: 13px 21px;
-
-  background: #16458a;
-
-  color: #ffffff;
-
+  background: rgba(22, 69, 138, 0.1);
+  padding: 3px 8px;
   border-radius: 6px;
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  font-weight: 750;
-
-  white-space: nowrap;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    gap 0.25s ease;
 }
 
-
-.partner-details-button:hover {
-  background: #16834a;
-
-  transform: translateY(-2px);
-
-  gap: 13px;
+.modal-badge-partner {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
+.modal-badge-page {
+  font-size: 0.72rem;
+  color: #64748b;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
 
-.partner-details-button span {
+.nascon-modal-close-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nascon-modal-close-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.nascon-modal-body {
+  padding: 28px 24px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.modal-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-image-display {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.05);
+}
+
+.modal-main-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-support-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.support-icon {
+  color: #16834a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-support-card strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #14532d;
+  margin-bottom: 2px;
+}
+
+.modal-support-card p {
+  font-size: 0.75rem;
+  color: #166534;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.modal-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-product-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.modal-product-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #16458a;
+  margin: 0 0 14px;
+}
+
+.modal-product-overview {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.modal-section-block {
+  margin-bottom: 20px;
+}
+
+.modal-block-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin: 0 0 10px;
+}
+
+.modal-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.modal-check-icon {
+  color: #16834a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-applications-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modal-app-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.app-icon {
+  color: #16458a;
+}
+
+.modal-action-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.modal-action-btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.modal-call-btn {
+  padding: 10px 18px;
+}
+
+/* ==========================================================================
+   7. WHY CHOOSE PARTNER SECTION
+========================================================================== */
+.nascon-why-partner-section {
+  background: #ffffff;
+  padding: 70px 24px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nascon-why-partner-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.nascon-why-partner-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.nascon-why-partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.nascon-why-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  animation: partnerCardReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all 0.25s ease;
+}
+
+.nascon-why-card:hover {
+  background: #ffffff;
+  border-color: #93c5fd;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -6px rgba(22, 69, 138, 0.1);
+}
+
+.why-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(22, 69, 138, 0.08);
+  color: #16458a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.nascon-why-card:hover .why-card-icon-wrap {
+  background: #16458a;
   color: #ffffff;
 }
 
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes partnersHeroText {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
+.why-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
 }
 
-
-@keyframes partnersLine {
-
-  from {
-    opacity: 0;
-
-    transform:
-      scaleX(0);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      scaleX(1);
-  }
-
+.why-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
 }
 
-
-@keyframes partnersHeadingLeft {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateX(-15px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateX(0);
-  }
-
+/* ==========================================================================
+   8. WHY NASCON SUPPORT SECTION
+========================================================================== */
+.nascon-support-section {
+  background: #f8fafc;
+  padding: 70px 24px;
 }
 
-
-@keyframes partnersHeadingRight {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateX(15px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateX(0);
-  }
-
+.nascon-support-container {
+  max-width: 1380px;
+  margin: 0 auto;
 }
 
-
-@keyframes partnerCardReveal {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
+.nascon-support-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 44px;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-
-@keyframes supplyCardReveal {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
+.nascon-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-
-@keyframes partnersCtaReveal {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
+.nascon-support-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 26px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  animation: partnerCardReveal 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: all 0.25s ease;
 }
 
-
-@keyframes selectedPartnerReveal {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
+.nascon-support-card:hover {
+  border-color: #86efac;
+  box-shadow: 0 12px 24px -6px rgba(22, 131, 74, 0.12);
+  transform: translateY(-2px);
 }
 
+.support-card-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(22, 131, 74, 0.1);
+  color: #16834a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+.nascon-support-card:hover .support-card-icon-box {
+  background: #16834a;
+  color: #ffffff;
+}
 
-@media (max-width: 1000px) {
+.support-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
 
-  .nascon-partners-hero-inner {
-    padding:
-      80px
-      40px
-      75px;
+.support-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0;
+}
+
+/* ==========================================================================
+   9. PARTNER BOTTOM CTA
+========================================================================== */
+.nascon-partner-bottom-cta {
+  background: #ffffff;
+  padding: 60px 24px 80px;
+}
+
+.nascon-partner-cta-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.nascon-partner-cta-card {
+  position: relative;
+  background: linear-gradient(135deg, #0a1f44 0%, #16458a 70%, #14532d 100%);
+  border-radius: 20px;
+  padding: 60px 48px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.3);
+  animation: partnerFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #a7f3d0;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.cta-headline {
+  font-size: 2.3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin: 0 0 16px;
+}
+
+.cta-description {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 0 0 28px;
+  max-width: 640px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-btn-main {
+  background: #22c55e !important;
+  color: #0f172a !important;
+}
+
+.cta-btn-main:hover {
+  background: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.cta-btn-alt {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.cta-btn-alt:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+}
+
+.nascon-partner-cta-decoration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-circle-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-stat-pill {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  max-width: 240px;
+}
+
+.cta-stat-pill strong {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.cta-stat-pill span {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ==========================================================================
+   COMMON BUTTONS & UTILITIES
+========================================================================= */
+.nascon-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #16458a;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(22, 69, 138, 0.2);
+}
+
+.nascon-btn-primary:hover {
+  background: #0f3166;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 69, 138, 0.3);
+}
+
+.nascon-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nascon-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+========================================================================== */
+@media (max-width: 1200px) {
+  .nascon-partner-products-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-
-  .nascon-partners-hero h1 {
-    font-size: 51px;
+  .nascon-partner-themes-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
+  .nascon-support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-  .nascon-partners-list {
-    padding:
-      75px
-      40px
-      90px;
+@media (max-width: 900px) {
+  .top-header-title {
+    font-size: 2.2rem;
   }
 
+  .nascon-partner-tabs-wrapper {
+    top: 68px;
+  }
 
-  .nascon-partners-heading {
+  .nascon-partner-hero-inner {
     grid-template-columns: 1fr;
-
-    gap: 22px;
-
-    margin-bottom: 40px;
+    gap: 36px;
   }
 
-
-  .nascon-partners-heading h2 {
-    font-size: 37px;
+  .nascon-partner-headline {
+    font-size: 2.1rem;
   }
 
-
-  .nascon-partners-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
+  .nascon-partner-products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-
-  .supply-network {
-    margin-top: 75px;
-
-    padding-top: 60px;
-  }
-
-
-  .supply-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-
-  .nascon-partners-contact {
-    padding:
-      0
-      40px
-      80px;
-  }
-
-
-  .nascon-partners-contact-inner {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    padding: 45px;
-  }
-
-
-  .partner-detail-hero-inner {
-    padding:
-      60px
-      40px
-      70px;
-  }
-
-
-  .partner-detail-hero h1 {
-    font-size: 51px;
-  }
-
-
-  .partner-detail-section {
-    padding:
-      75px
-      40px;
-  }
-
-
-  .partner-detail-grid {
+  .nascon-modal-body {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
-
-  .partner-other-section {
-    padding:
-      0
-      40px
-      80px;
-  }
-
-
-  .partner-other-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-
-  .partner-details-content {
+  .nascon-partner-cta-card {
     grid-template-columns: 1fr;
-
-    gap: 35px;
+    padding: 40px 28px;
   }
 
+  .nascon-partner-cta-decoration {
+    display: none;
+  }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  /* ---------- HERO ---------- */
-
-  .nascon-partners-hero-inner {
-    padding:
-      65px
-      22px
-      60px;
+@media (max-width: 640px) {
+  .nascon-partners-top-header {
+    padding: 48px 16px 40px;
   }
 
-
-  .nascon-partners-hero::before {
-    width: 350px;
-    height: 350px;
-
-    right: -210px;
-    top: -190px;
+  .top-header-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
   }
 
-
-  .nascon-partners-hero::after {
-    width: 240px;
-    height: 240px;
-
-    right: -140px;
-    bottom: -170px;
+  .top-header-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
   }
 
-
-  .nascon-partners-eyebrow {
-    margin-bottom: 17px;
-
-    font-size: 11px;
-
-    letter-spacing: 1.8px;
+  .nascon-partner-tabs-wrapper {
+    top: 62px;
   }
 
-
-  .nascon-partners-hero h1 {
-    font-size: 39px;
-
-    letter-spacing: -0.9px;
+  .nascon-partner-tabs-container {
+    padding: 10px 12px;
   }
 
-
-  .nascon-partners-hero-description {
-    font-size: 15px;
-
-    line-height: 1.7;
+  .nascon-partner-hero-banner {
+    padding: 40px 16px 36px;
   }
 
-
-  /* ---------- PARTNERS ---------- */
-
-  .nascon-partners-list {
-    padding:
-      65px
-      22px
-      70px;
+  .nascon-partner-products-section {
+    padding: 44px 16px;
   }
 
-
-  .nascon-partners-heading {
-    margin-bottom: 34px;
+  .nascon-partner-products-header {
+    margin-bottom: 24px;
   }
 
-
-  .nascon-partners-heading h2 {
-    font-size: 31px;
-  }
-
-
-  .nascon-partners-heading-description {
-    font-size: 14px;
-  }
-
-
-  .nascon-partners-grid {
+  .nascon-partner-products-grid {
     grid-template-columns: 1fr;
-
-    gap: 15px;
+    gap: 16px;
   }
 
-
-  .nascon-partner-card {
-    min-height: 270px;
-
-    padding: 24px;
+  .nascon-partner-themes-section {
+    padding: 30px 16px;
   }
 
-
-  .nascon-partner-card-header {
-    margin-bottom: 30px;
-  }
-
-
-  .nascon-partner-icon {
-    width: 51px;
-    height: 51px;
-
-    font-size: 21px;
-  }
-
-
-  .nascon-partner-card-content h3 {
-    font-size: 23px;
-  }
-
-
-  .nascon-partner-description {
-    font-size: 13.5px;
-  }
-
-
-  /* ---------- SUPPLY ---------- */
-
-  .supply-network {
-    margin-top: 60px;
-
-    padding-top: 50px;
-  }
-
-
-  .supply-heading {
-    margin-bottom: 35px;
-  }
-
-
-  .supply-heading h2 {
-    font-size: 30px;
-  }
-
-
-  .supply-heading > span {
-    font-size: 14px;
-  }
-
-
-  .supply-grid {
+  .nascon-partner-themes-grid {
     grid-template-columns: 1fr;
-
     gap: 12px;
   }
 
-
-  .supply-card {
-    padding: 20px 18px;
+  .nascon-why-partner-section {
+    padding: 40px 16px;
   }
 
-
-  /* ---------- CTA ---------- */
-
-  .nascon-partners-contact {
-    padding:
-      0
-      22px
-      60px;
+  .nascon-why-partner-header {
+    margin-bottom: 28px;
   }
 
-
-  .nascon-partners-contact-inner {
-    padding:
-      36px
-      25px;
-
-    gap: 30px;
-
-    border-radius: 12px;
+  .nascon-support-section {
+    padding: 40px 16px;
   }
 
-
-  .nascon-partners-contact-text h2 {
-    font-size: 29px;
+  .nascon-support-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-
-  .nascon-partners-contact-text > p:last-child {
-    font-size: 14px;
+  .nascon-partner-cta-section {
+    padding: 36px 16px 48px;
   }
 
+  .nascon-partner-headline {
+    font-size: 1.75rem;
+    line-height: 1.22;
+  }
 
-  .nascon-partners-contact-button {
+  .nascon-section-title {
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+
+  .cta-headline {
+    font-size: 1.65rem;
+  }
+
+  .nascon-partner-hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nascon-partner-hero-ctas .nascon-btn-primary,
+  .nascon-partner-hero-ctas .nascon-btn-secondary {
     width: 100%;
-
+    justify-content: center;
     box-sizing: border-box;
   }
 
-
-  /* ---------- DETAIL HERO ---------- */
-
-  .partner-detail-hero-inner {
-    padding:
-      50px
-      22px
-      60px;
-  }
-
-
-  .partner-detail-back {
-    margin-bottom: 35px;
-  }
-
-
-  .partner-detail-hero h1 {
-    font-size: 39px;
-
-    letter-spacing: -0.9px;
-  }
-
-
-  .partner-detail-description {
-    font-size: 14px;
-  }
-
-
-  /* ---------- DETAIL CONTENT ---------- */
-
-  .partner-detail-section {
-    padding:
-      60px
-      22px;
-  }
-
-
-  .partner-detail-box {
-    padding: 25px;
-  }
-
-
-  .partner-detail-box h2 {
-    font-size: 25px;
-  }
-
-
-  .partner-product-list {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ---------- VALUE ---------- */
-
-  .partner-detail-value {
-    padding:
-      30px
-      24px;
-
+  .nascon-partner-guarantee-strip {
     flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 25px;
+    gap: 10px;
   }
 
-
-  .partner-detail-value h2 {
-    font-size: 29px;
+  .nascon-product-modal-backdrop {
+    padding: 10px;
   }
 
+  .nascon-product-modal-container {
+    max-height: 94vh;
+    border-radius: 14px;
+  }
 
-  .partner-detail-value
-  .nascon-partners-contact-button {
+  .nascon-modal-header {
+    padding: 12px 16px;
+  }
+
+  .nascon-modal-body {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .modal-action-row {
+    flex-direction: column;
     width: 100%;
   }
 
-
-  /* ---------- OTHER PARTNERS ---------- */
-
-  .partner-other-section {
-    padding:
-      0
-      22px
-      60px;
-  }
-
-
-  .partner-other-heading h2 {
-    font-size: 30px;
-  }
-
-
-  .partner-other-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ---------- SELECTED PARTNER ---------- */
-
-  .selected-partner {
-    padding: 27px;
-
-    margin-bottom: 55px;
-  }
-
-
-  .selected-partner-header h2 {
-    font-size: 30px;
-  }
-
-
-  .selected-partner-content {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    padding: 20px;
-  }
-
-
-  .selected-partner-content h3 {
-    font-size: 20px;
-  }
-
-
-  .selected-partner-content p {
-    font-size: 13.5px;
-  }
-
-
-  /* ---------- DETAILS ---------- */
-
-  .partner-details {
-    margin-top: 45px;
-
-    padding:
-      28px
-      20px;
-
-    border-radius: 12px;
-  }
-
-
-  .partner-details-header {
-    padding-bottom: 20px;
-  }
-
-
-  .partner-details-header h2 {
-    font-size: 29px;
-  }
-
-
-  .partner-details-number {
-    font-size: 33px;
-  }
-
-
-  .partner-details-content {
-    padding:
-      25px
-      0
-      28px;
-
-    gap: 28px;
-  }
-
-
-  .partner-details-description p {
-    font-size: 13.5px;
-
-    line-height: 1.7;
-  }
-
-
-  .partner-details-footer {
-    align-items: stretch;
-
-    flex-direction: column;
-  }
-
-
-  .partner-details-button {
+  .modal-enquire-btn,
+  .modal-brochure-btn {
     width: 100%;
-
+    justify-content: center;
     box-sizing: border-box;
   }
-
 }
 
+@media (max-width: 480px) {
+  .top-header-title {
+    font-size: 1.55rem;
+  }
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+  .nascon-partner-headline {
+    font-size: 1.5rem;
+  }
 
-@media (prefers-reduced-motion: reduce) {
+  .nascon-section-title {
+    font-size: 1.45rem;
+  }
 
-  .nascon-partners-hero-text,
-  .nascon-partners-eyebrow::before,
-  .nascon-partners-heading-left,
-  .nascon-partners-heading-description,
-  .nascon-partner-card,
-  .supply-card,
-  .nascon-partners-contact-inner,
-  .selected-partner {
-    animation: none;
+  .nascon-hero-floating-badge {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 8px 12px;
+  }
 
+  .badge-text strong {
+    font-size: 0.78rem;
+  }
+
+  .badge-text span {
+    font-size: 0.68rem;
+  }
+
+  .nascon-partner-tab-btn {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .nascon-tab-name {
+    font-size: 0.8rem;
+  }
+
+  .nascon-tab-category {
+    font-size: 0.65rem;
+  }
+
+  .nascon-partner-cta-card {
+    padding: 30px 18px;
+    border-radius: 14px;
+  }
+}
+
+/* ==========================================================================
+   PARTNER PAGE ANIMATIONS
+========================================================================== */
+@keyframes partnerHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
+}
 
-
-  .nascon-partner-card,
-  .nascon-partner-icon,
-  .nascon-partner-accent,
-  .supply-card,
-  .supply-icon,
-  .nascon-partners-contact-button,
-  .nascon-partners-contact-button span,
-  .partner-detail-back,
-  .partner-other-card,
-  .partner-view-details,
-  .partner-solution-item,
-  .partner-details-button {
-    transition: none;
+@keyframes partnerHeroVisual {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
   }
-
-
-  .nascon-partner-card:hover,
-  .supply-card:hover,
-  .nascon-partners-contact-button:hover,
-  .partner-other-card:hover,
-  .partner-solution-item:hover {
-    transform: none;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
 
+@keyframes partnerFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes partnerCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,6 +1,62 @@
 # Robots.txt for Nascon Technologies
+# Website: https://nascontechnologies.com
+# Head Office: Indore, Madhya Pradesh | Plant: Pithampur Industrial Area
+
+# Standard Search Engines (Googlebot, Bingbot, etc.)
 User-agent: *
 Allow: /
 
-# Sitemap URL
+# OpenAI Crawlers & Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude Crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google Generative Search & Extended Crawlers
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Apple Intelligence & Siri Crawlers
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Other Major AI / Search Engines
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# XML Sitemap
 Sitemap: https://nascontechnologies.com/sitemap.xml
+
+# LLM Context Standard (https://llmstxt.org)
+# Full site technical knowledge base: https://nascontechnologies.com/llms-full.txt
+# Summary context: https://nascontechnologies.com/llms.txt

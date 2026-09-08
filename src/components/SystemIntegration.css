@@ -144,268 +144,148 @@
 
 
 /* =========================================================
-   PARTNER GRID
+   PARTNER LOGOS (CLEAN LOGO-ONLY LAYOUT)
 ========================================================= */
 
-.partners-container {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 16px;
+.partners-logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 38px 48px;
+  max-width: 1120px;
+  margin: 36px auto 0;
+  padding: 8px 0 16px;
 }
 
 
 /* =========================================================
-   PARTNER CARD
+   PARTNER LOGO ITEM (CLICKABLE LINK)
 ========================================================= */
 
-.partner-card {
-  position: relative;
-
-  min-height: 205px;
-
-  padding: 19px 20px;
-
-  box-sizing: border-box;
+.partner-logo-item {
+  /* 4 logos in row 1, 3 in row 2 on desktop */
+  flex: 0 0 calc((100% - (3 * 48px)) / 4);
+  max-width: calc((100% - (3 * 48px)) / 4);
+  height: 90px;
 
   display: flex;
-  flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
 
   text-decoration: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 
-  background: #ffffff;
+  padding: 8px 12px;
+  box-sizing: border-box;
 
-  border: 1px solid #dfe8e4;
+  cursor: pointer;
+  outline: none;
 
-  border-radius: 14px;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 
-.partner-card:hover {
-  transform: translateY(-6px);
-
-  border-color: #c6dcd2;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 18px 38px rgba(22, 69, 138, 0.09);
+.partner-logo-item:hover {
+  transform: scale(1.05);
 }
 
 
-/* =========================================================
-   CARD TOP
-========================================================= */
+.partner-logo-item:focus-visible {
+  outline: 2px solid #16834a;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
 
-.partner-card-top {
-  position: absolute;
 
-  top: 17px;
-  left: 20px;
-  right: 20px;
-
+.partner-logo-item picture {
   display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-}
-
-
-.partner-index {
-  color: #c7d7d1;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-}
-
-
-.partner-status {
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: #d5e2dd;
-
-  transition: background 0.3s ease;
-}
-
-
-.partner-card:hover .partner-status {
-  background: #16834a;
-}
-
-
-/* =========================================================
-   PARTNER LOGO
-========================================================= */
-
-.partner-logo {
-  width: 100%;
-  height: 105px;
-
-  display: flex;
-
   align-items: center;
   justify-content: center;
 
-  margin-top: 12px;
-
-  box-sizing: border-box;
-
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 
-/*
-   IMPORTANT:
-   contain prevents logos such as PHOENIX and GLOSTER
-   from being cropped.
-*/
-
-.partner-logo img {
+.partner-logo-img {
   display: block;
 
   width: auto;
   height: auto;
 
-  max-width: 88%;
-  max-height: 78px;
+  max-width: 100%;
+  max-height: 100%;
 
   object-fit: contain;
 
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
+  transition: filter 280ms ease;
+
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 
-.partner-card:hover .partner-logo img {
-  transform: scale(1.04);
+.partner-logo-item:hover .partner-logo-img {
+  filter: brightness(1.03) contrast(1.03);
 }
 
 
 /* =========================================================
-   INDIVIDUAL LOGO ADJUSTMENTS
+   INDIVIDUAL LOGO OPTICAL BALANCE (PRESERVE ORIGINAL ASPECT RATIOS)
 ========================================================= */
 
-/* Schneider */
-
-.partner-logo.schneider img {
-  max-width: 175px;
-  max-height: 70px;
-}
-
-
-/* Siemens */
-
-.partner-logo.siemens img {
-  max-width: 175px;
-  max-height: 65px;
-}
-
-
-/* Phoenix Contact */
-
-.partner-logo.phoenix img {
-  max-width: 190px;
-  max-height: 75px;
-}
-
-
-/* Multispan */
-
-.partner-logo.multispan img {
-  max-width: 170px;
-  max-height: 70px;
-}
-
-
-/* Selec */
-
-.partner-logo.selec img {
-  max-width: 155px;
-  max-height: 70px;
-}
-
-
-/* Finolex */
-
-.partner-logo.finolex img {
-  max-width: 175px;
-  max-height: 70px;
-}
-
-
-/* Gloster */
-
-.partner-logo.gloster img {
-  max-width: 155px;
+/* Schneider Electric */
+.partner-logo-item.schneider .partner-logo-img {
+  max-width: 185px;
   max-height: 72px;
 }
 
 
-/* =========================================================
-   PARTNER SUBTITLE
-========================================================= */
-
-.partner-sub {
-  margin-top: 7px;
-
-  color: #777777;
-
-  font-size: 11px;
-
-  text-align: center;
+/* Siemens */
+.partner-logo-item.siemens .partner-logo-img {
+  max-width: 185px;
+  max-height: 66px;
 }
 
 
-/* =========================================================
-   HOVER ARROW
-========================================================= */
-
-.partner-arrow {
-  position: absolute;
-
-  right: 18px;
-  bottom: 15px;
-
-  color: #16834a;
-
-  font-size: 17px;
-  font-weight: 700;
-
-  opacity: 0;
-
-  transform: translateX(-5px);
-
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+/* Phoenix Contact */
+.partner-logo-item.phoenix .partner-logo-img {
+  max-width: 200px;
+  max-height: 76px;
 }
 
 
-.partner-card:hover .partner-arrow {
-  opacity: 1;
-
-  transform: translateX(0);
+/* Multispan */
+.partner-logo-item.multispan .partner-logo-img {
+  max-width: 180px;
+  max-height: 68px;
 }
+
+
+/* Selec */
+.partner-logo-item.selec .partner-logo-img {
+  max-width: 165px;
+  max-height: 72px;
+}
+
+
+/* Finolex */
+.partner-logo-item.finolex .partner-logo-img {
+  max-width: 180px;
+  max-height: 72px;
+}
+
+
+/* Gloster */
+.partner-logo-item.gloster .partner-logo-img {
+  max-width: 160px;
+  max-height: 78px;
+}
+
 
 
 /* =========================================================
@@ -467,7 +347,7 @@
 }
 
 
-.integration-workflow-heading > span {
+.integration-workflow-heading>span {
   display: block;
 
   color: #707070;
@@ -664,15 +544,53 @@
   }
 
 
-  .partners-container {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 15px;
+  /* Tablet: 3 logos per row */
+  .partners-logos-container {
+    gap: 32px 32px;
+    max-width: 840px;
+    margin-top: 30px;
   }
 
+  .partner-logo-item {
+    flex: 0 0 calc((100% - (2 * 32px)) / 3);
+    max-width: calc((100% - (2 * 32px)) / 3);
+    height: 84px;
+    padding: 6px 10px;
+  }
 
-  .partner-card {
-    min-height: 200px;
+  .partner-logo-item.schneider .partner-logo-img {
+    max-width: 165px;
+    max-height: 65px;
+  }
+
+  .partner-logo-item.siemens .partner-logo-img {
+    max-width: 165px;
+    max-height: 58px;
+  }
+
+  .partner-logo-item.phoenix .partner-logo-img {
+    max-width: 180px;
+    max-height: 68px;
+  }
+
+  .partner-logo-item.multispan .partner-logo-img {
+    max-width: 160px;
+    max-height: 60px;
+  }
+
+  .partner-logo-item.selec .partner-logo-img {
+    max-width: 150px;
+    max-height: 65px;
+  }
+
+  .partner-logo-item.finolex .partner-logo-img {
+    max-width: 160px;
+    max-height: 65px;
+  }
+
+  .partner-logo-item.gloster .partner-logo-img {
+    max-width: 145px;
+    max-height: 70px;
   }
 
 
@@ -786,7 +704,7 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
 
   .partners-section {
     padding: 70px 20px 60px;
@@ -860,104 +778,56 @@
 
 
   /* -------------------------------------------------------
-     PARTNER GRID
+     PARTNER LOGOS (MOBILE: 2 PER ROW)
   ------------------------------------------------------- */
 
-  .partners-container {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
+  .partners-logos-container {
+    gap: 24px 18px;
+    max-width: 100%;
+    margin-top: 22px;
+    padding: 4px 0 12px;
   }
 
-
-  .partner-card {
-    min-height: 175px;
-
-    padding: 18px;
+  .partner-logo-item {
+    flex: 0 0 calc((100% - 18px) / 2);
+    max-width: calc((100% - 18px) / 2);
+    height: 72px;
+    padding: 6px 8px;
   }
 
-
-  .partner-card-top {
-    top: 15px;
-
-    left: 17px;
-    right: 17px;
+  .partner-logo-item.schneider .partner-logo-img {
+    max-width: 140px;
+    max-height: 54px;
   }
 
-
-  .partner-logo {
-    height: 95px;
-
-    margin-top: 10px;
+  .partner-logo-item.siemens .partner-logo-img {
+    max-width: 140px;
+    max-height: 48px;
   }
 
-
-  .partner-logo img {
-    max-width: 78%;
-
-    max-height: 68px;
+  .partner-logo-item.phoenix .partner-logo-img {
+    max-width: 150px;
+    max-height: 56px;
   }
 
-
-  .partner-logo.schneider img {
-    max-width: 165px;
-
-    max-height: 62px;
+  .partner-logo-item.multispan .partner-logo-img {
+    max-width: 135px;
+    max-height: 50px;
   }
 
+  .partner-logo-item.selec .partner-logo-img {
+    max-width: 125px;
+    max-height: 52px;
+  }
 
-  .partner-logo.siemens img {
-    max-width: 160px;
+  .partner-logo-item.finolex .partner-logo-img {
+    max-width: 135px;
+    max-height: 52px;
+  }
 
+  .partner-logo-item.gloster .partner-logo-img {
+    max-width: 120px;
     max-height: 58px;
-  }
-
-
-  .partner-logo.phoenix img {
-    max-width: 175px;
-
-    max-height: 68px;
-  }
-
-
-  .partner-logo.multispan img {
-    max-width: 155px;
-
-    max-height: 62px;
-  }
-
-
-  .partner-logo.selec img {
-    max-width: 145px;
-
-    max-height: 62px;
-  }
-
-
-  .partner-logo.finolex img {
-    max-width: 165px;
-
-    max-height: 62px;
-  }
-
-
-  .partner-logo.gloster img {
-    max-width: 145px;
-
-    max-height: 65px;
-  }
-
-
-  .partner-arrow {
-    right: 16px;
-
-    bottom: 13px;
-
-    opacity: 1;
-
-    transform: none;
-
-    font-size: 15px;
   }
 
 
@@ -995,7 +865,7 @@
   }
 
 
-  .integration-workflow-heading > span {
+  .integration-workflow-heading>span {
     font-size: 13px;
 
     line-height: 1.6;
@@ -1109,10 +979,51 @@
   }
 
 
-  .partner-card {
-    min-height: 165px;
+  .partners-logos-container {
+    gap: 20px 14px;
   }
 
+  .partner-logo-item {
+    flex: 0 0 calc((100% - 14px) / 2);
+    max-width: calc((100% - 14px) / 2);
+    height: 64px;
+    padding: 4px 6px;
+  }
+
+  .partner-logo-item.schneider .partner-logo-img {
+    max-width: 125px;
+    max-height: 48px;
+  }
+
+  .partner-logo-item.siemens .partner-logo-img {
+    max-width: 125px;
+    max-height: 44px;
+  }
+
+  .partner-logo-item.phoenix .partner-logo-img {
+    max-width: 135px;
+    max-height: 50px;
+  }
+
+  .partner-logo-item.multispan .partner-logo-img {
+    max-width: 120px;
+    max-height: 45px;
+  }
+
+  .partner-logo-item.selec .partner-logo-img {
+    max-width: 110px;
+    max-height: 46px;
+  }
+
+  .partner-logo-item.finolex .partner-logo-img {
+    max-width: 120px;
+    max-height: 46px;
+  }
+
+  .partner-logo-item.gloster .partner-logo-img {
+    max-width: 110px;
+    max-height: 50px;
+  }
 
   .integration-workflow-heading h3 {
     font-size: 24px;
@@ -1137,27 +1048,15 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .partner-card,
-  .partner-logo img,
-  .partner-arrow,
-  .partner-status,
+  .partner-logo-item,
+  .partner-logo-img,
   .integration-step {
     transition: none;
   }
 
 
-  .partner-card:hover,
+  .partner-logo-item:hover,
   .integration-step:hover {
-    transform: none;
-  }
-
-
-  .partner-card:hover .partner-logo img {
-    transform: none;
-  }
-
-
-  .partner-card:hover .partner-arrow {
     transform: none;
   }
 

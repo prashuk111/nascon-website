@@ -1,0 +1,112 @@
+# ============================================================================
+# NASCON TECHNOLOGIES - PRODUCTION NGINX CONFIGURATION EXAMPLE
+# Copy into /etc/nginx/conf.d/nascon.conf or your server block
+# Features: Gzip & Brotli on-the-fly and static pre-compressed file serving
+# ============================================================================
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name nascontechnologies.com www.nascontechnologies.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name nascontechnologies.com www.nascontechnologies.com;
+
+    root /var/www/nascon-website/dist;
+    index index.html;
+
+    # SSL certificates (e.g. Let's Encrypt Certbot)
+    # ssl_certificate /etc/letsencrypt/live/nascontechnologies.com/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/nascontechnologies.com/privkey.pem;
+
+    # ------------------------------------------------------------------------
+    # 1. GZIP COMPRESSION CONFIGURATION
+    # ------------------------------------------------------------------------
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_min_length 256;
+    gzip_types
+        application/atom+xml
+        application/geo+json
+        application/javascript
+        application/x-javascript
+        application/json
+        application/ld+json
+        application/manifest+json
+        application/rdf+xml
+        application/rss+xml
+        application/xhtml+xml
+        application/xml
+        font/eot
+        font/otf
+        font/ttf
+        image/svg+xml
+        text/css
+        text/javascript
+        text/plain
+        text/xml;
+
+    # Serve pre-compressed .gz files if they exist on disk (zero runtime CPU cost)
+    gzip_static on;
+
+    # ------------------------------------------------------------------------
+    # 2. BROTLI COMPRESSION CONFIGURATION (requires ngx_brotli module)
+    # ------------------------------------------------------------------------
+    # brotli on;
+    # brotli_comp_level 6;
+    # brotli_types
+    #     application/javascript
+    #     application/json
+    #     application/xml
+    #     image/svg+xml
+    #     text/css
+    #     text/html
+    #     text/javascript
+    #     text/plain
+    #     text/xml;
+    # brotli_static on;
+
+    # ------------------------------------------------------------------------
+    # 3. SECURITY HEADERS
+    # ------------------------------------------------------------------------
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # ------------------------------------------------------------------------
+    # 4. STATIC ASSET CACHING (Hashed Vite Bundles)
+    # ------------------------------------------------------------------------
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        access_log off;
+    }
+
+    # Images, icons, and fonts
+    location ~* \.(webp|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$ {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000";
+        access_log off;
+    }
+
+    # Sitemaps & robots
+    location ~* \.(xml|txt)$ {
+        expires 1d;
+        add_header Cache-Control "public, max-age=86400";
+    }
+
+    # ------------------------------------------------------------------------
+    # 5. SPA ROUTING FALLBACK TO index.html
+    # ------------------------------------------------------------------------
+    location / {
+        try_files $uri $uri/ /index.html;
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+    }
+}

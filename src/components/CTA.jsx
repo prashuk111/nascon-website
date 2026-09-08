@@ -5,7 +5,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe,
   ArrowRight
 } from "lucide-react";
 
@@ -121,26 +120,10 @@ function CTA() {
 
         {/* WEBSITE */}
 
-        <div className="contact-item">
 
-          <span className="contact-icon">
-            <Globe
-              size={21}
-              strokeWidth={1.8}
-            />
-          </span>
-
-          <div>
-            <h4>Website</h4>
-
-            <p>
-              www.nascon.in
-            </p>
-          </div>
-
-        </div>
 
       </div>
+
 
 
       {/* =========================
@@ -193,7 +176,7 @@ function CTA() {
 
       </div>
 
-    </section>
+    </section >
   );
 }
 

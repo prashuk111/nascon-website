@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import PageMeta from "./components/PageMeta";
 import Navbar from "./components/Navbar";
@@ -6,7 +6,14 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
+import AutomationProducts from "./pages/AutomationProducts";
+import ElectricalControlProducts from "./pages/ElectricalControlProducts";
+import CablesProducts from "./pages/CablesProducts";
+import InstrumentationProducts from "./pages/InstrumentationProducts";
+import ProductDetail from "./pages/ProductDetail";
 import Solutions from "./pages/Solutions";
+import SmartControlPanels from "./pages/SmartControlPanels";
+import AutomationControlSolutions from "./pages/AutomationControlSolutions";
 import Industries from "./pages/Industries";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
@@ -29,7 +36,22 @@ function App() {
 
         <Route path="/products" element={<Products />} />
 
+        <Route path="/products/automation" element={<AutomationProducts />} />
+
+        <Route path="/products/electrical-control" element={<ElectricalControlProducts />} />
+
+        <Route path="/products/cables" element={<CablesProducts />} />
+
+        <Route path="/products/instrumentation" element={<InstrumentationProducts />} />
+
+        {/* Alias redirect for backwards compatibility */}
+        <Route path="/products/electrical" element={<Navigate to="/products/electrical-control" replace />} />
+
+        <Route path="/products/:category/:productId" element={<ProductDetail />} />
+
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/control-panels" element={<SmartControlPanels />} />
+        <Route path="/solutions/automation-control" element={<AutomationControlSolutions />} />
 
         <Route path="/industries" element={<Industries />} />
 
@@ -39,7 +61,8 @@ function App() {
 
         <Route path="/contact" element={<Contact />} />
 
-        
+        {/* Catch-all fallback to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
 

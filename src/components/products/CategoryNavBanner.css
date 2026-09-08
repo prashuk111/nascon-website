@@ -1,0 +1,146 @@
+/* ==========================================================================
+   CATEGORY NAVIGATION BANNER
+   Sticky category switcher bar for dedicated product pages
+   ========================================================================== */
+
+.cat-nav-banner {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 14px 0;
+  position: sticky;
+  top: 78px;
+  z-index: 900;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.cat-nav-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.cat-nav-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.cat-nav-pills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cat-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cat-nav-pill:hover {
+  background: #16458a;
+  border-color: #16458a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(22, 69, 138, 0.18);
+}
+
+.cat-nav-pill:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.cat-nav-pill:hover .cat-pill-num {
+  background: #ffffff;
+  color: #16458a;
+}
+
+.cat-nav-pill:hover .cat-pill-icon {
+  color: #ffffff;
+}
+
+.cat-nav-pill.active {
+  background: #16458a;
+  border-color: #16458a;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(22, 69, 138, 0.2);
+}
+
+.cat-pill-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  background: #16834a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.cat-nav-pill.active .cat-pill-num {
+  background: #16834a;
+  color: #ffffff;
+}
+
+.cat-pill-icon {
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.cat-nav-pill.active .cat-pill-icon {
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .cat-nav-banner {
+    top: 68px;
+    padding: 10px 0;
+  }
+
+  .cat-nav-container {
+    gap: 8px;
+  }
+
+  .cat-nav-label {
+    display: none;
+  }
+
+  .cat-nav-pills {
+    gap: 6px;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .cat-nav-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cat-nav-pill {
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .cat-nav-banner {
+    top: 62px;
+  }
+}

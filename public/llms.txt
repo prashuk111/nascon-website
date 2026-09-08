@@ -1,0 +1,106 @@
+# Nascon Technologies
+
+> Smart Industrial Automation, Custom Control Panels (IEC 61439), and Genuine Automation Component Distribution since 2012.
+
+Nascon Technologies is an Indian industrial automation engineering company and authorized system integrator headquartered in Indore, Madhya Pradesh, with a dedicated panel manufacturing and testing plant in Sector-II, Pithampur Industrial Area. Founded in 2012, Nascon designs, manufactures, tests, and commissions turnkey industrial control systems, custom control panels, SCADA/HMI visualization architectures, and IoT remote telemetry for manufacturing plants across India.
+
+- Website: https://nascontechnologies.com
+- Contact Email: Nishit@nascon.in
+- Phone / WhatsApp: +91 98262 88999
+- Registered Office: G-11 Swadesh Bhawan, 2 Press Complex, Indore, Madhya Pradesh 452018, India
+- Manufacturing Facility: 41 Industrial Estate, Sector-II, Pithampur, Dhar, Madhya Pradesh, India
+- Hours of Operation: Monday – Saturday, 09:30 – 18:30 IST
+- Standards & Quality: IEC 61439, ISO compliant testing, comprehensive FAT/SAT procedures
+- Technical Documentation: https://nascontechnologies.com/llms-full.txt
+- Sitemap: https://nascontechnologies.com/sitemap.xml
+
+## Core Capabilities & Solutions
+
+- [Smart Control Panels](https://nascontechnologies.com/solutions/control-panels): Custom-built PLC Control Panels, Variable Frequency Drive (VFD) Panels, Motor Control Centers (MCC / iMCC), Power Control Centers (PCC), Automatic Power Factor Correction (APFC / iPFC), RTU & Telemetry Panels, and bespoke automation enclosures.
+- [Automation & Control Solutions](https://nascontechnologies.com/solutions/automation-control): Turnkey PLC, HMI, and SCADA architectures, motion control, drive integration, cloud IoT remote telemetry, and field instrumentation.
+- [System Integration & Commissioning](https://nascontechnologies.com/about): Complete electrical engineering design (EPLAN/CAD), wiring, FAT simulation, on-site installation, commissioning, and lifecycle support.
+
+## Product Distribution & Authorized Partners
+
+Nascon Technologies supplies genuine, factory-warranty industrial automation, switchgear, and cabling products from global market leaders:
+
+1. [Phoenix Contact](https://nascontechnologies.com/partners/phoenix): Industrial terminal blocks, power supplies (QUINT/TRIO), signal conditioners, interface relays, surge protection, and Ethernet switches.
+2. [Multispan](https://nascontechnologies.com/partners/multispan): Digital PID temperature controllers, process indicators, digital timers, counters, and panel instrumentation.
+3. [Schneider Electric](https://nascontechnologies.com/partners/schneider): Modicon PLCs, Altivar VFDs, TeSys contactors, thermal overload relays, Acti9 MCBs, and power meters.
+4. [Siemens](https://nascontechnologies.com/partners/siemens): SIMATIC S7-1200/S7-1500 PLCs, SIMATIC Comfort/Basic HMIs, SINAMICS variable frequency drives, and SIRIUS switchgear.
+5. [Selec](https://nascontechnologies.com/partners/selec): Multi-function energy meters, power quality monitors, digital protection relays, timers, and process controllers.
+6. [Finolex Cables](https://nascontechnologies.com/partners/finolex): Flexible multi-core control cables, copper panel wiring, and industrial power cables.
+7. [Gloster Cables](https://nascontechnologies.com/partners/gloster): Heavy-duty LT/HT armoured power cables, instrumentation cables, and fire-survival cables.
+
+## Industrial Product Catalog (32 Products)
+
+### 1. Automation Products
+- [PLCs](https://nascontechnologies.com/products/automation/plcs): Programmable logic controllers for machinery and process automation.
+- [HMIs](https://nascontechnologies.com/products/automation/hmis): Industrial touchscreens and operator display panels.
+- [SCADA Systems](https://nascontechnologies.com/products/automation/scada): Plant-wide supervisory software and data acquisition.
+- [I/O Modules](https://nascontechnologies.com/products/automation/io-modules): Distributed and modular field I/O expansion.
+- [VFDs](https://nascontechnologies.com/products/automation/vfds): Variable frequency drives for AC motor speed and torque control.
+- [Servo Drives & Motors](https://nascontechnologies.com/products/automation/servo-drives): High-precision motion control systems.
+- [Industrial Communication](https://nascontechnologies.com/products/automation/industrial-communication): Managed Ethernet switches and industrial gateways.
+- [IoT & Remote Monitoring](https://nascontechnologies.com/products/automation/remote-monitoring): Edge IoT gateways and cloud telemetry units.
+
+### 2. Electrical Control & Protection
+- [Circuit Breakers](https://nascontechnologies.com/products/electrical-control/circuit-breakers): MCB, MCCB, and ACB power distribution protection.
+- [Contactors](https://nascontechnologies.com/products/electrical-control/contactors): 3-pole and 4-pole power switching contactors.
+- [Overload Relays](https://nascontechnologies.com/products/electrical-control/overload-relays): Thermal and electronic motor protection relays.
+- [Control Relays](https://nascontechnologies.com/products/electrical-control/control-relays): Electromechanical and slim interface relays.
+- [Timers](https://nascontechnologies.com/products/electrical-control/timers): Multi-function electronic sequence and delay timers.
+- [SMPS Power Supplies](https://nascontechnologies.com/products/electrical-control/smps): DIN-rail 24VDC regulated switched-mode power supplies.
+- [Surge Protection Devices](https://nascontechnologies.com/products/electrical-control/surge-protection): Type 1+2 and Type 2 lightning and surge arresters.
+- [Terminal Blocks](https://nascontechnologies.com/products/electrical-control/terminal-blocks): Push-in and screw-clamp DIN-rail wiring terminals.
+
+### 3. Cables & Wiring Accessories
+- [Power Cables](https://nascontechnologies.com/products/cables/power-cables): Heavy-duty LT/HT armoured and unarmoured power cables.
+- [Control Cables](https://nascontechnologies.com/products/cables/control-cables): Multi-core copper shielded control cables.
+- [Instrumentation Cables](https://nascontechnologies.com/products/cables/instrumentation-cables): Overall and individual shielded twisted-pair cables.
+- [Flexible Cables](https://nascontechnologies.com/products/cables/flexible-cables): High-flex drag chain and continuous flex robotic cables.
+- [Panel Wires](https://nascontechnologies.com/products/cables/panel-wires): Single-core flame-retardant panel wiring cables.
+- [Cable Glands & Lugs](https://nascontechnologies.com/products/cables/cable-glands): Brass nickel-plated glands and heavy-duty crimping lugs.
+- [Cable Accessories](https://nascontechnologies.com/products/cables/cable-accessories): Heat shrink sleeves, ferrules, markers, and nylon ties.
+- [Cable Management](https://nascontechnologies.com/products/cables/cable-management): Slotted wiring ducts, conduits, and drag chains.
+
+### 4. Field Instrumentation & Sensors
+- [Temperature Sensors](https://nascontechnologies.com/products/instrumentation/temp-sensors): Industrial thermocouples and RTD assemblies.
+- [RTD & Thermocouples](https://nascontechnologies.com/products/instrumentation/rtd-thermocouple): Duplex Pt100 sensors and thermowells.
+- [Pressure Transmitters](https://nascontechnologies.com/products/instrumentation/pressure-transmitters): Gauge, absolute, and differential 4-20mA transmitters.
+- [Flow Transmitters](https://nascontechnologies.com/products/instrumentation/flow-meters): Electromagnetic and turbine industrial flow meters.
+- [Level Transmitters](https://nascontechnologies.com/products/instrumentation/level-sensors): Ultrasonic, radar, and hydrostatic level transmitters.
+- [Signal Isolators](https://nascontechnologies.com/products/instrumentation/signal-isolators): Galvanic 3-way isolation barriers (4-20mA / 0-10V).
+- [Signal Conditioners](https://nascontechnologies.com/products/instrumentation/signal-conditioners): Universal analog transmitters and converters.
+- [Process Indicators](https://nascontechnologies.com/products/instrumentation/process-indicators): Digital LED panel meters and PID controllers.
+
+## Target Industries
+
+- Automotive & Auto Ancillaries Assembly Lines
+- Food & Beverage Processing and Packaging
+- Pharmaceutical Formulation, API & Cleanrooms
+- Water, Wastewater & Effluent Treatment Plants (STP/ETP/RO)
+- Power, Renewable Energy & Electrical Utilities
+- Chemical, Petrochemical & Process Plants
+- Textile Machinery & Special Purpose Machines (SPMs)
+
+## Contact & Business Enquiry
+
+- General & Technical Enquiries: Nishit@nascon.in
+- Phone / WhatsApp Enquiry: +91 98262 88999
+- Online Enquiry Form: https://nascontechnologies.com/contact
+- Direct WhatsApp Chat: https://wa.me/919826288999
+
+## Frequently Asked Questions (FAQ)
+
+### What information is required to get a quote for a custom control panel?
+To receive a competitive quote, please share your single line diagram (SLD), motor/load list with kW ratings, preferred switchgear/PLC brand (Schneider, Siemens, Phoenix Contact, etc.), I/O count, and environmental requirements (IP rating).
+
+### Where is Nascon's panel manufacturing plant located?
+Our manufacturing facility is at 41 Industrial Estate, Sector-II, Pithampur Industrial Area, Madhya Pradesh. Our registered head office is at G-11 Swadesh Bhawan, 2 Press Complex, Indore, MP.
+
+### What are typical lead times for custom control panels?
+Standard starter/drive panels ship within 1 to 2 weeks. Complex multi-bay PLC/MCC/PCC panels typically require 3 to 6 weeks, including engineering drawings, fabrication, wiring, and FAT testing.
+
+### Does Nascon Technologies provide on-site commissioning?
+Yes. Our field engineering specialists provide complete on-site installation supervision, field wiring termination, PLC/SCADA logic testing, and full plant commissioning.

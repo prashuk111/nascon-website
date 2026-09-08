@@ -6,74 +6,115 @@ import {
   Wrench,
 } from "lucide-react";
 
-
 function Services() {
   const services = [
     {
+      number: "01",
       title: "Control Panel Manufacturing",
       description:
-        "Custom-built electrical and automation control panels designed for reliable industrial operations.",
+        "Engineered control panels designed for reliable industrial power distribution, automation and motor control applications.",
+
       icon: Settings,
+
+      items: [
+        "PLC Panels",
+        "VFD Panels",
+        "MCC / PCC Panels",
+        "APFC Panels",
+
+      ],
     },
+
     {
+      number: "02",
       title: "Authorized Industrial Product Supply",
       description:
-        "Genuine industrial automation products from trusted manufacturers and global brands.",
+        "Genuine industrial automation and electrical control products from trusted global and Indian brands.",
+
       icon: Package,
+
+      items: [
+        "Automation Products",
+        "Electrical Control Products",
+        "Power And Protection",
+        "Cables & Wiring",
+      ],
     },
+
     {
-      title: "Automation System Integration",
+      number: "03",
+      title: "Automation System Integration Support",
       description:
-        "Complete automation integration and support solutions tailored to industrial requirements.",
+        "Complete automation engineering, integration, programming, commissioning and technical support.",
+
       icon: Wrench,
+
+      items: [
+        "PLC /HMI / SCADA",
+        "Drive Control Solutions",
+        "Iot & Remote Monitoring",
+        "Application Support"
+      ],
     },
   ];
-
 
   return (
     <section className="services" id="services">
 
       <div className="services-heading">
-
         <p>WHAT WE DO</p>
 
-        <h2>Our Solutions</h2>
+        <h2>Our Core Business Pillars</h2>
 
         <span>
-          Reliable industrial solutions designed to support modern
-          manufacturing and automation.
+          Three focused strengths. One complete industrial solution approach.
         </span>
-
       </div>
-
 
       <div className="services-container">
 
         {services.map((service) => {
-
           const Icon = service.icon;
 
           return (
             <div className="service-card" key={service.title}>
 
-              <div className="service-icon">
-                <Icon
-                  size={26}
-                  strokeWidth={1.8}
-                />
+              <div className="service-top">
+
+                <span className="service-number">
+                  {service.number}
+                </span>
+
+                <div className="service-icon">
+                  <Icon
+                    size={28}
+                    strokeWidth={1.8}
+                  />
+                </div>
+
               </div>
 
               <h3>{service.title}</h3>
 
-              <p>{service.description}</p>
+              <p className="service-description">
+                {service.description}
+              </p>
 
-              <a href="#contact">
-                Learn More →
-              </a>
+              <div className="service-divider"></div>
+
+              <ul className="service-list">
+
+                {service.items.map((item) => (
+                  <li key={item}>
+                    <span className="service-dot"></span>
+                    {item}
+                  </li>
+                ))}
+
+              </ul>
 
             </div>
           );
-
         })}
 
       </div>
@@ -81,6 +122,5 @@ function Services() {
     </section>
   );
 }
-
 
 export default Services;

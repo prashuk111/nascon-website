@@ -10,7 +10,7 @@ function Hero() {
       NASCON TECHNOLOGIES
     </p>
 
-    <h1 className="hero-animate hero-delay-2">
+    <h1 className="hero-animate hero-delay-2" aria-label="Nascon Technologies - Smart Industrial Automation &amp; Control Solutions">
       Smart Automation.
       <br />
       Reliable Solutions.
