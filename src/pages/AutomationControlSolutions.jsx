@@ -17,6 +17,7 @@ const solutionAreas = [
   {
     number: "01",
     title: "PLC / HMI / SCADA Systems",
+    image: "/images/solutions/automation-control/01-plc-hmi-scada.png",
     description:
       "Intelligent control, visualization and supervisory monitoring for modern automated manufacturing.",
     icon: Cpu,
@@ -25,6 +26,7 @@ const solutionAreas = [
   {
     number: "02",
     title: "VFD & Drive Control Solutions",
+    image: "/images/solutions/automation-control/02-vfd-drive.png",
     description:
       "Efficient motor control, speed regulation and energy optimization across pumps, fans and conveyors.",
     icon: Activity,
@@ -33,6 +35,7 @@ const solutionAreas = [
   {
     number: "03",
     title: "Smart Control Panel Manufacturing",
+    image: "/images/solutions/automation-control/03-smart-control-panel.png",
     description:
       "PLC panels, VFD panels, MCC, PCC, APFC and custom automation panels built in-house.",
     icon: Layers,
@@ -41,6 +44,7 @@ const solutionAreas = [
   {
     number: "04",
     title: "IoT & Remote Monitoring",
+    image: "/images/solutions/automation-control/04-iot-remote-monitoring.png",
     description:
       "Connected systems, alerts, dashboards and remote visibility for distributed plant assets.",
     icon: Radio,
@@ -49,6 +53,7 @@ const solutionAreas = [
   {
     number: "05",
     title: "Field Instrumentation",
+    image: "/images/solutions/automation-control/05-field-instrumentation.png",
     description:
       "Pressure, temperature, flow and process sensing integration with galvanic isolation.",
     icon: Gauge,
@@ -57,6 +62,7 @@ const solutionAreas = [
   {
     number: "06",
     title: "System Integration Support",
+    image: "/images/solutions/automation-control/06-system-integration.png",
     description:
       "Design, selection, programming, commissioning and post-installation technical engineering support.",
     icon: Wrench,
@@ -235,8 +241,26 @@ function AutomationControlSolutions() {
                     </div>
                   </div>
 
-                  <h3 className="area-card-title">{area.title}</h3>
-                  <p className="area-card-desc">{area.description}</p>
+                  <div className="area-card-main">
+                    <div className="area-card-img-wrap">
+                      <picture>
+                        <source
+                          srcSet={area.image.replace(".png", ".webp")}
+                          type="image/webp"
+                        />
+                        <img
+                          src={area.image}
+                          alt={area.title}
+                          className="area-card-img"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                    <div className="area-card-info">
+                      <h3 className="area-card-title">{area.title}</h3>
+                      <p className="area-card-desc">{area.description}</p>
+                    </div>
+                  </div>
 
                   <div className="area-card-highlights">
                     {area.highlights.map((h, i) => (

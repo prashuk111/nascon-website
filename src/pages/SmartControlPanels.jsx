@@ -20,6 +20,7 @@ const panelSolutions = [
   {
     number: "01",
     title: "PLC PANEL",
+    image: "/images/solutions/control-panels/01-plc-panel.png",
     description:
       "Advanced PLC based control panels for precise automation and process control.",
     icon: Cpu,
@@ -28,6 +29,7 @@ const panelSolutions = [
   {
     number: "02",
     title: "VFD PANEL",
+    image: "/images/solutions/control-panels/02-vfd-panel.png",
     description:
       "Variable Frequency Drive panels for energy efficiency and smooth motor control.",
     icon: Gauge,
@@ -36,6 +38,7 @@ const panelSolutions = [
   {
     number: "03",
     title: "MCC / iMCC PANEL",
+    image: "/images/solutions/control-panels/03-mcc-panel.png",
     description:
       "Motor Control Centers and intelligent MCC panels for reliable motor management.",
     icon: Sliders,
@@ -44,6 +47,7 @@ const panelSolutions = [
   {
     number: "04",
     title: "PCC PANEL",
+    image: "/images/solutions/control-panels/04-pcc-panel.png",
     description:
       "Power Control Center panels for efficient power distribution and load management.",
     icon: Zap,
@@ -52,6 +56,7 @@ const panelSolutions = [
   {
     number: "05",
     title: "APFC / iPFC PANEL",
+    image: "/images/solutions/control-panels/05-apfc-panel.png",
     description:
       "Automatic and intelligent Power Factor Control panels for improved efficiency and reduced power cost.",
     icon: Activity,
@@ -60,6 +65,7 @@ const panelSolutions = [
   {
     number: "06",
     title: "RTU PANEL",
+    image: "/images/solutions/control-panels/06-rtu-panel.png",
     description:
       "Remote Terminal Unit panels for remote monitoring, data acquisition and control.",
     icon: Radio,
@@ -68,6 +74,7 @@ const panelSolutions = [
   {
     number: "07",
     title: "CUSTOM AUTOMATION PANEL",
+    image: "/images/solutions/control-panels/07-custom-automation-panel.png",
     description:
       "Tailor-made panels designed to meet unique process requirements and application needs.",
     icon: Wrench,
@@ -243,8 +250,26 @@ function SmartControlPanels() {
                     </div>
                   </div>
 
-                  <h3 className="panel-card-title">{panel.title}</h3>
-                  <p className="panel-card-desc">{panel.description}</p>
+                  <div className="panel-card-main">
+                    <div className="panel-card-info">
+                      <h3 className="panel-card-title">{panel.title}</h3>
+                      <p className="panel-card-desc">{panel.description}</p>
+                    </div>
+                    <div className="panel-card-img-wrap">
+                      <picture>
+                        <source
+                          srcSet={panel.image.replace(".png", ".webp")}
+                          type="image/webp"
+                        />
+                        <img
+                          src={panel.image}
+                          alt={panel.title}
+                          className="panel-card-img"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                  </div>
 
                   <div className="panel-card-highlights">
                     {panel.highlights.map((h, i) => (

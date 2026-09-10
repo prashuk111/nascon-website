@@ -9,7 +9,7 @@ import SystemIntegration from "../components/SystemIntegration";
 import AutomationEcosystem from "../components/AutomationEcosystem";
 import WhyChooseUs from "../components/WhyChooseUs";
 import CTA from "../components/CTA";
-
+import ProjectExecutionFlow from "../components/ProjectExecutionFlow";
 function Home() {
   return (
     <>
@@ -25,6 +25,8 @@ function Home() {
       <Industry />
 
       <QualitySupport />
+
+      <ProjectExecutionFlow />
 
       <SystemIntegration />
 

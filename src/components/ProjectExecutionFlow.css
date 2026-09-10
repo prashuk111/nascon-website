@@ -1,0 +1,744 @@
+/* =========================================================
+   PROJECT EXECUTION FLOW
+   ========================================================= */
+
+.project-flow-section {
+    position: relative;
+    width: 100%;
+    padding: 75px 0 85px;
+
+    background: #f7f9fc;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE TECHNICAL BACKGROUND
+   ========================================================= */
+
+.project-flow-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(22, 69, 138, 0.035) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(22, 69, 138, 0.035) 1px,
+            transparent 1px);
+
+    background-size: 48px 48px;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.project-flow-container {
+    position: relative;
+    z-index: 1;
+
+    width: min(1280px, calc(100% - 60px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.project-flow-header {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 48px;
+}
+
+
+.project-flow-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #16834a;
+}
+
+
+.project-flow-header h2 {
+    margin: 0;
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    color: #16458a;
+}
+
+
+.project-flow-header h2 span {
+    color: #16834a;
+}
+
+
+.project-flow-header p {
+    margin: 16px auto 0;
+
+    max-width: 620px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    color: #657184;
+}
+
+
+/* =========================================================
+   ROW
+   IMPORTANT:
+   The arrows are INSIDE each item.
+   Therefore the grid only contains CARDS.
+   ========================================================= */
+
+.project-flow-row {
+    display: grid;
+
+    align-items: center;
+
+    width: 100%;
+}
+
+
+/* FIRST ROW */
+
+.project-flow-row-five {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    column-gap: 38px;
+
+    margin-bottom: 48px;
+}
+
+
+/* SECOND ROW */
+
+.project-flow-row-four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 38px;
+
+    max-width: 1040px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ITEM
+   ========================================================= */
+
+.project-flow-item {
+    position: relative;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.project-flow-card {
+    position: relative;
+
+    min-height: 255px;
+
+    padding: 47px 18px 22px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid #d9e2ee;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 7px 20px rgba(20, 60, 110, 0.055);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   CORNER DETAILS
+   ========================================================= */
+
+.project-flow-card::before,
+.project-flow-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 15px;
+
+    pointer-events: none;
+}
+
+
+.project-flow-card::before {
+    top: 8px;
+    left: 8px;
+
+    border-top: 2px solid #16834a;
+    border-left: 2px solid #16834a;
+
+    border-radius: 3px 0 0 0;
+}
+
+
+.project-flow-card::after {
+    right: 8px;
+    bottom: 8px;
+
+    border-right: 2px solid #16834a;
+    border-bottom: 2px solid #16834a;
+
+    border-radius: 0 0 3px 0;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.project-flow-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #b9cfe7;
+
+    box-shadow:
+        0 15px 30px rgba(20, 60, 110, 0.10);
+}
+
+
+.project-flow-card.green:hover {
+    border-color: rgba(22, 131, 74, 0.4);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
+
+.project-flow-number {
+    position: absolute;
+
+    top: -17px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 15px rgba(15, 50, 100, 0.10);
+
+    z-index: 3;
+}
+
+
+/* BLUE */
+
+.project-flow-card.blue .project-flow-number {
+    color: #16458a;
+
+    border: 2px solid #16458a;
+}
+
+
+/* GREEN */
+
+.project-flow-card.green .project-flow-number {
+    color: #16834a;
+
+    border: 2px solid #16834a;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.project-flow-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #f8fbff;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.project-flow-card:hover .project-flow-icon {
+    transform: translateY(-2px) scale(1.03);
+}
+
+
+/* BLUE ICON */
+
+.project-flow-card.blue .project-flow-icon {
+    color: #16458a;
+
+    border: 1px solid #d7e2f1;
+}
+
+
+/* GREEN ICON */
+
+.project-flow-card.green .project-flow-icon {
+    color: #16834a;
+
+    border: 1px solid #d2e9dc;
+
+    background: #f7fcf9;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.project-flow-content {
+    text-align: center;
+}
+
+
+.project-flow-content h3 {
+    margin: 0 auto;
+
+    max-width: 205px;
+
+    min-height: 47px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    color: #16458a;
+}
+
+
+.project-flow-card.green .project-flow-content h3 {
+    color: #16834a;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.project-flow-divider {
+    width: 42px;
+    height: 3px;
+
+    margin: 12px auto 12px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,
+            #16458a,
+            #16834a);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.project-flow-content p {
+    margin: 0 auto;
+
+    max-width: 210px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: #667386;
+}
+
+
+/* =========================================================
+   ARROWS
+   ========================================================= */
+
+.project-flow-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    right: -31px;
+
+    transform: translateY(-50%);
+
+    width: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #16458a;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+.project-flow-arrow span {
+    display: inline-block;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   BOTTOM HIGHLIGHTS
+   ========================================================= */
+
+.project-flow-highlights {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 48px;
+
+    padding: 18px 12px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 7px 20px rgba(20, 60, 110, 0.045);
+}
+
+
+.project-flow-highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 7px 20px;
+
+    border-right: 1px solid #dce5ef;
+}
+
+
+.project-flow-highlight:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   HIGHLIGHT ICON
+   ========================================================= */
+
+.highlight-icon {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+
+.highlight-icon.blue {
+    color: #16458a;
+
+    background: #f1f6fc;
+
+    border: 1px solid #d7e2f1;
+}
+
+
+.highlight-icon.green {
+    color: #16834a;
+
+    background: #f0faf4;
+
+    border: 1px solid #d2e9dc;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TEXT
+   ========================================================= */
+
+.project-flow-highlight h4 {
+    margin: 0 0 3px;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    color: #18385f;
+}
+
+
+.project-flow-highlight p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #718096;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+    .project-flow-container {
+        width: min(1050px, calc(100% - 40px));
+    }
+
+    .project-flow-row-five {
+        column-gap: 28px;
+    }
+
+    .project-flow-row-four {
+        column-gap: 28px;
+
+        max-width: 900px;
+    }
+
+    .project-flow-arrow {
+        right: -24px;
+    }
+
+    .project-flow-card {
+        min-height: 250px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .project-flow-content h3 {
+        font-size: 15px;
+    }
+
+    .project-flow-content p {
+        font-size: 12.5px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .project-flow-section {
+        padding: 65px 0 75px;
+    }
+
+    .project-flow-row-five,
+    .project-flow-row-four {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 24px;
+        row-gap: 32px;
+
+        max-width: none;
+
+        margin-bottom: 32px;
+    }
+
+    .project-flow-arrow {
+        display: none;
+    }
+
+    .project-flow-card {
+        min-height: 245px;
+
+        padding: 47px 18px 22px;
+    }
+
+    .project-flow-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-flow-highlight:nth-child(2) {
+        border-right: none;
+    }
+
+    .project-flow-highlight:nth-child(-n + 2) {
+        border-bottom: 1px solid #dce5ef;
+
+        padding-bottom: 16px;
+    }
+
+    .project-flow-highlight:nth-child(n + 3) {
+        padding-top: 16px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .project-flow-section {
+        padding: 55px 0 60px;
+    }
+
+    .project-flow-container {
+        width: calc(100% - 28px);
+    }
+
+    .project-flow-header {
+        margin-bottom: 42px;
+    }
+
+    .project-flow-header h2 {
+        font-size: 32px;
+    }
+
+    .project-flow-header p {
+        font-size: 14px;
+    }
+
+    .project-flow-row-five,
+    .project-flow-row-four {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        margin-bottom: 28px;
+    }
+
+    .project-flow-card {
+        min-height: auto;
+
+        padding: 47px 22px 24px;
+    }
+
+    .project-flow-icon {
+        width: 62px;
+        height: 62px;
+
+        margin-bottom: 18px;
+    }
+
+    .project-flow-content h3 {
+        font-size: 17px;
+
+        min-height: auto;
+    }
+
+    .project-flow-content p {
+        max-width: 280px;
+
+        font-size: 13.5px;
+    }
+
+    .project-flow-highlights {
+        grid-template-columns: 1fr;
+
+        padding: 8px 16px;
+    }
+
+    .project-flow-highlight,
+    .project-flow-highlight:nth-child(2),
+    .project-flow-highlight:nth-child(n + 3) {
+        padding: 16px 4px;
+
+        border-right: none;
+
+        border-bottom: 1px solid #dce5ef;
+    }
+
+    .project-flow-highlight:last-child {
+        border-bottom: none;
+    }
+}
