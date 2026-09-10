@@ -7,7 +7,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 85px 6% 80px;
+  padding: 85px 6% 65px;
   box-sizing: border-box;
 
   background: #ffffff;
@@ -354,68 +354,7 @@
 }
 
 
-/* =========================================================
-   DEVELOPMENT MILESTONE
-========================================================= */
 
-.development-credit {
-  position: relative;
-  z-index: 1;
-
-  max-width: 1150px;
-
-  margin: 65px auto 0;
-
-  padding-top: 28px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 22px;
-
-  border-top: 1px solid #e3ebe7;
-}
-
-.development-credit p {
-  margin: 0;
-
-  color: #68736f;
-
-  font-size: 13px;
-  font-weight: 500;
-
-  letter-spacing: 1.2px;
-
-  text-transform: uppercase;
-
-  text-align: center;
-}
-
-.development-credit strong {
-  margin-left: 6px;
-
-  color: #16458a;
-
-  font-size: 15px;
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-}
-
-
-/* =========================================================
-   SMALL PROFESSIONAL SEPARATORS
-========================================================= */
-
-.development-line {
-  width: 45px;
-  height: 2px;
-
-  background: #16834a;
-
-  opacity: 0.75;
-}
 
 
 /* =========================================================
@@ -425,7 +364,7 @@
 @media (max-width: 1000px) {
 
   .contact-section {
-    padding: 75px 5% 70px;
+    padding: 75px 5% 55px;
   }
 
   .contact-heading h2 {
@@ -468,7 +407,7 @@
 @media (max-width: 600px) {
 
   .contact-section {
-    padding: 65px 20px 65px;
+    padding: 65px 20px 45px;
   }
 
   .contact-heading {
@@ -573,41 +512,7 @@
   }
 
 
-  /* =====================================================
-     DEVELOPMENT CREDIT
-  ===================================================== */
 
-  .development-credit {
-    margin-top: 45px;
-
-    padding-top: 22px;
-
-    gap: 12px;
-  }
-
-  .development-credit p {
-    font-size: 10px;
-
-    letter-spacing: 0.9px;
-
-    line-height: 1.6;
-  }
-
-  .development-credit strong {
-    display: block;
-
-    margin: 3px 0 0;
-
-    font-size: 12px;
-
-    letter-spacing: 1.2px;
-  }
-
-  .development-line {
-    width: 22px;
-
-    height: 1px;
-  }
 
 }
 

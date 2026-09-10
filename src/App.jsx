@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import PageMeta from "./components/PageMeta";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -65,6 +66,8 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
+
+      <Footer />
 
     </BrowserRouter>
   );

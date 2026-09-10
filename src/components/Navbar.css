@@ -52,8 +52,8 @@
   gap: 34px;
 }
 
-.nav-links > a,
-.nav-links > .nav-item-dropdown > a {
+.nav-links>a,
+.nav-links>.nav-item-dropdown>a {
   position: relative;
   color: #303030;
   text-decoration: none;
@@ -67,16 +67,16 @@
   gap: 6px;
 }
 
-.nav-links > a:hover,
-.nav-links > a.active,
-.nav-links > .nav-item-dropdown > a:hover,
-.nav-links > .nav-item-dropdown > a.active {
+.nav-links>a:hover,
+.nav-links>a.active,
+.nav-links>.nav-item-dropdown>a:hover,
+.nav-links>.nav-item-dropdown>a.active {
   color: #16458a;
 }
 
 /* Green underline on hover/active */
-.nav-links > a::after,
-.nav-links > .nav-item-dropdown > a::after {
+.nav-links>a::after,
+.nav-links>.nav-item-dropdown>a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -87,20 +87,22 @@
   transition: width 0.25s ease;
 }
 
-.nav-links > a:hover::after,
-.nav-links > a.active::after,
-.nav-links > .nav-item-dropdown > a:hover::after,
-.nav-links > .nav-item-dropdown > a.active::after {
+.nav-links>a:hover::after,
+.nav-links>a.active::after,
+.nav-links>.nav-item-dropdown>a:hover::after,
+.nav-links>.nav-item-dropdown>a.active::after {
   width: 100%;
 }
 
 .dropdown-chevron {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.25s ease;
   color: #64748b;
 }
 
-.nav-links > .nav-item-dropdown > a:hover .dropdown-chevron,
-.nav-links > .nav-item-dropdown > a.active .dropdown-chevron {
+.nav-links>.nav-item-dropdown>a:hover .dropdown-chevron,
+.nav-links>.nav-item-dropdown>a.active .dropdown-chevron {
   color: #16458a;
 }
 
@@ -115,11 +117,13 @@
   display: inline-flex;
   align-items: center;
   height: 100%;
+
 }
 
 /* ==========================================================================
    DESKTOP DROPDOWNS BACKDROP BLUR OVERLAY
-   ========================================================================== */
+========================================================================== */
+
 .navbar-dropdown-backdrop {
   position: fixed;
   top: 78px;
@@ -138,26 +142,35 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 /* ==========================================================================
-   DESKTOP MEGA MENU DROPDOWN (PREMIUM FLOATING ISLAND)
-   ========================================================================== */
+   DESKTOP MEGA MENU DROPDOWN
+   PREMIUM FLOATING ISLAND
+========================================================================== */
+
 .mega-menu-dropdown {
   position: absolute;
-  top: 78px;
+  top: 74px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(1200px, calc(100% - 48px));
+  width: min(1160px, calc(100% - 48px));
   background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  box-shadow: 0 28px 65px -12px rgba(15, 35, 75, 0.18), 0 8px 24px -4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 16px 40px -10px rgba(15, 35, 75, 0.12),
+    0 4px 16px -2px rgba(0, 0, 0, 0.04);
   z-index: 1050;
+
+  /* Keep dropdown stable */
   overflow: hidden;
+  box-sizing: border-box;
+
   animation: megaMenuSlideIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -172,19 +185,12 @@
   background: transparent;
 }
 
-/* Elegant contained top jewel accent line */
 .mega-menu-dropdown::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #16458a 0%, #16834a 50%, #16458a 100%);
+  display: none !important;
 }
 
 .mega-menu-dropdown a {
-  padding: 0;
+  padding: 20px;
   text-decoration: none;
 }
 
@@ -193,55 +199,129 @@
 }
 
 .mega-menu-inner {
-  padding: 24px 24px 20px;
+  padding: 24px;
+  box-sizing: border-box;
 }
+
+/* =========================
+   MEGA MENU GRID
+========================= */
 
 .mega-menu-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+
+  /*
+    Each card gets its own independent grid track.
+    Hover transforms never change the grid layout or neighbor positions.
+  */
+  align-items: stretch;
+  box-sizing: border-box;
 }
 
-/* Individual Category Card */
+/* ==========================================================================
+   INDIVIDUAL CATEGORY CARD
+========================================================================= */
+
 .mega-menu-card {
   display: flex !important;
   flex-direction: column;
-  padding: 20px 18px 18px;
-  background: #f8fafc;
-  border: 1px solid #e8eef3;
-  border-radius: 12px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.22s ease,
-              background 0.22s ease;
-  position: relative;
+
+  /*
+    Strict constraints so cards stay inside their grid column.
+  */
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+
+  padding: 24px 20px 22px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow:
+    0 1px 3px 0 rgba(15, 35, 75, 0.04),
+    0 1px 2px -1px rgba(0, 0, 0, 0.02);
+
+  /*
+    Only animate visual properties: vertical transform and shadow.
+    Strictly no scale, no width/margin shifts.
+  */
+  transition:
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease;
+
+  position: relative;
+  z-index: 1;
+
+  overflow: hidden;
+  isolation: isolate;
 }
+
+/* =========================
+   CARD HOVER
+========================= */
 
 .mega-menu-card:hover {
   background: #ffffff;
   border-color: #16834a;
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px -6px rgba(22, 131, 74, 0.15), 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  /*
+    IMPORTANT:
+    Lifts slightly vertically (-3px).
+    Strictly 0 horizontal transform, no scale, no collision with adjacent cards.
+  */
+  transform: translateY(-3px);
+
+  /*
+    Downwards-focused shadow with negative spread to prevent bleeding into adjacent cards
+  */
+  box-shadow:
+    0 10px 22px -5px rgba(22, 131, 74, 0.16),
+    0 3px 8px -2px rgba(0, 0, 0, 0.04);
+
+  z-index: 2;
+  padding: 10px;
 }
+
+/* =========================
+   MEGA CARD HEADER
+========================= */
 
 .mega-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   margin-bottom: 14px;
+  min-width: 0;
 }
+
+/* =========================
+   ICON
+========================= */
 
 .mega-icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 44px;
   height: 44px;
+
+  flex-shrink: 0;
+
   border-radius: 10px;
+
   background: #ffffff;
   color: #16458a;
+
   border: 1px solid #dbe6df;
+
   transition: all 0.22s ease;
 }
 
@@ -249,21 +329,41 @@
   background: #16834a;
   color: #ffffff;
   border-color: #16834a;
+
   box-shadow: 0 4px 12px rgba(22, 131, 74, 0.35);
-  transform: scale(1.04);
 }
 
+/* =========================
+   CARD NUMBER
+========================= */
+
 .mega-num {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
   font-size: 11.5px;
   font-weight: 800;
+
   color: #16834a;
+
   background: #eef8f2;
+
   border: 1px solid #d4ebd9;
+
   padding: 2px 8px;
+
   border-radius: 4px;
+
   letter-spacing: 0.5px;
+
   transition: all 0.2s ease;
+
+  flex-shrink: 0;
 }
 
 .mega-menu-card:hover .mega-num {
@@ -272,63 +372,98 @@
   border-color: #16834a;
 }
 
+/* =========================
+   CARD TITLE
+========================= */
+
 .mega-title {
   font-size: 14.5px;
   font-weight: 800;
   letter-spacing: 0.3px;
+
   color: #16458a;
+
   margin: 0 0 6px;
+
   transition: color 0.2s ease;
+
+  /*
+    Prevent long titles from forcing card width.
+  */
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .mega-menu-card:hover .mega-title {
   color: #16834a;
 }
 
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
 .mega-desc {
   font-size: 12px;
   line-height: 1.55;
+
   color: #626d7a;
+
   margin: 0 0 16px;
+
   flex-grow: 1;
+
+  /*
+    Keep descriptions contained inside cards.
+  */
+  overflow-wrap: break-word;
 }
 
+/* =========================
+   CARD ACTION
+========================= */
+
 .mega-link-action {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid #edf2f7;
+
+  gap: 6px;
+
+  margin-top: auto;
+  padding-top: 6px;
+
+  border-top: none;
+
   font-size: 12.5px;
   font-weight: 700;
+
   color: #16834a;
+
   transition: color 0.2s ease;
-  width: 100%;
+
+  width: fit-content;
+
+  max-width: 100%;
 }
 
 .mega-arrow {
   transition: transform 0.22s ease;
+  flex-shrink: 0;
 }
 
 .mega-menu-card:hover .mega-link-action {
-  color: #16458a;
+  color: #16834a;
 }
 
 .mega-menu-card:hover .mega-arrow {
   transform: translateX(4px);
 }
 
-/* Mega Menu Bottom Strip */
+/* ==========================================================================
+   MEGA MENU BOTTOM STRIP
+========================================================================== */
+
 .mega-menu-bottom-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 18px;
-  padding: 14px 18px;
-  background: #f8fafc;
-  border: 1px solid #eef2f6;
-  border-radius: 10px;
-  font-size: 13px;
+  display: none !important;
 }
 
 .mega-bottom-text {
@@ -339,14 +474,22 @@
 .mega-bottom-link {
   display: inline-flex;
   align-items: center;
+
   gap: 8px;
+
   color: #16458a;
+
   font-weight: 700;
   font-size: 12.5px;
+
   padding: 7px 16px;
+
   border-radius: 8px;
+
   background: #ffffff;
+
   border: 1px solid #dce6ef;
+
   transition: all 0.2s ease;
 }
 
@@ -354,15 +497,22 @@
   background: #16458a;
   color: #ffffff;
   border-color: #16458a;
+
   box-shadow: 0 4px 12px rgba(22, 69, 138, 0.25);
+
   transform: translateY(-1px);
 }
+
+/* =========================
+   MEGA MENU ANIMATION
+========================= */
 
 @keyframes megaMenuSlideIn {
   from {
     opacity: 0;
     transform: translate(-50%, -8px);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, 0);
@@ -370,20 +520,27 @@
 }
 
 /* ==========================================================================
-   DESKTOP SOLUTIONS DROPDOWN MENU (PREMIUM FLOATING ISLAND)
-   ========================================================================== */
+   DESKTOP SOLUTIONS DROPDOWN MENU
+   PREMIUM FLOATING ISLAND
+========================================================================== */
+
 .solutions-dropdown-menu {
   position: absolute;
-  top: 78px;
+  top: 74px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(840px, calc(100% - 48px));
+  width: min(740px, calc(100% - 48px));
   background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
-  box-shadow: 0 28px 65px -12px rgba(15, 35, 75, 0.18), 0 8px 24px -4px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 16px 40px -10px rgba(15, 35, 75, 0.12),
+    0 4px 16px -2px rgba(0, 0, 0, 0.04);
   z-index: 1050;
+
   overflow: hidden;
+  box-sizing: border-box;
+
   animation: megaMenuSlideIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -398,17 +555,11 @@
 }
 
 .solutions-dropdown-menu::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #16458a 0%, #16834a 50%, #16458a 100%);
+  display: none !important;
 }
 
 .solutions-dropdown-menu a {
-  padding: 0;
+  padding: 20px;
   text-decoration: none;
 }
 
@@ -416,170 +567,317 @@
   display: none !important;
 }
 
+/* =========================
+   SOLUTIONS GRID
+========================= */
+
 .solutions-dropdown-inner {
-  padding: 24px 24px 20px;
+  padding: 24px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  box-sizing: border-box;
 }
+
+/* ==========================================================================
+   SOLUTIONS CARD
+========================================================================== */
 
 .solutions-dropdown-card {
   display: flex !important;
   flex-direction: column;
-  padding: 22px 20px 20px;
-  background: #f8fafc;
-  border: 1px solid #e8eef3;
-  border-radius: 12px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.22s ease,
-              background 0.22s ease;
-  position: relative;
+
+  /*
+    Keep every card strictly inside its own grid column.
+  */
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
+
+  padding: 24px 22px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  box-shadow:
+    0 1px 3px 0 rgba(15, 35, 75, 0.04),
+    0 1px 2px -1px rgba(0, 0, 0, 0.02);
+
+  transition:
+    transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease;
+
+  position: relative;
+  z-index: 1;
+
+
+  overflow: hidden;
+  isolation: isolate;
 }
+
+/* =========================
+   SOLUTIONS CARD HOVER
+========================= */
 
 .solutions-dropdown-card:hover {
   background: #ffffff;
   border-color: #16458a;
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px -6px rgba(22, 69, 138, 0.16), 0 2px 8px rgba(0, 0, 0, 0.03);
+
+  /*
+    ONLY vertical movement.
+    No scale or horizontal expansion.
+  */
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 22px -5px rgba(22, 69, 138, 0.16),
+    0 3px 8px -2px rgba(0, 0, 0, 0.04);
+
+  z-index: 2;
+  padding: 10px;
 }
+
+/* =========================
+   SOLUTION CARD HEADER
+========================= */
 
 .sol-card-header {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
+  gap: 10px;
+
   margin-bottom: 14px;
+
+  min-width: 0;
 }
+
+/* =========================
+   SOLUTION ICON
+========================= */
 
 .sol-icon-box {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   width: 44px;
   height: 44px;
+
+  flex-shrink: 0;
+
   border-radius: 10px;
+
   background: #ffffff;
+
   color: #16458a;
+
   border: 1px solid #dbe6df;
+
   transition: all 0.22s ease;
 }
 
 .solutions-dropdown-card:hover .sol-icon-box {
   background: #16458a;
+
   color: #ffffff;
+
   border-color: #16458a;
+
   box-shadow: 0 4px 12px rgba(22, 69, 138, 0.35);
-  transform: scale(1.04);
 }
 
+/* =========================
+   SOLUTION NUMBER
+========================= */
+
 .sol-card-num {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+
   font-size: 11.5px;
+
   font-weight: 800;
+
   color: #16834a;
+
   background: #eef8f2;
+
   border: 1px solid #d4ebd9;
+
   padding: 2px 8px;
+
   border-radius: 4px;
+
   letter-spacing: 0.5px;
+
   transition: all 0.2s ease;
+
+  flex-shrink: 0;
 }
 
 .solutions-dropdown-card:hover .sol-card-num {
   background: #16458a;
+
   color: #ffffff;
+
   border-color: #16458a;
 }
 
+/* =========================
+   SOLUTION TITLE
+========================= */
+
 .sol-card-title {
   font-size: 15px;
+
   font-weight: 800;
+
   letter-spacing: 0.3px;
+
   color: #16458a;
+
   margin: 0 0 6px;
+
   transition: color 0.2s ease;
+
+  overflow-wrap: break-word;
 }
 
 .solutions-dropdown-card:hover .sol-card-title {
   color: #16834a;
 }
 
+/* =========================
+   SOLUTION DESCRIPTION
+========================= */
+
 .sol-card-desc {
   font-size: 12px;
+
   line-height: 1.55;
+
   color: #626d7a;
+
   margin: 0 0 16px;
+
   flex-grow: 1;
+
+  overflow-wrap: break-word;
 }
 
+/* =========================
+   SOLUTION ACTION
+========================= */
+
 .sol-card-action {
-  display: flex;
+  display: inline-flex;
+
   align-items: center;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid #edf2f7;
+
+  gap: 6px;
+
+  margin-top: auto;
+
+  padding-top: 6px;
+
+  border-top: none;
+
   font-size: 12.5px;
+
   font-weight: 700;
+
   color: #16834a;
+
   transition: color 0.2s ease;
-  width: 100%;
+
+  width: fit-content;
+
+  max-width: 100%;
 }
 
 .sol-arrow {
   transition: transform 0.22s ease;
+
+  flex-shrink: 0;
 }
 
 .solutions-dropdown-card:hover .sol-card-action {
-  color: #16458a;
+  color: #16834a;
 }
 
 .solutions-dropdown-card:hover .sol-arrow {
   transform: translateX(4px);
 }
 
+/* ==========================================================================
+   SOLUTIONS DROPDOWN FOOTER
+========================================================================== */
+
 .solutions-dropdown-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 24px 20px;
-  padding: 14px 18px;
-  background: #f8fafc;
-  border: 1px solid #eef2f6;
-  border-radius: 10px;
-  font-size: 13px;
+  display: none !important;
 }
 
 .sol-footer-text {
   color: #64748b;
+
   font-weight: 500;
 }
 
 .sol-footer-link {
   display: inline-flex;
+
   align-items: center;
+
   gap: 8px;
+
   color: #16458a;
+
   font-weight: 700;
+
   font-size: 12.5px;
+
   padding: 7px 16px;
+
   border-radius: 8px;
+
   background: #ffffff;
+
   border: 1px solid #dce6ef;
+
   transition: all 0.2s ease;
 }
 
 .sol-footer-link:hover {
   background: #16458a;
+
   color: #ffffff;
+
   border-color: #16458a;
+
   box-shadow: 0 4px 12px rgba(22, 69, 138, 0.25);
+
   transform: translateY(-1px);
 }
 
-/* =========================
-   MOBILE MENU TOGGLE (HIDDEN ON DESKTOP)
-========================= */
+/* ==========================================================================
+   MOBILE MENU TOGGLE
+   HIDDEN ON DESKTOP
+========================================================================== */
+
 .mobile-toggle-btn {
   display: none;
 }
@@ -589,9 +887,45 @@
   display: none;
 }
 
-/* =========================
-   TABLET & MOBILE (<= 900px)
-========================= */
+/* ==========================================================================
+   TABLET
+========================================================================== */
+
+@media (max-width: 1120px) and (min-width: 901px) {
+  .mega-menu-dropdown {
+    width: min(1060px, calc(100% - 36px));
+  }
+
+  .mega-menu-inner {
+    padding: 20px;
+  }
+
+  .mega-menu-grid {
+    gap: 16px;
+  }
+
+  .mega-menu-card {
+    padding: 20px 16px 18px;
+  }
+
+  .solutions-dropdown-menu {
+    width: min(720px, calc(100% - 36px));
+  }
+
+  .solutions-dropdown-inner {
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .solutions-dropdown-card {
+    padding: 20px 18px 18px;
+  }
+}
+
+/* ==========================================================================
+   TABLET & MOBILE
+========================================================================== */
+
 @media (max-width: 900px) {
   .navbar {
     height: 68px;
@@ -610,120 +944,198 @@
     display: none;
   }
 
-  /* Show mobile hamburger toggle */
+  /* =========================
+     MOBILE HAMBURGER
+  ========================= */
+
   .mobile-toggle-btn {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 42px;
+
     height: 42px;
+
     border: 1px solid #e2e8f0;
+
     border-radius: 10px;
+
     background: #f8fafc;
+
     color: #16458a;
+
     cursor: pointer;
+
     transition: all 0.2s ease;
   }
 
   .mobile-toggle-btn:hover {
     background: #f1f5f9;
+
     border-color: #cbd5e1;
+
     color: #0f3166;
   }
 
   .mobile-toggle-btn:focus-visible {
     outline: 2px solid #16458a;
+
     outline-offset: 2px;
   }
 
-  /* Mobile Backdrop */
+  /* =========================
+     MOBILE BACKDROP
+  ========================= */
+
   .mobile-backdrop {
     display: block;
+
     position: fixed;
+
     inset: 0;
+
     top: 68px;
+
     background: rgba(15, 23, 42, 0.45);
+
     backdrop-filter: blur(4px);
+
     -webkit-backdrop-filter: blur(4px);
+
     z-index: 998;
+
     animation: mobileNavFade 0.2s ease-out;
   }
 
-  /* Mobile Dropdown Drawer */
+  /* =========================
+     MOBILE DRAWER
+  ========================= */
+
   .mobile-drawer {
     display: flex;
+
     flex-direction: column;
+
     position: fixed;
+
     top: 68px;
+
     left: 0;
+
     right: 0;
+
     background: #ffffff;
+
     border-bottom: 2px solid #16458a;
+
     box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+
     z-index: 999;
+
     max-height: calc(100vh - 68px);
+
     overflow-y: auto;
+
     animation: mobileNavSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .mobile-drawer-links {
     display: flex;
+
     flex-direction: column;
+
     padding: 12px 16px 8px;
+
     gap: 4px;
   }
 
   .mobile-drawer-links a {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     padding: 13px 16px;
+
     font-size: 15px;
+
     font-weight: 600;
+
     color: #1e293b;
+
     text-decoration: none;
+
     border-radius: 8px;
+
     transition: all 0.18s ease;
   }
 
   .mobile-drawer-links a:hover {
     background: #f8fafc;
+
     color: #16458a;
   }
 
   .mobile-drawer-links a.active {
     background: rgba(22, 69, 138, 0.08);
+
     color: #16458a;
+
     font-weight: 700;
+
     border-left: 3px solid #16834a;
+
     border-radius: 0 8px 8px 0;
   }
 
+  /* =========================
+     MOBILE ARROW
+  ========================= */
+
   .mobile-arrow {
     color: #94a3b8;
-    transition: transform 0.18s ease, color 0.18s ease;
+
+    transition:
+      transform 0.18s ease,
+      color 0.18s ease;
   }
 
   .mobile-drawer-links a:hover .mobile-arrow,
   .mobile-drawer-links a.active .mobile-arrow {
     color: #16458a;
+
     transform: translateX(3px);
   }
 
-  /* Mobile Accordion Styles */
+  /* =========================
+     MOBILE ACCORDION
+  ========================= */
+
   .mobile-accordion-wrapper {
     display: flex;
+
     flex-direction: column;
+
     border-radius: 8px;
+
     background: #ffffff;
   }
 
   .mobile-accordion-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     width: 100%;
+
     border-radius: 8px;
+
     transition: background 0.18s ease;
   }
 
@@ -733,135 +1145,226 @@
 
   .mobile-accordion-title {
     flex: 1;
+
     display: flex;
+
     align-items: center;
+
     padding: 13px 16px;
+
     font-size: 15px;
+
     font-weight: 600;
+
     color: #1e293b;
+
     text-decoration: none;
+
     border-radius: 8px 0 0 8px;
+
     transition: all 0.18s ease;
   }
 
   .mobile-accordion-title.active {
     background: rgba(22, 69, 138, 0.08);
+
     color: #16458a;
+
     font-weight: 700;
+
     border-left: 3px solid #16834a;
+
     border-radius: 0;
   }
 
   .mobile-expand-btn {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 44px;
+
     height: 44px;
+
     background: transparent;
+
     border: none;
+
     color: #64748b;
+
     cursor: pointer;
+
     border-radius: 0 8px 8px 0;
-    transition: transform 0.22s ease, color 0.18s ease;
+
+    transition:
+      transform 0.22s ease,
+      color 0.18s ease;
   }
 
   .mobile-expand-btn:hover {
     color: #16458a;
+
     background: #f8fafc;
   }
 
   .mobile-expand-btn.expanded {
     transform: rotate(180deg);
+
     color: #16834a;
   }
 
+  /* =========================
+     MOBILE SUB CATEGORIES
+  ========================= */
+
   .mobile-sub-categories {
     display: flex;
+
     flex-direction: column;
+
     gap: 3px;
+
     padding: 6px 6px 8px 14px;
+
     margin-left: 14px;
+
     margin-bottom: 6px;
+
     border-left: 2px solid #e2e8f0;
+
     animation: mobileNavSlide 0.2s ease-out;
   }
 
   .mobile-sub-link {
     display: flex !important;
+
     align-items: center !important;
+
     justify-content: space-between !important;
+
     padding: 9px 12px !important;
+
     font-size: 13.5px !important;
+
     font-weight: 600 !important;
+
     color: #475569 !important;
+
     border-radius: 6px !important;
+
     text-decoration: none !important;
+
     transition: all 0.18s ease !important;
   }
 
   .mobile-sub-link:hover,
   .mobile-sub-link.active {
     background: rgba(22, 69, 138, 0.08) !important;
+
     color: #16458a !important;
   }
 
   .mobile-sub-num {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family:
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      monospace;
+
     font-size: 11px;
+
     font-weight: 800;
+
     color: #16834a;
+
     background: #eef8f2;
+
     padding: 2px 6px;
+
     border-radius: 4px;
+
     margin-right: 8px;
+
     flex-shrink: 0;
   }
 
   .mobile-sub-text {
     flex: 1;
+
     display: flex;
+
     align-items: center;
+
     gap: 6px;
+
+    min-width: 0;
   }
 
   .mobile-sub-icon {
     color: #16458a;
+
     flex-shrink: 0;
   }
 
+  /* =========================
+     MOBILE DRAWER FOOTER
+  ========================= */
+
   .mobile-drawer-footer {
     padding: 12px 16px 20px;
+
     border-top: 1px solid #f1f5f9;
   }
 
   .mobile-drawer-cta {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 8px;
+
     width: 100%;
+
     padding: 12px 18px;
-    background: linear-gradient(135deg, #16458a 0%, #0f3166 100%);
+
+    background: linear-gradient(135deg,
+        #16458a 0%,
+        #0f3166 100%);
+
     color: #ffffff;
+
     font-size: 14px;
+
     font-weight: 700;
+
     border-radius: 8px;
+
     text-decoration: none;
+
     box-shadow: 0 4px 12px rgba(22, 69, 138, 0.2);
+
     box-sizing: border-box;
+
     transition: transform 0.18s ease;
   }
 
   .mobile-drawer-cta:hover {
     transform: translateY(-1px);
+
     box-shadow: 0 6px 16px rgba(22, 69, 138, 0.28);
   }
 }
 
-/* =========================
-   COMPACT SMARTPHONES (<= 500px)
-========================= */
+/* ==========================================================================
+   COMPACT SMARTPHONES
+========================================================================== */
+
 @media (max-width: 500px) {
   .navbar {
     height: 62px;
@@ -886,18 +1389,25 @@
 
   .mobile-toggle-btn {
     width: 38px;
+
     height: 38px;
   }
 }
 
-/* Animations */
+/* ==========================================================================
+   ANIMATIONS
+========================================================================== */
+
 @keyframes mobileNavSlide {
   from {
     opacity: 0;
+
     transform: translateY(-12px);
   }
+
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -906,6 +1416,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

@@ -159,24 +159,7 @@ function CTA() {
         </Link>
 
       </div>
-
-      {/* =========================
-          DEVELOPMENT MILESTONE
-      ========================= */}
-
-      <div className="development-credit">
-
-        <span className="development-line"></span>
-
-        <p>
-          Developed by <strong>A2BN PRIVATE LIMITED</strong>
-        </p>
-
-        <span className="development-line"></span>
-
-      </div>
-
-    </section >
+    </section>
   );
 }
 

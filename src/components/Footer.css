@@ -1,0 +1,99 @@
+/* =========================================================
+   REUSABLE GLOBAL FOOTER
+========================================================= */
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 0 6% 65px;
+  z-index: 10;
+}
+
+.site-footer .development-credit {
+  position: relative;
+  z-index: 1;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  border-top: 1px solid #e3ebe7;
+}
+
+.site-footer .development-credit p {
+  margin: 0;
+  color: #68736f;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.site-footer .development-credit strong {
+  margin-left: 6px;
+  color: #16458a;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================================
+   SMALL PROFESSIONAL SEPARATORS
+========================================================= */
+
+.site-footer .development-line {
+  width: 45px;
+  height: 2px;
+  background: #16834a;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   TABLET & MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 1000px) {
+  .site-footer {
+    padding: 0 5% 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 0 5% 45px;
+  }
+
+  .site-footer .development-credit {
+    padding-top: 22px;
+    gap: 12px;
+  }
+
+  .site-footer .development-credit p {
+    font-size: 10px;
+    letter-spacing: 0.9px;
+    line-height: 1.6;
+  }
+
+  .site-footer .development-credit strong {
+    display: block;
+    margin: 3px 0 0;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+  }
+
+  .site-footer .development-line {
+    width: 22px;
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 0 4% 40px;
+  }
+}
