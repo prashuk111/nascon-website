@@ -1,5 +1,6 @@
 import "./Contact.css";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 
 import {
@@ -8,18 +9,44 @@ import {
   MapPin,
   Factory,
   ChevronDown,
+  AlertCircle,
 } from "lucide-react";
 import { contactFAQs } from "../data/faqData";
 
+function getInitialRequirement(searchParams) {
+  const productParam = searchParams.get("product");
+  const partnerParam = searchParams.get("partner");
+  const solutionParam = searchParams.get("solution");
+  const categoryParam = searchParams.get("category");
+
+  if (productParam) {
+    return `Enquiry for: ${productParam}${partnerParam ? ` (${partnerParam.toUpperCase()})` : ""}`;
+  }
+  if (partnerParam) {
+    return `Enquiry regarding ${partnerParam.toUpperCase()} products and industrial solutions.`;
+  }
+  if (solutionParam) {
+    return `Enquiry regarding ${solutionParam.replace(/-/g, " ")} engineering solutions.`;
+  }
+  if (categoryParam) {
+    return `Enquiry regarding ${categoryParam} products.`;
+  }
+  return "";
+}
+
 function Contact() {
-  const [formData, setFormData] = useState({
+  const [searchParams] = useSearchParams();
+
+  const [formData, setFormData] = useState(() => ({
     name: "",
     company: "",
     phone: "",
     email: "",
-    requirement: "",
-  });
+    requirement: getInitialRequirement(searchParams),
+  }));
 
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -29,6 +56,50 @@ function Contact() {
     setOpenFaq((prev) => (prev === index ? -1 : index));
   };
 
+  const validateField = (field, value) => {
+    const val = (value || "").trim();
+    switch (field) {
+      case "name":
+        if (!val) return "Please enter your full name.";
+        if (val.length < 2) return "Name must be at least 2 characters.";
+        if (!/^[a-zA-Z\s.'-]+$/.test(val)) return "Name should contain letters only.";
+        return "";
+      case "company":
+        if (!val) return "Please enter your company name.";
+        if (val.length < 2) return "Company name must be at least 2 characters.";
+        return "";
+      case "phone": {
+        const digits = val.replace(/\D/g, "");
+        if (!val) return "Please enter your phone number.";
+        if (digits.length < 10) return "Please enter a valid 10-digit phone number.";
+        if (digits.length > 15) return "Phone number cannot exceed 15 digits.";
+        return "";
+      }
+      case "email": {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!val) return "Please enter your email address.";
+        if (!emailRegex.test(val)) return "Please enter a valid email address (e.g. name@company.com).";
+        return "";
+      }
+      case "requirement":
+        if (!val) return "Please describe your requirement.";
+        if (val.length < 10) return "Please provide more details (at least 10 characters).";
+        return "";
+      default:
+        return "";
+    }
+  };
+
+  const validateAll = () => {
+    return {
+      name: validateField("name", formData.name),
+      company: validateField("company", formData.company),
+      phone: validateField("phone", formData.phone),
+      email: validateField("email", formData.email),
+      requirement: validateField("requirement", formData.requirement),
+    };
+  };
+
   const handleChange = (e) => {
     const { id, value } = e.target;
 
@@ -36,10 +107,72 @@ function Contact() {
       ...prev,
       [id]: value,
     }));
+
+    if (touched[id]) {
+      setErrors((prev) => ({
+        ...prev,
+        [id]: validateField(id, value),
+      }));
+    }
+  };
+
+  // Dedicated phone handler to strictly block typing non-numeric characters (like "as")
+  const handlePhoneChange = (e) => {
+    const raw = e.target.value;
+    // Allow digits, spaces, plus, hyphens, and parentheses only
+    const sanitized = raw.replace(/[^\d\s+\-()]/g, "");
+
+    setFormData((prev) => ({
+      ...prev,
+      phone: sanitized,
+    }));
+
+    if (touched.phone) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: validateField("phone", sanitized),
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { id, value } = e.target;
+    setTouched((prev) => ({
+      ...prev,
+      [id]: true,
+    }));
+    setErrors((prev) => ({
+      ...prev,
+      [id]: validateField(id, value),
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Mark all fields touched
+    const allTouched = {
+      name: true,
+      company: true,
+      phone: true,
+      email: true,
+      requirement: true,
+    };
+    setTouched(allTouched);
+
+    const formErrors = validateAll();
+    setErrors(formErrors);
+
+    const hasError = Object.values(formErrors).some((err) => Boolean(err));
+    if (hasError) {
+      // Auto-focus the first invalid field
+      const firstInvalidField = Object.keys(formErrors).find((k) => Boolean(formErrors[k]));
+      if (firstInvalidField) {
+        const el = document.getElementById(firstInvalidField);
+        if (el) el.focus();
+      }
+      return;
+    }
 
     setSubmitting(true);
     setSubmitted(false);
@@ -76,6 +209,8 @@ function Contact() {
         email: "",
         requirement: "",
       });
+      setTouched({});
+      setErrors({});
     } catch (error) {
       console.error(error);
 
@@ -380,6 +515,7 @@ function Contact() {
             <form
               onSubmit={handleSubmit}
               autoComplete="off"
+              noValidate
               className="contact-form"
             >
 
@@ -387,42 +523,62 @@ function Contact() {
 
               <div className="contact-form-row">
 
-                <div className="contact-field">
+                <div className={`contact-field ${touched.name && errors.name ? "has-error" : ""}`}>
 
                   <label htmlFor="name">
-                    Your Name
+                    Your Name <span className="req-star">*</span>
                   </label>
 
                   <input
                     id="name"
                     type="text"
-                    name="business_enquiry_name"
-                    autoComplete="new-password"
+                    name="enquiry_fullname"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    data-lpignore="true"
+                    data-form-type="other"
                     placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
+                    onBlur={handleBlur}
                   />
+
+                  {touched.name && errors.name && (
+                    <span className="contact-field-error" role="alert">
+                      <AlertCircle size={13} /> {errors.name}
+                    </span>
+                  )}
 
                 </div>
 
 
-                <div className="contact-field">
+                <div className={`contact-field ${touched.company && errors.company ? "has-error" : ""}`}>
 
                   <label htmlFor="company">
-                    Company
+                    Company <span className="req-star">*</span>
                   </label>
 
                   <input
                     id="company"
                     type="text"
-                    name="business_enquiry_company"
-                    autoComplete="new-password"
+                    name="enquiry_organization"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    data-lpignore="true"
+                    data-form-type="other"
                     placeholder="Enter your company"
                     value={formData.company}
                     onChange={handleChange}
-                    required
+                    onBlur={handleBlur}
                   />
+
+                  {touched.company && errors.company && (
+                    <span className="contact-field-error" role="alert">
+                      <AlertCircle size={13} /> {errors.company}
+                    </span>
+                  )}
 
                 </div>
 
@@ -433,42 +589,64 @@ function Contact() {
 
               <div className="contact-form-row">
 
-                <div className="contact-field">
+                <div className={`contact-field ${touched.phone && errors.phone ? "has-error" : ""}`}>
 
                   <label htmlFor="phone">
-                    Phone
+                    Phone <span className="req-star">*</span>
                   </label>
 
                   <input
                     id="phone"
                     type="tel"
-                    name="business_enquiry_phone"
-                    autoComplete="new-password"
-                    placeholder="Enter your phone number"
+                    inputMode="tel"
+                    name="enquiry_phone_number"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    data-lpignore="true"
+                    data-form-type="other"
+                    placeholder="Enter 10-digit phone number"
                     value={formData.phone}
-                    onChange={handleChange}
-                    required
+                    onChange={handlePhoneChange}
+                    onBlur={handleBlur}
                   />
+
+                  {touched.phone && errors.phone && (
+                    <span className="contact-field-error" role="alert">
+                      <AlertCircle size={13} /> {errors.phone}
+                    </span>
+                  )}
 
                 </div>
 
 
-                <div className="contact-field">
+                <div className={`contact-field ${touched.email && errors.email ? "has-error" : ""}`}>
 
                   <label htmlFor="email">
-                    Email
+                    Email <span className="req-star">*</span>
                   </label>
 
                   <input
                     id="email"
                     type="email"
-                    name="business_enquiry_email"
-                    autoComplete="new-password"
+                    name="enquiry_email_address"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    spellCheck={false}
+                    data-lpignore="true"
+                    data-form-type="other"
                     placeholder="Enter your email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
+                    onBlur={handleBlur}
                   />
+
+                  {touched.email && errors.email && (
+                    <span className="contact-field-error" role="alert">
+                      <AlertCircle size={13} /> {errors.email}
+                    </span>
+                  )}
 
                 </div>
 
@@ -477,22 +655,32 @@ function Contact() {
 
               {/* REQUIREMENT */}
 
-              <div className="contact-field">
+              <div className={`contact-field ${touched.requirement && errors.requirement ? "has-error" : ""}`}>
 
                 <label htmlFor="requirement">
-                  Your Requirement
+                  Your Requirement <span className="req-star">*</span>
                 </label>
 
                 <textarea
                   id="requirement"
-                  name="business_enquiry_requirement"
+                  name="enquiry_message_requirement"
                   autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck={false}
+                  data-lpignore="true"
+                  data-form-type="other"
                   rows="5"
                   placeholder="Tell us about your automation, electrical or control requirement"
                   value={formData.requirement}
                   onChange={handleChange}
-                  required
+                  onBlur={handleBlur}
                 />
+
+                {touched.requirement && errors.requirement && (
+                  <span className="contact-field-error" role="alert">
+                    <AlertCircle size={13} /> {errors.requirement}
+                  </span>
+                )}
 
               </div>
 

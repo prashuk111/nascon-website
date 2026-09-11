@@ -655,6 +655,53 @@
   color: #b5b5b5;
 }
 
+/* =========================================================
+   FORM FIELD VALIDATION & ERROR STATES
+========================================================= */
+
+.contact-field label .req-star {
+  color: #e53e3e;
+  font-weight: bold;
+  margin-left: 2px;
+}
+
+.contact-field.has-error input,
+.contact-field.has-error textarea {
+  border-color: #e53e3e !important;
+  background: #fffafa;
+}
+
+.contact-field.has-error input:focus,
+.contact-field.has-error textarea:focus {
+  border-color: #e53e3e !important;
+  box-shadow:
+    0 0 0 3px rgba(229, 62, 62, 0.12),
+    0 5px 18px rgba(229, 62, 62, 0.05) !important;
+}
+
+.contact-field-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #e53e3e;
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 3px;
+  line-height: 1.3;
+  animation: contactErrorFade 0.2s ease-out;
+}
+
+@keyframes contactErrorFade {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* =========================================================
    SUBMIT BUTTON

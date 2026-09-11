@@ -26,6 +26,22 @@ export default async function handler(req, res) {
       });
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      return res.status(400).json({
+        message: "Please provide a valid email address.",
+      });
+    }
+
+    if (phone) {
+      const cleanPhone = phone.replace(/\D/g, "");
+      if (cleanPhone.length < 10 || cleanPhone.length > 15) {
+        return res.status(400).json({
+          message: "Please provide a valid phone number (at least 10 digits).",
+        });
+      }
+    }
+
     const { data, error } = await resend.emails.send({
       from: "Nascon Website <onboarding@resend.dev>",
       to: ["Nishit@nascon.in"],
