@@ -179,12 +179,20 @@ function Contact() {
     setErrorMessage("");
 
     try {
+      const payload = {
+        name: (formData.name || "").trim(),
+        company: (formData.company || "").trim(),
+        phone: (formData.phone || "").trim(),
+        email: (formData.email || "").trim(),
+        requirement: (formData.requirement || "").trim(),
+      };
+
       const response = await fetch("/api/Contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
