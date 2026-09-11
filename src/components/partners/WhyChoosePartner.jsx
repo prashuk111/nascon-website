@@ -1,21 +1,21 @@
 import { CheckCircle2, Shield, Zap, Sparkles, Award, Star } from "lucide-react";
 
 export default function WhyChoosePartner({ partner }) {
-  const { whyChoose, name } = partner;
+  const { whyChoose, name, whyChooseTitle, whyChooseSubtitle } = partner;
   if (!whyChoose || whyChoose.length === 0) return null;
 
   const icons = [Award, Sparkles, Zap, Shield, Star, CheckCircle2];
 
   return (
-    <section className="nascon-why-partner-section" aria-label={`Why Choose ${name}`}>
+    <section className="nascon-why-partner-section" aria-label={whyChooseTitle || `Why Choose ${name}`}>
       <div className="nascon-why-partner-container">
         <div className="nascon-why-partner-header">
           <span className="nascon-section-eyebrow">TECHNOLOGY ADVANTAGE</span>
           <h2 className="nascon-section-title">
-            Why Industry Leaders Choose {name}
+            {whyChooseTitle || `Why Industry Leaders Choose ${name}`}
           </h2>
           <p className="nascon-section-subtitle">
-            Proven performance, global certifications, and continuous innovation trusted by manufacturing and process industries worldwide.
+            {whyChooseSubtitle || "Proven performance, global certifications, and continuous innovation trusted by manufacturing and process industries worldwide."}
           </p>
         </div>
 
@@ -37,3 +37,4 @@ export default function WhyChoosePartner({ partner }) {
     </section>
   );
 }
+

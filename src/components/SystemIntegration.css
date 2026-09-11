@@ -1061,3 +1061,209 @@
   }
 
 }
+
+/* =========================================================
+   INTEGRATION LINKS
+========================================================= */
+
+.integration-links-section {
+  max-width: 1150px;
+  margin: 65px auto 0;
+  padding-top: 42px;
+  border-top: 1px solid #e5ece9;
+}
+
+
+/* =========================================================
+   INTEGRATION HEADING
+========================================================= */
+
+.integration-links-heading {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+
+.integration-heading-line {
+  flex: 1;
+  height: 1px;
+  background: #dce7e2;
+}
+
+
+.integration-links-heading p {
+  margin: 0;
+
+  flex-shrink: 0;
+
+  color: #16834a;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   INTEGRATION LINKS
+========================================================= */
+
+.integration-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+
+  width: 100%;
+}
+
+
+.integration-links a {
+  flex: 1;
+
+  padding: 8px 24px;
+
+  color: #16458a;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+
+.integration-links a:hover {
+  color: #16834a;
+  transform: translateY(-2px);
+}
+
+
+.integration-links a:focus-visible {
+  outline: 2px solid #16834a;
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .integration-links-section {
+    margin-top: 55px;
+    padding-top: 38px;
+  }
+
+
+  .integration-links {
+    gap: 10px;
+  }
+
+
+  .integration-links a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .integration-links-section {
+    margin-top: 48px;
+    padding-top: 35px;
+  }
+
+
+  .integration-links-heading {
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+
+
+  .integration-links-heading p {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+
+  .integration-links {
+    flex-direction: column;
+    gap: 17px;
+  }
+
+
+  .integration-links a {
+    flex: none;
+
+    width: 100%;
+
+    padding: 5px 10px;
+
+    font-size: 14px;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .integration-links-section {
+    margin-top: 42px;
+    padding-top: 30px;
+  }
+
+
+  .integration-links {
+    gap: 15px;
+  }
+
+
+  .integration-links a {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .integration-links a {
+    transition: none;
+  }
+
+
+  .integration-links a:hover {
+    transform: none;
+  }
+
+}

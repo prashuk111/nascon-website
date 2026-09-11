@@ -17,6 +17,7 @@ import SmartControlPanels from "./pages/SmartControlPanels";
 import AutomationControlSolutions from "./pages/AutomationControlSolutions";
 import Industries from "./pages/Industries";
 import Partners from "./pages/Partners";
+import IntegrationDetail from "./pages/IntegrationDetail";
 import Contact from "./pages/Contact";
 
 
@@ -58,6 +59,15 @@ function App() {
 
         <Route path="/partners" element={<Partners />} />
 
+        {/* 3 Integration Pages */}
+        <Route path="/partners/plc-hmi-scada" element={<IntegrationDetail slug="plc-hmi-scada" />} />
+        <Route path="/partners/vfd-drives-motor-control" element={<IntegrationDetail slug="vfd-drives-motor-control" />} />
+        <Route path="/partners/mcc-pcc-apfc-rtu" element={<IntegrationDetail slug="mcc-pcc-apfc-rtu" />} />
+
+        {/* Alias redirect for backwards compatibility */}
+        <Route path="/partners/vfd-drives" element={<Navigate to="/partners/vfd-drives-motor-control" replace />} />
+
+        {/* Existing Partner Detail Routes */}
         <Route path="/partners/:slug" element={<Partners />} />
 
         <Route path="/contact" element={<Contact />} />

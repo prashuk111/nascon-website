@@ -2,7 +2,15 @@ import { Link } from "react-router-dom";
 import { Check, ArrowRight, Eye, Send } from "lucide-react";
 
 export default function PartnerProductGrid({ partner, onOpenProductModal }) {
-  const { categories, name, slug } = partner;
+  const {
+    categories,
+    name,
+    slug,
+    gridEyebrow,
+    gridTitle,
+    gridSubtitle,
+    categoryLabel,
+  } = partner;
 
   return (
     <section className="nascon-partner-products-section" id="partner-products">
@@ -10,21 +18,22 @@ export default function PartnerProductGrid({ partner, onOpenProductModal }) {
         {/* Section Header */}
         <div className="nascon-partner-products-header">
           <div className="header-left">
-            <span className="nascon-section-eyebrow">BROCHURE CATALOGUE</span>
+            <span className="nascon-section-eyebrow">{gridEyebrow || "BROCHURE CATALOGUE"}</span>
             <h2 className="nascon-section-title">
-              {name} Product Portfolio
+              {gridTitle || `${name} Product Portfolio`}
             </h2>
             <p className="nascon-section-subtitle">
-              Authentic industrial automation, control, and electrical products sourced and integrated by NASCON TECHNOLOGIES.
+              {gridSubtitle || "Authentic industrial automation, control, and electrical products sourced and integrated by NASCON TECHNOLOGIES."}
             </p>
           </div>
           <div className="header-right">
             <div className="nascon-category-count-badge">
               <span className="count-number">{categories.length}</span>
-              <span className="count-label">Product Categories</span>
+              <span className="count-label">{categoryLabel || "Product Categories"}</span>
             </div>
           </div>
         </div>
+
 
         {/* 4-Column Product Grid */}
         <div className="nascon-partner-products-grid">

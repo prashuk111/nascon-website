@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function PartnerTabs({ partners, activeSlug, onSelectPartner }) {
   const activeTabRef = useRef(null);
@@ -53,7 +54,38 @@ export default function PartnerTabs({ partners, activeSlug, onSelectPartner }) {
             );
           })}
         </div>
+
+        {/* Clean Integration Section Divider & 3 Plain Text Links */}
+        <div className="partner-tabs-integration-section">
+          <div className="partner-tabs-integration-divider">
+            <div className="partner-tabs-divider-line" />
+            <p className="partner-tabs-divider-title">INTEGRATION</p>
+            <div className="partner-tabs-divider-line" />
+          </div>
+
+          <div className="partner-tabs-integration-links">
+            <Link
+              to="/partners/plc-hmi-scada"
+              className={`partner-tabs-integration-link ${activeSlug === "plc-hmi-scada" ? "active" : ""}`}
+            >
+              PLC, HMI &amp; SCADA Integration
+            </Link>
+            <Link
+              to="/partners/vfd-drives-motor-control"
+              className={`partner-tabs-integration-link ${activeSlug === "vfd-drives-motor-control" ? "active" : ""}`}
+            >
+              VFD, Drives &amp; Motor Control Solutions
+            </Link>
+            <Link
+              to="/partners/mcc-pcc-apfc-rtu"
+              className={`partner-tabs-integration-link ${activeSlug === "mcc-pcc-apfc-rtu" ? "active" : ""}`}
+            >
+              MCC, PCC, APFC &amp; RTU Panel Engineering
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+

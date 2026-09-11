@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function PartnerHero({ partner, onScrollToProducts }) {
+  const guarantees = partner.guarantees || [
+    "100% Genuine Certified",
+    "Application Engineering Support",
+    "Fast Regional Dispatch",
+  ];
+
   return (
     <section className="nascon-partner-hero-banner" id="partner-hero">
       <div className="nascon-partner-hero-bg-accent" />
@@ -9,19 +15,20 @@ export default function PartnerHero({ partner, onScrollToProducts }) {
         {/* Left text column */}
         <div className="nascon-partner-hero-copy">
 
-
           <div className="nascon-partner-title-group">
-            <div className="nascon-partner-logo-container">
-              <picture>
-                {partner.logoWebp && <source srcSet={partner.logoWebp} type="image/webp" />}
-                <img
-                  src={partner.logo}
-                  alt={`${partner.name} logo`}
-                  className="nascon-hero-partner-logo"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
+
+
+            {partner.supportedBrands && partner.supportedBrands.length > 0 && (
+              <div className="nascon-hero-brands-row" aria-label="Supported Technology Platforms">
+                <span className="hero-brands-tag-label">SUPPORTED BRANDS:</span>
+                <div className="hero-brands-pills">
+                  {partner.supportedBrands.map((brand, idx) => (
+                    <span key={idx} className="hero-brand-badge">{brand}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <h2 className="nascon-partner-headline">
               {partner.name}
             </h2>
@@ -40,7 +47,7 @@ export default function PartnerHero({ partner, onScrollToProducts }) {
               className="nascon-btn-primary nascon-btn-explore"
               id="btn-explore-partner-products"
             >
-              Explore {partner.name} Products
+              {partner.exploreBtnText || `Explore ${partner.shortName || partner.name} ${partner.categoryLabel || "Capabilities"}`}
               <ArrowRight size={16} />
             </button>
             <Link
@@ -48,20 +55,16 @@ export default function PartnerHero({ partner, onScrollToProducts }) {
               className="nascon-btn-secondary"
               id="btn-enquire-partner"
             >
-              Request a Quote
+              Request a Consultation
             </Link>
           </div>
 
           <div className="nascon-partner-guarantee-strip">
-            <span className="guarantee-item">
-              <CheckCircle2 size={16} className="guarantee-icon" /> 100% Genuine Certified
-            </span>
-            <span className="guarantee-item">
-              <CheckCircle2 size={16} className="guarantee-icon" /> Application Engineering Support
-            </span>
-            <span className="guarantee-item">
-              <CheckCircle2 size={16} className="guarantee-icon" /> Fast Regional Dispatch
-            </span>
+            {guarantees.map((item, idx) => (
+              <span key={idx} className="guarantee-item">
+                <CheckCircle2 size={16} className="guarantee-icon" /> {item}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -73,20 +76,23 @@ export default function PartnerHero({ partner, onScrollToProducts }) {
               <img
                 src={partner.heroImage}
                 alt={`${partner.name} industrial automation showcase`}
-                className="nascon-partner-hero-img"
+                className={`nascon-partner-hero-img ${partner.heroFitContain ? "fit-contain" : ""}`}
               />
             </picture>
-            <div className="nascon-hero-image-overlay" />
-            <div className="nascon-hero-floating-badge">
-              <span className="badge-pulse" />
-              <div className="badge-text">
-                <strong>Authorized Partner</strong>
-                <span>NASCON Integration & Supply</span>
+            {!partner.hideHeroOverlay && <div className="nascon-hero-image-overlay" />}
+            {!partner.hideHeroBadge && (
+              <div className="nascon-hero-floating-badge">
+                <span className="badge-pulse" />
+                <div className="badge-text">
+                  <strong>{partner.badgeText || "Authorized Partner"}</strong>
+                  <span>{partner.badgeSubtext || "NASCON Integration & Supply"}</span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
     </section>
   );
 }
+

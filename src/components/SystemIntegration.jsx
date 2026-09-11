@@ -137,6 +137,40 @@ function SystemIntegration() {
 
       </div>
 
+      {/* =========================
+    INTEGRATION
+========================= */}
+
+      <div className="integration-links-section">
+
+        <div className="integration-links-heading">
+
+          <div className="integration-heading-line"></div>
+
+          <p>INTEGRATION</p>
+
+          <div className="integration-heading-line"></div>
+
+        </div>
+
+
+        <div className="integration-links">
+
+          <Link to="/partners/plc-hmi-scada">
+            PLC, HMI &amp; SCADA Integration
+          </Link>
+
+          <Link to="/partners/vfd-drives-motor-control">
+            VFD, Drives &amp; Motor Control Solutions
+          </Link>
+
+          <Link to="/partners/mcc-pcc-apfc-rtu">
+            MCC, PCC, APFC &amp; RTU Panel Engineering
+          </Link>
+
+        </div>
+
+      </div>
 
       {/* =========================
           BOTTOM STATEMENT

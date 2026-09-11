@@ -223,6 +223,89 @@
 }
 
 /* ==========================================================================
+   2b. PARTNER TABS INTEGRATION SECTION (CLEAN TEXT-ONLY LINKS)
+========================================================================== */
+.partner-tabs-integration-section {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.partner-tabs-integration-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.partner-tabs-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.partner-tabs-divider-title {
+  margin: 0;
+  flex-shrink: 0;
+  color: #16834a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.partner-tabs-integration-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 2px 0;
+}
+
+.partner-tabs-integration-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #16458a;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 4px 2px;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.partner-tabs-integration-link:hover {
+  color: #16834a;
+  transform: translateY(-1px);
+}
+
+.partner-tabs-integration-link.active {
+  color: #16834a;
+  border-bottom: 2px solid #16834a;
+}
+
+.partner-tabs-integration-link:focus-visible {
+  outline: 2px solid #16834a;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .partner-tabs-integration-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .partner-tabs-integration-link {
+    font-size: 0.82rem;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
    3. PARTNER HERO BANNER
 ========================================================================== */
 .nascon-partner-hero-banner {
@@ -232,7 +315,43 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
+.nascon-hero-brands-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-brands-tag-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #16834a;
+  text-transform: uppercase;
+}
+
+.hero-brands-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.hero-brand-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
 .nascon-partner-hero-inner {
+
   max-width: 1380px;
   margin: 0 auto;
   display: grid;
@@ -385,6 +504,11 @@
 
 .nascon-hero-image-frame:hover .nascon-partner-hero-img {
   transform: scale(1.03);
+}
+
+.nascon-partner-hero-img.fit-contain {
+  object-fit: contain;
+  background: #ffffff;
 }
 
 .nascon-hero-image-overlay {
