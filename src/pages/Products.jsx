@@ -12,37 +12,6 @@ function Products() {
       ===================================================== */}
       <ProductsHero />
 
-      {/* =====================================================
-          FOUR CATEGORY NAVIGATION CARDS
-      ===================================================== */}
-      <section className="products-categories-overview section-container" aria-label="Product Category Portfolios">
-        <div className="cat-overview-header">
-          <p className="cat-overview-eyebrow">FOUR CORE DISCIPLINES</p>
-          <h2>Industrial Product Portfolios</h2>
-          <span>Select any discipline to explore dedicated product specifications, key features, and sizing assistance.</span>
-        </div>
-
-        <div className="cat-overview-cards-grid">
-          {productCategories.map((cat) => (
-            <div key={cat.id} className="cat-overview-card">
-              <div className="cat-overview-card-top">
-                <span className="cat-overview-num">{cat.number}</span>
-                <span className="cat-overview-pill">{cat.products.length} Products</span>
-              </div>
-              <h3 className="cat-overview-title">{cat.title}</h3>
-              <p className="cat-overview-desc">{cat.subtitle}</p>
-              <Link
-                to={cat.route || `/products/${cat.id}`}
-                className="btn-explore-category-action"
-                title={`Explore ${cat.title}`}
-              >
-                <span>Explore Products</span>
-                <span className="action-arrow" aria-hidden="true">→</span>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* =====================================================
           FOUR MAJOR PRODUCT CATEGORY SECTIONS
